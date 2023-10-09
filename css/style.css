@@ -150,7 +150,7 @@ body{
     align-items: center;
     min-height: 100vh;
     font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #59D7EE, #9DE3F6, #40B0DF);
+    background: linear-gradient(to bottom, #0E3663, #5978A9, #B3B3BD);
     display: none;
 }
 .main{
