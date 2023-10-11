@@ -7,6 +7,7 @@
 }*/
 body{
     display: flex;
+    overflow-x: hidden;
 
 }
 .video-background>.nav{
@@ -139,7 +140,7 @@ body{
 .admin-login{
     width: 100vw;
     height: 100vh;
-    border: 4px solid black;
+    /*border: 4px solid black;*/
     position: absolute;
     left: 0%;
     top: 102%;
@@ -244,3 +245,124 @@ button:hover{
     position: absolute;
     top: 0%;
 }*/
+.user-login{
+    border: 4px solid black;
+    width: 99.5vw;
+    height: 754px;
+    position: absolute;
+    top: 100%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+
+}
+.div{
+    width: 800px;
+    height: 600px;
+   background: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 40px;
+}
+.wigth {
+    width: 110px;
+    height: 20px;
+    background: black;
+
+}
+#widthDive1{
+    background: white;
+    position: absolute;
+    left: 92%;
+    top: -81%
+
+}
+#widthDive2{
+    background: #AABBE7;
+    position: absolute;
+    left: 95%;
+    /* top: -19%; */
+    bottom: 75%
+}
+#widthDive3{
+    background: white;
+    position: absolute;
+    left: 90%;
+    bottom: 69%;
+}
+#widthDive4{
+    background: white;
+    position: absolute;
+    left: -95%;
+    top: 66%;
+}
+#widthDive5{
+    background: #7A7A98;
+    position: absolute;
+    left: -105%;
+    top: 72%;
+}
+#widthDive6{
+    background: white;
+    position: absolute;
+    left: -103%;
+    top: 78.8%;
+}
+.topDive{
+    background: #AABBE7 70%;
+    /*background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);*/
+    width: 330px;
+    height: 330px;
+    border-bottom-right-radius: 100%;
+}
+.leghtDrive{
+    background: white;
+    width: 67px;
+    height: 341px;
+    position: absolute;
+    top: 1%;
+    left: 4.9%;
+    transform: rotate(13.5deg);
+    border-radius: -9%;
+}
+#l1{
+    background: white;
+    width: 65px;
+    height: 280px;
+    transform: rotate(-25deg);
+    left: 17%;
+    top: -1%;
+    border-radius: 20px;
+}
+#l2{
+/*    background: white;
+    width: 65px;
+    height: 73px;
+    transform: rotate(-90deg);
+    left: 9.3%;
+    border-radius: 14px;
+    top: -6px;*/
+
+
+    background: white;
+    width: 65px;
+    height: 73px;
+    transform: rotate(-90deg);
+    left: 10%;
+    border-radius: 20px;
+    top: -6px;
+
+}
+/*.box {
+    width: 200px;
+    height: 100px;
+    overflow: hidden; !* This will crop the content that overflows the box *!
+    border: 1px solid #333;
+    background: black;
+    padding: 10px;
+    box-sizing: border-box; !* Ensures that padding is included in the width and height *!
+}*/
+
+/*
