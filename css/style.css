@@ -325,7 +325,7 @@ button:hover{
     top: 1%;
     left: 4.9%;
     transform: rotate(13.5deg);
-    border-radius: -9%;
+    /*border-radius: -9%;*/
 }
 #l1{
     background: white;
@@ -355,6 +355,175 @@ button:hover{
     top: -6px;
 
 }
+
+.login-filed-and-text{
+    width: 450px;
+    height: 420px;
+    border: 1px solid black;
+    position: absolute;
+    right: 2%;
+    bottom: 12%;
+}
+#loginText{
+    position: absolute;
+    left: 42%;
+    top: 2%;
+    font-family: math;
+    font-weight: revert;
+}
+#text{
+    position: absolute;
+    left: 7%;
+    top: 11%;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+.wrapper{
+    /*width: 450px;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border: 1px solid red;*/
+    width: 410px;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border: 1px solid red;
+    height: 10%;
+    position: absolute;
+    left: 5%;
+    top: 27%;
+
+}
+.wrapper .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+    border: 1px solid green;
+
+}
+.wrapper .input-data input{
+   /* width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 0px solid silver;*/
+    /*width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 0px solid silver;
+    !* position: absolute; *!
+    position: absolute;
+    left: 0%;
+    top: -34%;*/
+    width: 117%;
+    height: 131%;
+    border: none;
+    border-bottom: 0px solid silver;
+    /* position: absolute; */
+    /* position: absolute; */
+    /* left: 0%; */
+    /* top: 36%; */
+    /* bottom: 37%; */
+    position: relative;
+    left: -8%;
+    top: -119%;
+}
+/*.input-data input:focus~label*/
+.input-data input:focus~label{
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #4158d0;
+}
+
+.wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: gray;
+    pointer-events: none;
+transition: all 0.3s ease;
+}
+/*.form-floating{
+    border: 1px solid red;
+    width: 87%;
+    height: 14%;
+    margin-top: 30px;
+    left: 7%;
+    !* bottom: -18px; *!
+    top: 79px;
+}*/
+/*.textFiled{
+    position: relative;
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+}*/
+/*.textFiled{
+    !*border: 1px solid blue;*!
+    width: 100%;
+    height: 84%;
+    position: absolute;
+    !* top: -18px; *!
+
+}*/
+/*
+.input-field {
+    position: relative;
+    width: 415px;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid red;
+    left: 4%;
+    top: 27%;
+}
+input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rebeccapurple;
+    box-shadow: none;
+    color: #111;
+}
+label {
+    position: absolute;
+    top: -60px;
+    left: -154px;
+    width: 100%;
+    color: #d3d3d3;
+    transition: 0.2s all;
+    cursor: text;
+    font-size: 1.5em;
+}
+input:invalid {
+    outline: 0;
+!*!/ color: #ff2300;*!
+!*!/   border-color: #ff2300;*!
+}
+input:focus,
+input:valid {
+    border-color: #00dd22;
+}
+input:valid~label {
+    font-size: 14px;
+    top: -24px;
+    color: #00dd22;
+}
+*/
+
+/*#usernameText{*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    color: #d3d3d3;*/
+/*    transition: 0.2s all;*/
+/*    cursor: text;*/
+/*}*/
+
+/*.form-control{
+    border: 1px solid blue;
+}*/
 /*.box {
     width: 200px;
     height: 100px;
