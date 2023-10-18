@@ -51,7 +51,7 @@
 
         </div>
 
-        <button type="button" class="btn btn-light">Register Now</button>
+        <button type="button" class="btn btn-light" id="btn-register">Register Now</button>
 
     </div>
 </section>
@@ -79,7 +79,7 @@
         </div>
     </div>
 </section>
-<section class="user-login">
+<section class="user-login" id="user_login">
    <div class="div">
 
        <div class="topDive"></div>
@@ -97,19 +97,37 @@
        <div class="login-filed-and-text">
            <h2 id="loginText">Login</h2>
      <p id="text">Don't have an account?Create your account,it takes less than a minute</p>
-           <div class="wrapper">
-               <div class="input-data">
-                   <input type="text">
-                   <label>Name</label>
-               </div>
-       </div>
+           <div class="input-container">
+               <input type="text" required=""/>
+               <label>User Name</label>
+               <img src="icon/user.png">
+           </div>
+           <div class="input-container" id="password">
+               <input type="password" required=""/>
+               <label>Password</label>
+               <img src="icon/padlock.png">
+           </div>
+
+
+           <button type="button" class="btn-user-login">Login</button>
+
+           <div class="middle-div" id="middle1"></div>
+           <label class="or-lable">OR</label>
+           <div class="middle-div" id="middle2"></div>
+
+           <button type="button" class="btn-register-login">Register Now</button>
+
 <!--<div class="wrapper">
     <div class="input-data">
        <input type="text">
         <label>Name</label>
     </div>-->
-</div>
+      </div>
 
+       <div class="welcome-div">
+           <h1 id="welcome">Welcome</h1>
+           <p class="welcome-text">Don't have an account?Create your account, it takes less than a min ave an account?Create your account,it takes less than a minute</p>
+       </div>
    </div>
 <!--    <form action="">-->
 <!--           <div class="input-field">-->
