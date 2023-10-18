@@ -486,6 +486,188 @@ button:hover{
     top: 36%;
     font-size: 0.8em;
 }
+#div2{
+    background: white;
+}
+.user-register-container{
+    border: 1px solid white;
+    width: 80%;
+    height: 90%;
+    position: relative;
+    left: 10%;
+    top: 5%;
+    box-shadow: black;
+
+}
+.input-register-container {
+    position: relative;
+   /* margin-bottom: 10px;*/
+    top: 40%;
+   /* border: 1px solid red;*/
+    height: 10%;
+    width: 43%;
+    margin: 20px;
+}
+.input-register-container label{
+    position: absolute;
+    top: -60px;
+    left: -40px;
+    font-size: 14px;
+    color: black;
+    pointer-event:none;
+    transition: all 0.5s ease-in-out;
+}
+.input-register-container input{
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 90%;
+    height: 45px;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    position: relative;
+    top: -35%;
+    /* color: red;
+    /*color:red;*/
+}
+.input-register-container input:focus{
+    border:none;
+    outline:none;
+    border-bottom:1px solid #AABBE7 ;
+}
+
+.input-register-container input:focus ~ label,
+.input-register-container input:valid ~ label{
+    top:-80px;
+    font-size:12px;
+    left:  -30px;
+}
+.input-register-container img{
+    width: 25px;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+.address{
+    position: absolute;
+    right: 2%;
+    top: 36%;
+    /*bottom: 10%;*/
+    /*top: 45%;*/
+}
+#address-lable{
+    position: absolute;
+    top: -70%;
+}
+.input-register-container input:focus ~  #address-lable,
+.input-register-container input:valid ~  #address-lable{
+    top: -60px;
+    left:  -30px;
+}
+.input-register-container input:focus ~  #password-leble,
+.input-register-container input:valid ~  #password-leble{
+    top: -60px;
+    left:  -30px;
+}
+.input-register-container input:focus ~  #gender-lable,
+.input-register-container input:valid ~  #gender-lable{
+    top: -60px;
+    left:  -30px;
+}
+
+/*#email-div{
+    position: relative;
+    top: -15%;
+}*/
+
+#password-div{
+    position: absolute;
+    right: 2%;
+    top: 50%;
+}
+#password-leble{
+    position: absolute;
+    top: -70%;
+}
+#gender-div{
+    position: absolute;
+    right: 2%;
+    top: 64%;
+}
+#gender-lable{
+    position: absolute;
+    top: -70%;
+}
+/*.file-upload{
+    border: 1px solid red;
+    width: 52%;
+    height: 5%;
+    position: absolute;
+    top: 24%;
+    left: 32%;
+}
+.file-input{
+    border: 1px solid blue;
+}*/
+.profile-pic {
+    color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*position: relative;*/
+    transition: all 0.3s ease;
+    /*border: 1px solid red;*/
+    position: absolute;
+    left: 25%;
+    top: 0%;
+    width: 50%;
+    height: 40%;
+}
+.profile-pic input {
+    display: none;
+}
+.profile-pic img {
+
+    position: absolute;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+    z-index: 0;
+}
+.profile-pic .-label {
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+}
+.profile-pic:hover .-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    color: #fafafa;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 100px;
+    margin-bottom: 0;
+
+    position: absolute;
+    /*left: 10%;*/
+    top: -24%;
+}
+.profile-pic span {
+
+    display: inline-flex;
+    padding: 0.2em;
+    height: 1em;
+    position: absolute;
+    left: 15%;
+    top: 15%;
+  /*  left: 10%*/;
+}
+
 /*.icon{*/
 /*    width: 20px;*/
 /*    height: 20px;*/
