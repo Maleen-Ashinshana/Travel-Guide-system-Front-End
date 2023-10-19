@@ -371,9 +371,10 @@ button:hover{
     margin-bottom:25px;
     top: 30%;
 }
+
 .input-container label{
     position:absolute;
-    top: -43px;
+    top: -30px;
     left: 10px;
     font-size:14px;
     color:black;
@@ -384,10 +385,12 @@ button:hover{
     border:0;
     border-bottom:1px solid #555;
     background:transparent;
-    width:70%;
+    width:100%;
     height: 45px;
     padding:8px 0 5px 0;
     font-size:16px;
+   /* position: absolute;
+    top: 10%;*/
     /*color:red;*/
 }
 .input-container input:focus{
@@ -943,10 +946,134 @@ button:hover{
     margin: 0;
     left: -66px;
 }
-#btn-add-guider{
+#btn-add-guider-page{
     width: 2%;
     position: absolute;
     right: 20px;
     bottom: 20px;
 
+}
+/*open blurre page*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.new-page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  /*  background-color: white;*/
+    /*padding: 20px;*/
+   /* border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+    display: none;
+}
+#closeButton{
+    background-color: transparent;
+    width: 30%;
+    position: relative;
+    left: 800%;
+    bottom: 300px;
+}
+#update-guide-filed{
+    width: 40vw;
+    height: 60vh;
+    background-color: white;
+    position: absolute;
+    left: -250px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 20px;
+}
+/*.guide-input-container{*/
+/*    border: 1px solid red;*/
+/*    width: 50%;*/
+/*    height: 40px;*/
+/*    position: absolute;*/
+/*    top: 45%;*/
+/*    left: 10%;*/
+/*color: black;*/
+
+/*!*    border: 1px solid white;*/
+/*    width: 80%;*/
+/*    height: 90%;*/
+/*    position: relative;*/
+/*    left: 10%;*/
+/*    top: 5%;*/
+/*    box-shadow: black;*!*/
+.guide-input-container{
+    /*border: 1px solid blue;*/
+    position: relative;
+    /* margin-bottom: 25px; */
+    top: 30%;
+    width: 50%;
+    height: 50px;
+    bottom: -10px;
+    left: 2%;
+    margin-top: 20px;
+
+   /* border-bottom: 1px solid #555;
+    background: transparent;
+    width: 70%;
+    height: 45px;
+    padding: 8px 0 5px 0;
+    font-size: 14px;
+    !* color: red; *!
+    position: absolute;
+    left: 13%;
+    top: -50%;*/
+}
+.guide-input-container label{
+    position:absolute;
+    top: -43px;
+    left: -50px;
+    font-size:14px;
+    color:black;
+    pointer-event:none;
+    transition: all 0.5s ease-in-out;
+}
+.guide-input-container input{
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    height: 45px;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    /* color: red; */
+    position: absolute;
+   /* left: 15%;*/
+    top: -50%;
+}
+.guide-input-container input:focus{
+    border:none;
+    outline:none;
+    border-bottom:1px solid #AABBE7 ;
+}
+.guide-input-container input:focus ~ label,
+.guide-input-container input:valid ~ label{
+    top:-70px;
+    font-size:10px;
+    left:  -50px;;
+}
+#btn-save-guide{
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    width: 20%;
+    height: 8%;
+    position: absolute;
+    left: 30%;
+    bottom: 5%;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
 }
