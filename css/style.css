@@ -238,13 +238,9 @@ button:hover{
     position:absolute ;
     left: 40%;
     top: 15%;
-    /*justify-content: center;
-    align-items: center;*/
+
 }
-/*.admin-login{
-    position: absolute;
-    top: 0%;
-}*/
+
 .user-login{
     /*border: 4px solid black;*/
     width: 99.9vw;
@@ -337,15 +333,6 @@ button:hover{
     border-radius: 20px;
 }
 #l2{
-/*    background: white;
-    width: 65px;
-    height: 73px;
-    transform: rotate(-90deg);
-    left: 9.3%;
-    border-radius: 14px;
-    top: -6px;*/
-
-
     background: white;
     width: 65px;
     height: 73px;
@@ -527,8 +514,7 @@ button:hover{
     font-size: 16px;
     position: relative;
     top: -35%;
-    /* color: red;
-    /*color:red;*/
+
 }
 .input-register-container input:focus{
     border:none;
@@ -552,8 +538,7 @@ button:hover{
     position: absolute;
     right: 2%;
     top: 36%;
-    /*bottom: 10%;*/
-    /*top: 45%;*/
+
 }
 #address-lable{
     position: absolute;
@@ -575,11 +560,6 @@ button:hover{
     left:  -30px;
 }
 
-/*#email-div{
-    position: relative;
-    top: -15%;
-}*/
-
 #password-div{
     position: absolute;
     right: 2%;
@@ -598,17 +578,7 @@ button:hover{
     position: absolute;
     top: -70%;
 }
-/*.file-upload{
-    border: 1px solid red;
-    width: 52%;
-    height: 5%;
-    position: absolute;
-    top: 24%;
-    left: 32%;
-}
-.file-input{
-    border: 1px solid blue;
-}*/
+
 .profile-pic {
     color: transparent;
     transition: all 0.3s ease;
@@ -649,6 +619,7 @@ button:hover{
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 10000;
     color: #fafafa;
+    /*border: 4px solid red;*/
     transition: background-color 0.2s ease-in-out;
     border-radius: 100px;
     margin-bottom: 0;
@@ -665,167 +636,297 @@ button:hover{
     position: absolute;
     left: 15%;
     top: 15%;
-  /*  left: 10%*/;
 }
-
-/*.icon{*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*}*/
-/*.wrapper{*/
-/*    !*width: 450px;*/
-/*    background: #fff;*/
-/*    padding: 30px;*/
-/*    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);*/
-/*    border: 1px solid red;*!*/
-/*    width: 410px;*/
-/*    background: #fff;*/
-/*    padding: 30px;*/
-/*    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);*/
-/*    border: 1px solid red;*/
-/*    height: 10%;*/
-/*    position: absolute;*/
-/*    left: 5%;*/
-/*    top: 27%;*/
-
-/*}*/
-/*.wrapper .input-data{*/
-/*    height: 40px;*/
-/*    width: 100%;*/
-/*    position: relative;*/
-/*    border: 1px solid green;*/
-
-/*}*/
-/*.wrapper .input-data input{*/
-/*   !* width: 100%;*/
-/*    height: 100%;*/
-/*    border: none;*/
-/*    border-bottom: 0px solid silver;*!*/
-/*    !*width: 100%;*/
-/*    height: 100%;*/
-/*    border: none;*/
-/*    border-bottom: 0px solid silver;*/
-/*    !* position: absolute; *!*/
-/*    position: absolute;*/
-/*    left: 0%;*/
-/*    top: -34%;*!*/
-/*    width: 117%;*/
-/*    height: 131%;*/
-/*    border: none;*/
-/*    border-bottom: 0px solid silver;*/
-/*    !* position: absolute; *!*/
-/*    !* position: absolute; *!*/
-/*    !* left: 0%; *!*/
-/*    !* top: 36%; *!*/
-/*    !* bottom: 37%; *!*/
-/*    position: relative;*/
-/*    left: -8%;*/
-/*    top: -119%;*/
-/*}*/
-/*.input-data input:focus~label*/
-/*.input-data input:focus~label{
-    transform: translateY(-20px);
-    font-size: 15px;
-    color: #4158d0;
-}
-
-.wrapper .input-data label{
+.guide-admin-page{
+    border: 4px solid black;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    bottom: 10px;
+    top: 100%;
+}
+
+/*Guide login Css*/
+
+
+.card {
+    float: left;
+    padding: 0 1.7rem;
+    width: 20%;
+    left: 8%;
+    top: 13%;
+}
+.card .menu-content {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.card .menu-content::before, .card .menu-content::after {
+    content: "";
+    display: table;
+}
+.card .menu-content::after {
+    clear: both;
+}
+.card .menu-content li {
+    display: inline-block;
+}
+.card .menu-content a {
+    color: #fff;
+}
+.card .menu-content span {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: "Open Sans";
+    transform: translate(-50%, 0);
+}
+.card .wrapper {
+    background-color: #fff;
+    min-height: 332px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+    width: 136%;
+    left: -27px;
+}
+.card .wrapper:hover .data {
+    transform: translateY(0);
+}
+.card .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform 0.3s;
+}
+.card .data .content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+    left: 0%;
+    height: 145px;
+    width: 100%;
+    bottom: 2px;
+}
+.card .author {
+    font-size: 12px;
+}
+.card .title {
+    margin-top: 10px;
+}
+.card .text {
+    height: 120px;
+    margin: 0;
+}
+.card input[type=checkbox] {
+    display: none;
+}
+.card input[type=checkbox]:checked + .menu-content {
+    transform: translateY(-60px);
+}
+
+.example-1 .date {
+    position: absolute;
+    top: 0;
     left: 0;
+    background-color: #77d7b9;
+    color: #fff;
+    padding: 0.8em;
+}
+.example-1 .date span {
+    display: block;
+    text-align: center;
+}
+.example-1 .content {
+    background-color: #fff;
+    box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+}
+.example-1 .title a {
     color: gray;
-    pointer-events: none;
-transition: all 0.3s ease;
-}*/
-/*.form-floating{
-    border: 1px solid red;
-    width: 87%;
-    height: 14%;
-    margin-top: 30px;
-    left: 7%;
-    !* bottom: -18px; *!
-    top: 79px;
-}*/
-/*.textFiled{
-    position: relative;
-    width: 250px;
-    height: 44px;
-    line-height: 44px;
-}*/
-/*.textFiled{
-    !*border: 1px solid blue;*!
-    width: 100%;
-    height: 84%;
+}
+.example-1 .menu-button {
     position: absolute;
-    !* top: -18px; *!
-
-}*/
-/*
-.input-field {
+    z-index: 999;
+    top: -30px;
+    right: -20px;
+    width: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.example-1 .menu-button span {
+    width: 5px;
+    height: 5px;
+    background-color: gray;
+    color: gray;
     position: relative;
-    width: 415px;
-    height: 44px;
-    line-height: 44px;
-    border: 1px solid red;
-    left: 4%;
-    top: 27%;
+    top: -73px;
+    display: inline-block;
+    border-radius: 50%;
+    left: 53px;
 }
-input {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid rebeccapurple;
-    box-shadow: none;
-    color: #111;
-}
-label {
+#guide-pic{
+/*    border: 1px solid red;*/
+    width: 40%;
     position: absolute;
-    top: -60px;
-    left: -154px;
+    left: 100px;
+    top: 10px;
+    height: 40%;
+}
+
+#guide-img-span{
+    font-size: 0.5em;
+}
+
+#guide-output{
+    border: 1px solid black;
+    width: 90%;
+    left: 8px;
+    height: 90%;
+}
+/*#guide-pic{
+    color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    !*position: relative;*!
+    transition: all 0.3s ease;
+    !*border: 1px solid red;*!
+    position: absolute;
+    left: 25%;
+    top: 0%;
+    width: 10%;
+    height: 40%;
+}*/
+#guide-pic:hover .-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    color: #fafafa;
+ /*   border: 4px solid red;*/
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 100px;
+    margin-bottom: 0;
+
+    position: absolute;
+    width: 90%;
+    height: 90%;
+
+    /*left: 10%;*/
+    top: -40%;
+}
+/*.example-1 .menu-button span::after, .example-1 .menu-button span::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: currentColor;
+    position: absolute;
+    border-radius: 50%;
+}
+.example-1 .menu-button span::before {
+    left: -10px;
+}
+.example-1 .menu-button span::after {
+    right: -10px;
+}*/
+.example-1 .menu-content {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    color: #d3d3d3;
-    transition: 0.2s all;
-    cursor: text;
-    font-size: 1.5em;
+    z-index: -1;
+    transition: transform 0.3s;
+    transform: translateY(0);
 }
-input:invalid {
-    outline: 0;
-!*!/ color: #ff2300;*!
-!*!/   border-color: #ff2300;*!
+.example-1 .menu-content li {
+    width: 100%;
+    float: left;
+    background-color: #77d7b9;
+    height: 40px;
+    /* height: 31%; */
+    position: relative;
+    /* top: -21%; */
+    bottom: -19px;
 }
-input:focus,
-input:valid {
-    border-color: #00dd22;
+.example-1 .menu-content a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
 }
-input:valid~label {
-    font-size: 14px;
-    top: -24px;
-    color: #00dd22;
+.example-1 .menu-content span {
+    top: -10px;
 }
-*/
 
-/*#usernameText{*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    color: #d3d3d3;*/
-/*    transition: 0.2s all;*/
-/*    cursor: text;*/
-/*}*/
+.pencile{
+    width: 5%;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
 
-/*.form-control{
-    border: 1px solid blue;
+.guide-lebles{
+    color: black;
+    font-size: 0.8em;
+    position: relative;
+    top: -28px;
+    left: -115px;
+    margin: 0;
+}
+#guide-adrress{
+    position: relative;
+    top: -45px;
+}
+#guide-address-lable{
+    position: relative;
+    top: -63px;
+}
+#guide-age{
+    position: relative;
+    top: -63px;
+}
+#guide-age-lable{
+    position: relative;
+    top: -80px;
+}
+#guide-gender{
+    position: relative;
+    top: -78px;
+}
+#guide-gender-lable{
+    position: relative;
+    top: -97px;
+}
+
+/*#guide-email{
+    position: relative;
+    top: -95px;
+}
+#guide-email-lable{
+    position: relative;
+    top: -115px;
 }*/
-/*.box {
-    width: 200px;
-    height: 100px;
-    overflow: hidden; !* This will crop the content that overflows the box *!
-    border: 1px solid #333;
-    background: black;
-    padding: 10px;
-    box-sizing: border-box; !* Ensures that padding is included in the width and height *!
-}*/
-
-/*
+#guide-contact{
+    position: relative;
+    top: -95px;
+}
+#guide-contact-lable{
+    position: relative;
+    top: -115px;
+}
+.guide-lables-filed{
+   /* border: 1px solid red;*/
+    position: relative;
+    top: -48px;
+    color: #6a1a21;
+    font-size: 0.8em;
+    margin: 0;
+    left: -66px;
+}

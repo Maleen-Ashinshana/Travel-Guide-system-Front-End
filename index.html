@@ -124,11 +124,6 @@
 
             <button type="button" class="btn-register-login" id="btn-user-register">Register Now</button>
 
-            <!--<div class="wrapper">
-                <div class="input-data">
-                   <input type="text">
-                    <label>Name</label>
-                </div>-->
         </div>
 
         <div class="welcome-div">
@@ -141,10 +136,6 @@
 
     <div class="div" id="div2">
         <div class="user-register-container">
-
-            <!--<button class="file-upload">
-                <input type="file" class="file-input">Choose File
-            </button>-->
 
             <div class="input-register-container" id="name-div">
                 <input type="text" required=""/>
@@ -187,22 +178,56 @@
 
             <button type="button" class="btn-register-login" id="btn-new-user-register">Register Now</button>
         </div>
-        <!--<div class="input-register-container">
-            <input type="text" required=""/>
-            <label>User Name</label>
-            <img src="icon/user.png">
-        </div>-->
+
     </div>
-    <!--    <form action="">-->
-    <!--           <div class="input-field">-->
-    <!--               <input type="text"  id="name" required />-->
-    <!--               <label for="name">Your name:</label>-->
-    <!--           </div>-->
-    <!--       </form>-->
 </section>
-<!--<div class="box">
-    <p>This is some text inside the box. It will be cropped if it overflows.</p>
-</div>-->
+<section class="guide-admin-page" id="guide-admin-page">
+    <div class="example-1 card">
+        <div class="wrapper">
+            <div class="profile-pic" id="guide-pic">
+                <label class="-label" for="file" id="guide-lable">
+                    <span class="glyphicon glyphicon-camera" id="guide-camera"></span>
+                    <span id="guide-img-span">Change Image</span>
+                </label>
+                <input id="guide-file" type="file" onchange="loadFile(event)"/>
+                <img src="icon/add-image.png/" id="guide-output" width="200" />
+            </div>
+
+            <div class="data">
+                <div class="content">
+                    <span class="author">Jane Doe</span>
+                    <h1 class="title"><!--<a href="#">Boxing icon has the will for a couple more fights</a>--></h1>
+                    <p class="text"></p>
+                   <!-- <img src="icon/option.png" class="menu-button">-->
+                    <label for="show-menu" class="menu-button">
+                       <!-- <span></span>-->
+                        <img src="icon/option.png" class="menu-button">
+                    </label>
+                    <label class="guide-lebles" id="guide-name">Name :</label>
+                    <label class="guide-lables-filed" id="guide-name-lable">Text :</label>
+                    <label class="guide-lebles" id="guide-adrress">Address :</label>
+                    <label class="guide-lables-filed" id="guide-address-lable">Text :</label>
+                    <label class="guide-lebles" id="guide-age">Age :</label>
+                    <label class="guide-lables-filed" id="guide-age-lable">Text :</label>
+                    <label class="guide-lebles" id="guide-gender">Gender :</label>
+                    <label class="guide-lables-filed" id="guide-gender-lable">Text :</label>
+     <!--               <label class="guide-lebles" id="guide-email">Email :</label>
+                    <label class="guide-lables-filed" id="guide-email-lable">Text :</label>-->
+                    <label class="guide-lebles" id="guide-contact">Contact :</label>
+                    <label class="guide-lables-filed" id="guide-contact-lable">Text :</label>
+
+                </div>
+                <input type="checkbox" id="show-menu" />
+                <ul class="menu-content">
+
+                    <li><a href="#"></a><img src="icon/pencil.png" class="pencile"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+
 <script src="assect/JQuary/jquery-3.6.4.min.js"></script>
 <script src="Js/style.js"></script>
 <script src="Js/userRegisterImage.js"></script>
