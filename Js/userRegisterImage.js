@@ -26,7 +26,12 @@ var loadFile = function (event) {
     var image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
 };
+const guideImage=document.querySelector("img#choose-guide-pic"),
+    input=document.querySelector("input#btn-choose-guide");
 
+input.addEventListener("change",()=>{
+    guideImage.src=URL.createObjectURL(input.files[0])
+})
 /*var loadImg = function (event) {
     var img = document.getElementById("guide-output");
     img.src = URL.createObjectURL(event.target.files[0]);
