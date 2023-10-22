@@ -432,7 +432,7 @@ button:hover{
     background: #7A7A98;
     border: 1px solid white;
     position: absolute;
-    bottom: 3%;
+    bottom: -5%;
     left: 24%;
     width: 50%;
     height: 10%;
@@ -584,6 +584,11 @@ button:hover{
     position: absolute;
     top: -70%;
 }
+#date-div{
+    position: absolute;
+    left: 48%;
+   top: 78%;
+}
 
 .profile-pic {
     color: transparent;
@@ -644,9 +649,9 @@ button:hover{
     top: 15%;
 }
 .guide-admin-page{
-    border: 4px solid black;
+   /* border: 4px solid black;*/
     width: 100%;
-    height: 100%;
+    height: 755px;
     position: absolute;
     top: 100%;
 }
@@ -854,6 +859,7 @@ button:hover{
     top: -43%;
 }
 .example-1 .menu-content {
+
     text-align: center;
     position: absolute;
     top: 0;
@@ -890,16 +896,28 @@ button:hover{
     right: 10px;
     top: 15px;
 }
+.btn-delete-guide{
+    color: #6a1a21;
+    width: 5%;
+    position: relative;
+    right: -30%;
+    top: -84%;
+    display: inline-block;
+}
 
 .guide-lebles{
+   /* border: 1px solid red;*/
     color: black;
     font-size: 0.8em;
     position: relative;
-    top: -28px;
-    left: -115px;
-    margin: 0;
+    top: 75px;
+    margin-top: -78px;
+    width: 30%;
+    left: -25%;
+    /* width: 10%;
+    /*width: 10%;*/
 }
-#guide-adrress{
+/*#guide-adrress{
     position: relative;
     top: -45px;
 }
@@ -922,7 +940,7 @@ button:hover{
 #guide-gender-lable{
     position: relative;
     top: -97px;
-}
+}*/
 
 /*#guide-email{
     position: relative;
@@ -932,22 +950,24 @@ button:hover{
     position: relative;
     top: -115px;
 }*/
-#guide-contact{
+/*#guide-contact{
     position: relative;
     top: -95px;
 }
 #guide-contact-lable{
     position: relative;
     top: -115px;
-}
+}*/
 .guide-lables-filed{
-   /* border: 1px solid red;*/
-    position: relative;
-    top: -48px;
+   /* border: 1px solid blue;*/
     color: #6a1a21;
     font-size: 0.8em;
     margin: 0;
-    left: -66px;
+    /* left: -66px; */
+    width: 90px;
+    position: relative;
+    top: -5%;
+    left: 25%;
 }
 #btn-add-guider-page{
     width: 2%;

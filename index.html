@@ -81,7 +81,7 @@
                 <label for="chk" aria-hidden="true">Login</label>
                 <input type="name" name="user name" placeholder="User Name" required="">
                 <input type="password" name="pswd" placeholder="Password" required="">
-                <button class="btn-admin-login">Login</button>
+                <button class="btn-admin-login" id="btn-admin-login">Login</button>
             </form>
         </div>
     </div>
@@ -138,42 +138,52 @@
         <div class="user-register-container">
 
             <div class="input-register-container" id="name-div">
-                <input type="text" required=""/>
+                <input type="text" required="" id="txt-user-name"/>
                 <label>User Name</label>
             </div>
 
                 <div class="input-register-container address" id="address-div">
-                    <input type="text" required=""/>
+                    <input type="text" required="" id="txt-user-address"/>
                     <label id="address-lable">Address</label>
 
                 </div>
 
                 <div class="input-register-container"id="email-div">
-                    <input type="email" required=""/>
+                    <input type="email" required="" id="txt-user-email"/>
                     <label>Email</label>
 
                 </div>
                 <div class="input-register-container"id="password-div">
-                    <input type="text" required=""/>
+                    <input type="text" required="" id="txt-user-password"/>
                     <label id="password-leble">Password</label>
 
                 </div>
                 <div class="input-register-container" id="nic-div">
-                    <input type="text" required=""/>
+                    <input type="text" required="" id="txt-user-contact"/>
                     <label>NIC/Passport Number</label>
                 </div>
+
+            <div class="input-register-container" id="contact-div">
+                <input type="text" required="" id="txt-user-nic"/>
+                <label>Contact</label>
+            </div>
+
+            <div class="input-register-container" id="date-div">
+                <input type="text" required="" id="txt-user-date"/>
+                <label>Date</label>
+            </div>
             <div class="input-register-container" id="gender-div">
-                <input type="text" required=""/>
+                <input type="text" required="" id="txt-user-gender"/>
                 <label id="gender-lable">Gender</label>
             </div>
 
-            <div class="profile-pic">
+            <div class="profile-pic" action="/upload">
                 <label class="-label" for="file">
                     <span class="glyphicon glyphicon-camera"></span>
                     <span>Change Image</span>
                 </label>
-                <input id="file" type="file" onchange="loadFile(event)"/>
-                <img src="icon/add-image.png/" id="output" width="200" />
+                <input  id="file" type="file" name="file" onchange="loadFile(event)" />
+                <img src="icon/add-image.png/" id="output" name="user-pic"  width="200" />
             </div>
 
             <button type="button" class="btn-register-login" id="btn-new-user-register">Register Now</button>
@@ -182,39 +192,22 @@
     </div>
 </section>
 <section class="guide-admin-page" id="guide-admin-page">
-    <div class="example-1 card">
-        <div class="wrapper">
-            <div class="profile-pic" id="guide-pic">
+  <!--  <div class="example-1 card" id="example-1 card">-->
+       <!-- <div class="wrapper" id="wrapper">-->
+            <!--<div class="profile-pic" id="guide-pic">
                 <label class="-label" for="file" id="guide-lable">
                     <span class="glyphicon glyphicon-camera" id="guide-camera"></span>
                     <span id="guide-img-span">Change Image</span>
                 </label>
-                <input id="guide-file" type="file" onchange="loadImg(event)"/>
                 <img src="icon/add-image.png/" id="guide-output" width="200" />
             </div>
 
             <div class="data">
                 <div class="content">
-                    <span class="author">Jane Doe</span>
-                    <h1 class="title"><!--<a href="#">Boxing icon has the will for a couple more fights</a>--></h1>
-                    <p class="text"></p>
-                   <!-- <img src="icon/option.png" class="menu-button">-->
                     <label for="show-menu" class="menu-button">
-                       <!-- <span></span>-->
-                        <!--<img src="icon/garbage-bin_2450285.png"  id="delete-icon1">-->
                         <img src="icon/option.png" class="menu-button">
-
-                        <!--<img src="icon/garbage-bin_2450285.png"  id="delete-icon">-->
                     </label>
 
-                    <label for="show-menu" class="menu-button">
-                        <!-- <span></span>-->
-                        <img src="icon/garbage-bin_2450285.png"  id="delete-icon1">
-                        <!--<img src="icon/option.png" class="menu-button">-->
-
-                        <!--<img src="icon/garbage-bin_2450285.png"  id="delete-icon">-->
-                    </label>
-                    <!--<img src="icon/garbage-bin_2450285.png"  id="delete-icon1">-->
                     <label class="guide-lebles" id="guide-name">Name :</label>
                     <label class="guide-lables-filed" id="guide-name-lable">Text :</label>
                     <label class="guide-lebles" id="guide-adrress">Address :</label>
@@ -223,8 +216,6 @@
                     <label class="guide-lables-filed" id="guide-age-lable">Text :</label>
                     <label class="guide-lebles" id="guide-gender">Gender :</label>
                     <label class="guide-lables-filed" id="guide-gender-lable">Text :</label>
-     <!--               <label class="guide-lebles" id="guide-email">Email :</label>
-                    <label class="guide-lables-filed" id="guide-email-lable">Text :</label>-->
                     <label class="guide-lebles" id="guide-contact">Contact :</label>
                     <label class="guide-lables-filed" id="guide-contact-lable">Text :</label>
 
@@ -232,50 +223,51 @@
                 <input type="checkbox" id="show-menu" />
                 <ul class="menu-content">
 
-                    <li><a href="#"></a><img src="icon/pencil.png" class="pencile"></li>
+                    <li><a href="#"></a><img src="icon/pencil.png" class="pencile" id="btn-guide-pane"></li>
+                    <li><a href="#"></a><img src="icon/garbage-bin_2450285.png" class="btn-delete-guide"></li>
                 </ul>
-            </div>
-        </div>
+            </div>-->
+    <!--    </div>
+    </div>-->
+    <div class="guid-c" id="guide-c">
+
     </div>
-    <!--<button id="btn-add-guider-page" >Add</button>-->
+
 <img src="icon/plus.png" id="btn-add-guider-page">
     <div id="overlay" class="overlay"></div>
     <div id="newPage" class="new-page">
-        <!--<p>This is the new page content.</p>-->
         <img src="icon/icons8-close-90.png" id="closeButton">
         <div class="update-guide-filed" id="update-guide-filed">
          <div class="update-guide-lables-and-text">
-             <!--<input type="text">-->
+
              <div class="guide-input-container" >
-                 <input type="text" required="" id="txt-guide-name" >
+                 <input type="text" required="" id="txt-guide-name" name="name" >
                  <label>Guide Name</label>
              </div>
              <div class="guide-input-container" >
-                 <input type="text" required="" id="txt-address-name" >
+                 <input type="text" required="" id="txt-guide-address" name="address">
                  <label>Guide Address</label>
              </div>
              <div class="guide-input-container" >
-                 <input type="text" required="" id="txt-age-name" >
+                 <input type="text" required="" id="txt-guide-age" name="age" >
                  <label>Guide Age</label>
              </div>
              <div class="guide-input-container" >
-                 <input type="text" required="" id="txt-gender-name" >
+                 <input type="text" required="" id="txt-guide-gender" name="gender">
                  <label>Guide Gender</label>
              </div>
              <div class="guide-input-container" >
-                 <input type="text" required="" id="txt-contact-name" >
+                 <input type="text" required="" id="txt-guide-contact" name="contact">
                  <label>Guide Contact</label>
              </div>
 
             <img src="icon/user_847969.png " id="choose-guide-pic">
-             <input type="file" id="btn-choose-guide">
+             <input type="file" id="btn-choose-guide" name="img">
 
-             <button class="btn-save-guide" id="btn-save-guide">Save</button>
+             <button class="btn-save-guide" id="btn-save-guide" type="submit">Save</button>
          </div>
         </div>
     </div>
-        <!--<button id="closeButton">Close</button>-->
-    <!--</div>-->
 </section>
 
 <script src="assect/JQuary/jquery-3.6.4.min.js"></script>
@@ -283,6 +275,11 @@
 <script src="Js/userRegisterImage.js"></script>
 <script src="Js/addBluerrPage.js"></script>
 <script type="module" src="Js/style.js"></script>
+<script type="module" src="Js/createNewCard.js"></script>
+<script type="module" src="guideService/dto/guideDTO.js"></script>
+<script type="module" src="guideService/controller/guideController.js"></script>
+<script type="module" src="UserService/model/userModel.js"></script>
+<script type="module" src="UserService/controller/userController.js"></script>
 
 </body>
 </html>
