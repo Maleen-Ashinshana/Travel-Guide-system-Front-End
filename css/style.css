@@ -481,13 +481,14 @@ button:hover{
 }
 #div2{
     background: white;
+    width: 900px;
 }
 .user-register-container{
-    border: 1px solid white;
-    width: 80%;
+    border: 1px solid black;
+    width: 97%;
     height: 90%;
     position: relative;
-    left: 10%;
+    left: 0.5%;
     top: 5%;
     box-shadow: black;
 
@@ -514,12 +515,13 @@ button:hover{
     border: 0;
     border-bottom: 1px solid #555;
     background: transparent;
-    width: 90%;
+    width: 60%;
     height: 45px;
     padding: 8px 0 5px 0;
     font-size: 16px;
     position: relative;
     top: -35%;
+    left: -19%;
 
 }
 .input-register-container input:focus{
@@ -538,13 +540,17 @@ button:hover{
     width: 25px;
     position: absolute;
     top: 5%;
-    left: 3%;
+    left: 2%;
 }
 .address{
     position: absolute;
     right: 2%;
     top: 36%;
 
+}
+#address-div{
+    position: absolute;
+    left: 37%;
 }
 #address-lable{
     position: absolute;
@@ -568,25 +574,40 @@ button:hover{
 
 #password-div{
     position: absolute;
-    right: 2%;
-    top: 50%;
+    right: -19%;
+    top: 36%;
 }
 #password-leble{
     position: absolute;
     top: -70%;
 }
+#nic-div{
+    position: absolute;
+    left: 37%;
+    top: 50%;
+}
+#contact-div{
+    position: absolute;
+    right: -19%;
+    top: 50%;
+}
 #gender-div{
     position: absolute;
-    right: 2%;
+    right: 15.5%;
     top: 64%;
 }
 #gender-lable{
     position: absolute;
     top: -70%;
 }
+#remark-div{
+    position: absolute;
+    right: -19%;
+    top: 64%;
+}
 #date-div{
     position: absolute;
-    left: 48%;
+    left: 0%;
    top: 78%;
 }
 
@@ -600,16 +621,15 @@ button:hover{
     transition: all 0.3s ease;
     /*border: 1px solid red;*/
     position: absolute;
-    left: 25%;
+    left: 32%;
     top: 0%;
-    width: 50%;
+    width: 40%;
     height: 40%;
 }
 .profile-pic input {
     display: none;
 }
 .profile-pic img {
-
     position: absolute;
     object-fit: cover;
     width: 200px;
@@ -647,6 +667,13 @@ button:hover{
     position: absolute;
     left: 15%;
     top: 15%;
+}
+#btn-new-user-register{
+    width: 27%;
+    bottom: 2%;
+    left: 38%;
+    height: 9%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
 }
 .guide-admin-page{
    /* border: 4px solid black;*/

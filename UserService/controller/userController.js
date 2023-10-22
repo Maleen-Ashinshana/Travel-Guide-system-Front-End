@@ -23,9 +23,11 @@ document.getElementById('btn-new-user-register').addEventListener("click", funct
     const userGender=$('#txt-user-gender').val()
     const userNIC=$('#txt-user-nic').val()
     const registerDate=$('#txt-user-date').val()
+    const userAge=$('#txt-user-age').val()
+    const userRemark=$('#txt-user-remark').val()
     const userProfile=$('#file')[0].files[0]
 
-    const dto=new UserModel(userName,userAddress,userEmail,userPassword,userContact,userNIC,registerDate,userGender,/*userProfile*/);
+    const dto=new UserModel(userName,userAddress,userEmail,userPassword,userContact,userNIC,userAge,userRemark,registerDate,userGender,userProfile);
 
 
     const formData = new FormData();
@@ -34,9 +36,11 @@ document.getElementById('btn-new-user-register').addEventListener("click", funct
     formData.append('userAddress', userAddress);
     formData.append('registerDate', registerDate);
     formData.append('userEmail', userEmail);
-    formData.append('userContact',userContact);
+    formData.append('contact_number',userContact);
     formData.append('userPassword',userPassword);
     formData.append('userNIC',userNIC);
+    formData.append('userAge',userAge);
+    formData.append('remark',userRemark);
     formData.append('userGender',userGender);
     formData.append("userProfile", userProfile);
     $.ajax({
