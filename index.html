@@ -246,7 +246,62 @@
     <div id="newPage" class="new-page">
         <img src="icon/icons8-close-90.png" id="closeButton">
         <div class="update-guide-filed" id="update-guide-filed">
-         <div class="update-guide-lables-and-text">
+            <h2 id="guide-lable">Guide</h2>
+            <div class="form-group" id="from-group from1">
+                <label for="txt-guide-name" id="guid-name-lable" class="guide-lable">Name:</label>
+                <input type="text" id="txt-guide-name" name="name" required>
+            </div>
+            <div class="form-group" id="from-group from2">
+                <label for="txt-guide-address" id="guid-address-lable" class="guide-lable">Address:</label>
+                <input type="text" id="txt-guide-address" name="name" required>
+            </div>
+            <div class="form-group" id="from-group from3">
+                <label for="txt-guide-age" id="guid-age-lable" class="guide-lable">Age:</label>
+                <input type="text" id="txt-guide-age" name="name" required>
+            </div>
+            <div class="form-group" id="from-group from4">
+                <label for="txt-guide-contact" id="guid-contact-lable" class="guide-lable">Contact:</label>
+                <input type="text" id="txt-guide-contact" name="name" required>
+            </div>
+            <div class="form-group" id="from-group from5">
+                <label for="gender" class="guide-lable">Gender:</label>
+                <select id="gender" name="gender" required >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group" id="from-group from6">
+                <label for="txt-guide-experiences" id="guid-experiences-lable" class="guide-lable">Experiences:</label>
+                <input type="text" id="txt-guide-experiences" name="name" required>
+            </div>
+            <div class="form-group" id="from-group fromValue">
+                <label for="txt-guide-manValue" id="guid-manValue-lable" class="guide-lable">Man Day Value:</label>
+                <input type="text" id="txt-guide-manValue" name="name" required>
+            </div>
+            <div class="form-group" id="from-group from7">
+                <label for="remarks" id="guid-remark-lable" class="guide-lable">Remarks:</label>
+                <textarea id="remarks" name="remarks"></textarea>
+            </div>
+            <div class="form-group" id="from-group from8">
+                <label for="profilePicture" id="guid-image-lable" class="guide-lable">Upload Profile Picture:</label>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
+                <img id="profilePicturePreview" src="#" alt="Profile Picture">
+            </div>
+            <div class="form-group" id="from-group from9">
+                <label for="idImage" id="guid-idImage-lable" class="guide-lable">ID Image:</label>
+                <input type="file" id="idImage" name="idImage" accept="image/*" required>
+                <img id="idImagePreview" src="#" alt="ID Image">
+            </div>
+            <div class="form-group" id="from-group from10">
+                <label for="nicImage" id="guid-nicImage-lable" class="guide-lable">NIC Image:</label>
+                <input type="file" id="nicImage" name="nicImage" accept="image/*" required>
+                <img id="nicImagePreview" src="#" alt="NIC Image">
+            </div>
+            <button type="submit" class="submit-button"id="btn-save-guide">Submit</button>
+        </div>
+
+         <!--<div class="update-guide-lables-and-text">
 
              <div class="guide-input-container" >
                  <input type="text" required="" id="txt-guide-name" name="name" >
@@ -273,7 +328,7 @@
              <input type="file" id="btn-choose-guide" name="img">
 
              <button class="btn-save-guide" id="btn-save-guide" type="submit">Save</button>
-         </div>
+         </div>-->
         </div>
     </div>
 </section>
@@ -288,6 +343,36 @@
 <script type="module" src="guideService/controller/guideController.js"></script>
 <script type="module" src="UserService/model/userModel.js"></script>
 <script type="module" src="UserService/controller/userController.js"></script>
+<script>
+    function previewImage(input, previewId) {
+        const preview = document.getElementById(previewId);
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    document.getElementById('profilePicture').addEventListener('change', function() {
+        previewImage(this, 'profilePicturePreview');
+    });
+
+    document.getElementById('idImage').addEventListener('change', function() {
+        previewImage(this, 'idImagePreview');
+    });
+
+    document.getElementById('nicImage').addEventListener('change', function() {
+        previewImage(this, 'nicImagePreview');
+    });
+
+    document.getElementById('applicationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Handle form submission here
+        // You can use JavaScript or a backend script to handle form data
+    });
+</script>
 
 </body>
 </html>

@@ -32,6 +32,7 @@ const guideImage=document.querySelector("img#choose-guide-pic"),
 input.addEventListener("change",()=>{
     guideImage.src=URL.createObjectURL(input.files[0])
 })
+
 /*var loadImg = function (event) {
     var img = document.getElementById("guide-output");
     img.src = URL.createObjectURL(event.target.files[0]);
