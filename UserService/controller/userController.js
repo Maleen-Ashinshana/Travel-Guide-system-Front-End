@@ -69,3 +69,4 @@ document.getElementById('btn-new-user-register').addEventListener("click", funct
 
 
 
+

@@ -2,6 +2,42 @@ import {GuideDTO} from "../dto/guideDTO.js";
 
 export  class GuideController{
     constructor() {
+        this.guideUrl="http://localhost:9091/Guide/api/v1/guide";
+        this.getAllGuiders();
+        this.loadGuidersData();
+    }
+/*    loadGuidersData(Data){
+        const guide=document.getElementById("data-container")
+        guide.innerHTML="";
+
+
+        console.log(Data)
+        Data.forEach(g=>{
+            const guiderCard=document.createElement("div");
+            guiderCard.className="card col-lg-3 col-mn-6 col-sm-12 m-4";
+            /!*guiderCard.id=g.gui*!/
+            guiderCard.innerHTML=` <div class="card-body">
+                                <h6 class="mb-2">Guide Id: <span class="guideId" style="color: #0a53be">${guide.guideId}</span></h6>
+                                <h5 class="card-title">${guide.guideName}</h5>
+                                <img class="card-img-top" src="data:image/!**;base64,${guide.guideProfileImage}" alt="Card image cap">
+                                <h5 class="contact mt-3">${guide.contact}</h5>
+                                <button id="delete" class="btn btn-danger" data-bs-toggle = "modal" data-bs-target="#modal">Delete</button>
+                                </div>`;
+            guide.append(guiderCard);
+        })
+    }*/
+    getAllGuiders(){
+        $.ajax({
+            url:this.guideUrl,
+            type:"Get",
+            dataType:"json",
+            success:(response=>{
+                console.log("Done"+response.data)
+            }),
+            error:(error=>{
+                console.log("No" + error.responseText)
+            })
+        })
     }
 }
 document.getElementById('btn-save-guide').addEventListener('click',function (){
@@ -51,3 +87,42 @@ document.getElementById('btn-save-guide').addEventListener('click',function (){
         })
     })
 })
+
+const cardContainer = document.getElementById("cardContainer");
+
+// Make a GET request to your back-end API
+fetch('http://localhost:9091/Guide/api/v1/guide')
+    .then(response => response.json())
+    .then(data => {
+        // Process the data and create cards
+        data.forEach(item => {
+            const card = createCard(item);
+            cardContainer.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+// Create a card element
+function createCard(item) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const guideId = document.createElement("h3");
+    guideId.textContent = item.guideId;
+
+    const content = document.createElement("p");
+    content.textContent = item.content;
+
+    card.appendChild(guideId);
+    card.appendChild(content);
+
+    return card;
+}
+
+
+
+
+
+
