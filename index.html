@@ -306,13 +306,97 @@
     </div>
 </section>
 <section class="vehicle-section" id="vehicle-section">
+    <h1>Vehicle</h1>
     <img src="icon/plus.png" id="btn-add-vehicle-page">
     <div id="vehicleOverlay" class="overlay"></div>
     <div id="newVehiclePage" class="new-page">
         <img src="icon/icons8-close-90.png" id="vehicleNewPageCloseButton" >
 
         <div class="vehicleFiledSection" id="vehicle-filed-section">
+            <div class="form-group" id="from-vehicle-type-group">
+                <label for="vehicle-type" class="vehicle-label">Vehicle Type:</label>
+                <select id="vehicle-type" name="vehicle-type" required >
+                    <option value="car">Car</option>
+                    <option value="van">Van</option>
+                    <option value="suv">SUV</option>
+                    <option value="bus">Bus</option>
+                </select>
+            </div>
+            <!--<div class="form-group" id="from-vehicle-type-group">
+                <label for="txt-vehicle-type" id="vehicleYType-label" class="vehicle-label">Vehicle Type:</label>
+                <input type="text" id="txt-vehicle-type" name="type" required>
+            </div>-->
 
+            <div class="form-group" id="from-vehicle-brand-group">
+                <label for="txt-vehicle-brand" id="vehicleBrand-label" class="vehicle-label">Vehicle Brand:</label>
+                <input type="text" id="txt-vehicle-brand" name="type" required>
+            </div>
+            <div class="form-group" id="from-vehicle-category-group">
+                <label for="vehicle-category" class="vehicle-label">Vehicle Category</label>
+                <select id="vehicle-category" name="vehicle-category" required >
+                    <option value="economy">Economy</option>
+                    <option value="mid-Range">Mid-Range</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="Super Luxury">Super Luxury</option>
+                </select>
+            </div>
+            <!--<div class="form-group" id="from-vehicle-category-group">
+                <label for="txt-vehicle-category" id="guid-vehicleCategory-label" class="vehicle-label">Vehicle Category:</label>
+                <input type="text" id="txt-vehicle-category" name="type" required>
+            </div>-->
+           <!-- <div class="form-group" id="from-vehicle-fuelType-group">
+                <label for="txt-vehicle-fuelType" id="guid-fuelType-label" class="vehicle-label">Fuel Type:</label>
+                <input type="text" id="txt-vehicle-fuelType" name="type" required>
+            </div>-->
+            <div class="form-group" id="from-vehicle-fuelType-group">
+                <label for="vehicle-fuelType" class="vehicle-label">Fuel Type</label>
+                <select id="vehicle-fuelType" name="vehicle-fuelType" required >
+                    <option value="petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                </select>
+            </div>
+            <div class="form-group" id="from-vehicle-fuelUsage-group">
+                <label for="txt-vehicle-fuelUsage" id="vehicleFuelUsage-label" class="vehicle-label">Fuel Usage:</label>
+                <input type="text" id="txt-vehicle-fuelUsage" name="fuelUsage" required>
+            </div>
+            <div class="form-group" id="from-vehicle-HybridType-group">
+                <label for="vehicle-hybridType" class="vehicle-label">Hybrid Type</label>
+                <select id="vehicle-hybridType" name="vehicle-hybridType" required >
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group" id="from-vehicle-seat-group">
+                <label for="txt-vehicle-seat" id="vehicleSeat-label" class="vehicle-label">Seat Capacity:</label>
+                <input type="text" id="txt-vehicle-seat" name="seat" required>
+            </div>
+            <div class="form-group" id="from-vehicle-transmission-group">
+                <label for="vehicle-transmission" class="vehicle-label">Transmission Type</label>
+                <select id="vehicle-transmission" name="vehicle-transmission" required >
+                    <option value="auto">Auto</option>
+                    <option value="manual">Manual</option>
+                </select>
+            </div>
+            <div class="form-group" id="from-vehicle-remark-group">
+                <label for="txt-vehicle-remark" id="vehicleRemark-label" class="vehicle-label">Remark:</label>
+                <textarea id="txt-vehicle-remark" name="remarks"></textarea>
+            </div>
+            <div class="form-group" id="from-vehicle-driver-group">
+                <label for="txt-vehicle-driver" id="vehicleDriver-label" class="vehicle-label">Driver name:</label>
+                <input type="text" id="txt-vehicle-driver" name="driver" required>
+            </div>
+            <div class="form-group" id="from-vehicle-driverContact-group">
+                <label for="txt-vehicle-driverContact" id="vehicleDriverContact-label" class="vehicle-label">Driver Contact:</label>
+                <input type="text" id="txt-vehicle-driverContact" name="driveName" required>
+            </div>
+
+            <div class="form-group" id="from-vehicle-image-group">
+                <label for="vehicle-image-input" id="vehicle-Image" class="vehicle-label">Vehicle Image:</label>
+                <input type="file" id="vehicle-image-input" name="vehicleImage" accept="image/*" required>
+                <img id="vehicleImagePreview" src="#" alt="vehicle Image">
+            </div>
+           <!-- <button type="button" class="save- button" id="btn-save-vehicle">Submit</button>-->
+            <button type="button " id="btn-vehicle-save">Save</button>
         </div>
 
     </div>
@@ -330,6 +414,9 @@
 <script type="module" src="guideService/controller/guideController.js"></script>
 <script type="module" src="UserService/model/userModel.js"></script>
 <script type="module" src="UserService/controller/userController.js"></script>
+<script type="module" src="vehicleService/model/vehicleModel.js"></script>
+<script type="module" src="vehicleService/model/vehicleImageModel.js"></script>
+<script type="module" src="vehicleService/controller/vehicleController.js"></script>
 <script>
     function previewImage(input, previewId) {
         const preview = document.getElementById(previewId);
@@ -358,6 +445,21 @@
         e.preventDefault();
         // Handle form submission here
         // You can use JavaScript or a backend script to handle form data
+    });
+
+</script>
+<script> function previewImage(input, previewId) {
+    const preview = document.getElementById(previewId);
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+    document.getElementById('vehicle-image-input').addEventListener('change', function() {
+        previewImage(this, 'vehicleImagePreview');
     });
 </script>
 

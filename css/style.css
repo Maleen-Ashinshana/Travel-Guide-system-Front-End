@@ -1418,9 +1418,9 @@ p {
 }
 #vehicleNewPageCloseButton{
     position: relative;
-    width: 8%;
-    left: 180%;
-    top: -210px;
+    width: 2%;
+    left: 105%;
+    top: -10px;
 
 }
 .close-btn{
@@ -1431,7 +1431,112 @@ p {
 }
 .vehicleFiledSection{
     background-color: white;
-    width: 600px;
-    height: 600px;
+    width: 1200px;
+    height: 650px;
     border: 1px solid blue;
+    position: relative;
+    top: -35px;
 }
+.vehicle-label{
+    color: black;
+    font-size: 1em;
+    position: relative;
+    bottom: 117%;
+}
+#from-vehicle-brand-group{
+    position: relative;
+    top: -5%;
+    left: 35%;
+}
+#from-vehicle-category-group{
+    position: relative;
+    left: 69%;
+    top: -15%;
+}
+#from-vehicle-fuelType-group{
+    position: relative;
+    top:-10%
+}
+#from-vehicle-fuelUsage-group{
+    position: relative;
+    left: 35%;
+    top: -20%;
+}
+#from-vehicle-HybridType-group{
+    position: relative;
+    left: 69%;
+    top: -30%;
+}
+#from-vehicle-seat-group{
+    position: relative;
+    top: -25%;
+}
+#from-vehicle-transmission-group{
+    position: relative;
+    top: -35%;
+    left: 35%;
+}
+#from-vehicle-remark-group{
+    position: relative;
+    left: 69%;
+    top: -45%;
+}
+#txt-vehicle-remark{
+    height: 55%;
+}
+#from-vehicle-driver-group{
+    position: relative;
+    top: -40%;
+}
+#from-vehicle-driverContact-group{
+    position: relative;
+    top: -50%;
+    left: 35%;
+
+}
+#from-vehicle-image-group{
+    border: 1px solid black;
+    position: relative;
+    top: -40%;
+    height: 20%;
+}
+#vehicle-Image{
+    background: #a39b9b;
+    margin: 5px;
+    top: -23%;
+    width: 40%;
+    left: 30%;
+    border-radius: 10px;
+    height: 30px;
+}
+#vehicleImagePreview{
+    border: 1px solid red;
+    width: 110px;
+    top: -18%;
+}
+#btn-vehicle-save{
+    width: 10%;
+    height: 5%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    position: relative;
+    top: -40%;
+    left: 50%;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+/*
+#btn-save-vehicle{
+    width: 10%;
+    height: 5%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    position: relative;
+    top: -40%;
+    left: 50%;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: bold;
+
+}*/

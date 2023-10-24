@@ -48,9 +48,9 @@ document.getElementById('btn-save-guide').addEventListener('click',function (){
     const experience=$('#txt-guide-experiences').val()
     const man_day_value=$('#txt-guide-manValue').val()
     const remark=$('#remarks').val()
-    const guide_image=$('#profilePicture').val()
-    const guide_nic_image=$('#nicImage').val()
-    const guide_id_image=$('#idImage').val()
+    const guide_image=$('#profilePicture')[0].files[0]
+    const guide_nic_image=$('#nicImage')[0].files[0]
+    const guide_id_image=$('#idImage')[0].files[0]
 
     console.log(gender+"*****")
     console.log(age+"*****")
@@ -186,10 +186,6 @@ $(document).ready(function() {
         success: function(data) {
 
             data.forEach(function(item) {
-
-                /*console.log(item.guide_name+"*")
-                console.log(item.address+"*")*/
-                /*console.log(item.profile_picture+"*")*/
 
                 const card = `
                     <div class="card" id="load-guide-filed-card">
