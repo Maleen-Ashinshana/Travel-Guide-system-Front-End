@@ -3,8 +3,7 @@ import {GuideDTO} from "../dto/guideDTO.js";
 export  class GuideController{
     constructor() {
         this.guideUrl="http://localhost:9091/Guide/api/v1/guide";
-        this.getAllGuiders();
-        this.loadGuidersData();
+
     }
 /*    loadGuidersData(Data){
         const guide=document.getElementById("data-container")
@@ -26,7 +25,7 @@ export  class GuideController{
             guide.append(guiderCard);
         })
     }*/
-    getAllGuiders(){
+  /*  getAllGuiders(){
         $.ajax({
             url:this.guideUrl,
             type:"Get",
@@ -38,7 +37,7 @@ export  class GuideController{
                 console.log("No" + error.responseText)
             })
         })
-    }
+    }*/
 }
 document.getElementById('btn-save-guide').addEventListener('click',function (){
     const guide_name=$('#txt-guide-name').val()
@@ -72,6 +71,9 @@ document.getElementById('btn-save-guide').addEventListener('click',function (){
     formData.append("guide_nic_image",guide_nic_image);
     formData.append("guide_id_image",guide_id_image);
 
+    console.log(guide_address+"Saved")
+    console.log(guide_address+"Saved")
+
     $.ajax({
         type:"POST",
         url:"http://localhost:9091/Guide/api/v1/guide",
@@ -86,11 +88,66 @@ document.getElementById('btn-save-guide').addEventListener('click',function (){
             console.log("Not Saved"+error.responseText);
         })
     })
-})
+});
 
-const cardContainer = document.getElementById("cardContainer");
+/*$(document).ready(function() {
+    // Replace '1' with the desired guide_id_image
+    const guideIdImage = 1;
 
-// Make a GET request to your back-end API
+    $.get(`http://localhost:9091/Guide/api/v1/guide${guideIdImage}`, function(guide) {
+        // Create HTML structure to display the guide's data
+        const guideCard = `
+            <div class="card">
+                <img src="${guide.guide_image}" alt="${guide.guide_name}">
+                <p>Name: ${guide.guide_name}</p>
+                <p>Address: ${guide.guide_address}</p>
+                <p>Age: ${guide.age}</p>
+                <p>Contact Number: ${guide.contact_number}</p>
+                <p>Gender: ${guide.gender}</p>
+                <p>Experience: ${guide.experience}</p>
+                <p>Man Day Value: ${guide.man_day_value}</p>
+                <p>Remark: ${guide.remark}</p>
+                <img src="${guide.guide_nic_image}" alt="NIC Image">
+            </div>
+        `;
+
+        // Display the guide's data in the guideContainer
+        $('#guideContainer').html(guideCard);
+    })
+        .fail(function() {
+            console.error('Failed to retrieve guide data');
+        });
+});*/
+
+
+/*$(document).ready(function (){
+    const  cardContainer=$('#cardContainer');
+
+    $.ajax({
+        url:"http://localhost:9091/Guide/api/v1/guide",
+        method:'GET',
+        dataType:'json',
+        success:function (data){
+            data.forEach(function (item){
+                var  card=createCard(item);
+                cardContainer.append(card);
+            });
+        },
+        error:function (xhr,status,error){
+            console.log('Error',error);
+        }
+    });
+    function createCard(item){
+        var card=$("<div></div>").addClass("card");
+        var content=$("<p></p>").text(item.content)
+
+        card.append(content);
+        return card
+    }
+});*/
+/*const cardContainer = document.getElementById("cardContainer");
+
+
 fetch('http://localhost:9091/Guide/api/v1/guide')
     .then(response => response.json())
     .then(data => {
@@ -104,24 +161,63 @@ fetch('http://localhost:9091/Guide/api/v1/guide')
         console.error('Error:', error);
     });
 
-// Create a card element
+
 function createCard(item) {
     const card = document.createElement("div");
     card.classList.add("card");
 
-    const guideId = document.createElement("h3");
-    guideId.textContent = item.guideId;
+   /!* const guideId = document.createElement("h3");
+    guideId.textContent = item.guideId;*!/
 
     const content = document.createElement("p");
     content.textContent = item.content;
 
-    card.appendChild(guideId);
+    /!*card.appendChild(guideId);*!/
     card.appendChild(content);
 
     return card;
-}
+}*/
 
+$(document).ready(function() {
+    $.ajax({
+        url: 'http://localhost:9091/Guide/api/v1/guide',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
 
+            data.forEach(function(item) {
+
+                /*console.log(item.guide_name+"*")
+                console.log(item.address+"*")*/
+                /*console.log(item.profile_picture+"*")*/
+
+                const card = `
+                    <div class="card" id="load-guide-filed-card">
+                       <img src="${item.image}" id="load-guide-image">
+                        <p>Name: ${item.guide_name}</p>
+                        <p>Address: ${item.address}</p>
+                        <p>Age: ${item.age}</p>
+                        <p>Gender: ${item.gender}</p>
+                        <p>Experience: ${item.experience}</p>
+                        <p>Man Day Value: ${item.man_day_value}</p>
+                        <p>Remark: ${item.remark}</p>
+                        <img src="${item.guide_nic_image}" id="load-guide-nic-image">
+                        <img src="${item.guide_id_image}" id="load-guide-id-image">
+                        <img src="../../icon/garbage-bin_2450285.png" id="load-guide-delete-image">
+                        <img src="../../icon/pencil.png" id="load-guide-update-image">
+                    </div>
+                `;
+
+                $('#cardContainer').append(card);
+            });
+        },
+        error: function() {
+            console.error('Failed to retrieve data');
+        }
+
+    });
+
+});
 
 
 
