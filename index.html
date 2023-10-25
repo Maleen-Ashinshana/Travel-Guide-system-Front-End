@@ -395,9 +395,89 @@
                 <input type="file" id="vehicle-image-input" name="vehicleImage" accept="image/*" required>
                 <img id="vehicleImagePreview" src="#" alt="vehicle Image">
             </div>
+            <div class="form-group" id="from-vehicle-image-group2">
+                <label for="vehicle-image-input2" id="vehicle-Image2" class="vehicle-label">Vehicle Image:</label>
+                <input type="file" id="vehicle-image-input2" name="vehicleImage" accept="image/*" required>
+                <img id="vehicleImagePreview2" src="#" alt="vehicle Image">
+            </div>
            <!-- <button type="button" class="save- button" id="btn-save-vehicle">Submit</button>-->
             <button type="button " id="btn-vehicle-save">Save</button>
         </div>
+
+    </div>
+
+</section>
+
+<section class="hotel-section" id="hotel-section">
+ <h1>Hotel</h1>
+    <img src="icon/plus.png" id="btn-add-hotel-page">
+    <div id="hotelOverLay" class="overlay">
+        <img src="icon/icons8-close-90.png" id="hotelNewPageCloseButton" >
+    </div>
+    <div id="newHotelPage" class="new-page">
+
+        <div class="form-group" id="from-hotel-name-group">
+            <label for="txt-hotel-name" id="hotelName-label" class="hotel-label">Hotel Name:</label>
+            <input type="text" id="txt-hotel-name" name="name" required>
+        </div>
+        <div class="form-group" id="from-hotel-category-group">
+            <label for="hotel-category" class="hotel-label">Hotel Category</label>
+            <select id="hotel-category" name="hotel-category" required >
+                <option value="star2">3 Star and 2 Star</option>
+                <option value="star3">3 Star and 4 Star</option>
+                <option value="star34">4 Star and 5 Star</option>
+                <option value="star5">5 Star</option>
+            </select>
+        </div>
+        <div class="form-group" id="from-hotel-location-group">
+            <label for="txt-hotel-location" id="hotelLocation-label" class="hotel-label">Hotel Location:</label>
+            <input type="text" id="txt-hotel-location" name="location" required>
+        </div>
+        <div class="form-group" id="from-hotel-email-group">
+            <label for="txt-hotel-email" id="hotelEmail-label" class="hotel-label">Hotel Email:</label>
+            <input type="text" id="txt-hotel-email" name="email" required>
+        </div>
+        <div class="form-group" id="from-hotel-contact1-group">
+            <label for="txt-hotel-contact1" id="hotelContact1-label" class="hotel-label">Hotel Contact 1:</label>
+            <input type="text" id="txt-hotel-contact1" name="contact1" required>
+        </div>
+        <div class="form-group" id="from-hotel-contact2-group">
+            <label for="txt-hotel-contact2" id="hotelContact2-label" class="hotel-label">Hotel Contact 2:</label>
+            <input type="text" id="txt-hotel-contact2" name="contact2" required>
+        </div>
+        <div class="form-group" id="from-hotel-fee-group">
+            <label for="txt-hotel-fee" id="hotelFee-label" class="hotel-label">Hotel Fee:</label>
+            <input type="text" id="txt-hotel-fee" name="fee" required>
+        </div>
+        <div class="form-group" id="from-hotel-remark-group">
+            <label for="txt-hotel-remark" id="hotelRemark-label" class="hotel-label">Hotel Remark:</label>
+            <textarea id="txt-hotel-remark" name="remarks"></textarea>
+        </div>
+        <div class="form-group" id="from-hotel-image-group1">
+            <label for="hotel-image-input1" id="hotel-Image1" class="hotel-label">Vehicle Image:</label>
+            <input type="file" id="hotel-image-input1" name="hotelImage" accept="image/*" required>
+            <img id="hotelImagePreview1" src="#" alt="hotel Image" class="hotelImagePrive">
+        </div>
+        <div class="form-group" id="from-hotel-image-group2">
+            <label for="hotel-image-input2" id="hotel-Image2" class="hotel-label">Vehicle Image:</label>
+            <input type="file" id="hotel-image-input2" name="hotelImage" accept="image/*" required>
+            <img id="hotelImagePreview2" src="#" alt="hotel Image" class="hotelImagePrive">
+        </div>
+        <div class="form-group" id="from-hotel-image-group3">
+            <label for="hotel-image-input3" id="hotel-Image3" class="hotel-label">Vehicle Image:</label>
+            <input type="file" id="hotel-image-input3" name="hotelImage" accept="image/*" required>
+            <img id="hotelImagePreview3" src="#" alt="hotel Image" class="hotelImagePrive">
+        </div>
+        <button type="button " id="btn-hotel-save">Save</button>
+       <!-- <div class="form-group" id="from-hotel-category-group">
+            <label for="hotelCategory" class="hotelCategory-label">Hotel Category </label>
+            <select id="hotelCategory" name="hotelCategory" required >
+                <option value="star2">3 Star and 2 Star</option>
+                <option value="star3">3 Star and 4 Star</option>
+                <option value="star34">4 Star and 5 Star</option>
+                <option value="star5">5 Star</option>
+            </select>
+        </div>-->
 
     </div>
 
@@ -417,6 +497,9 @@
 <script type="module" src="vehicleService/model/vehicleModel.js"></script>
 <script type="module" src="vehicleService/model/vehicleImageModel.js"></script>
 <script type="module" src="vehicleService/controller/vehicleController.js"></script>
+<script type="module" src="hotelService/model/hotelModel.js"></script>
+<script type="module" src="hotelService/model/hotelImageModel.js"></script>
+<script type="module" src="hotelService/controller/hotelController.js"></script>
 <script>
     function previewImage(input, previewId) {
         const preview = document.getElementById(previewId);
@@ -461,6 +544,21 @@
     document.getElementById('vehicle-image-input').addEventListener('change', function() {
         previewImage(this, 'vehicleImagePreview');
     });
+document.getElementById('vehicle-image-input2').addEventListener('change', function() {
+    previewImage(this, 'vehicleImagePreview2');
+});
+
+document.getElementById('hotel-image-input1').addEventListener('change', function() {
+    previewImage(this, 'hotelImagePreview1');
+});
+
+document.getElementById('hotel-image-input2').addEventListener('change', function() {
+    previewImage(this, 'hotelImagePreview2');
+});
+document.getElementById('hotel-image-input3').addEventListener('change', function() {
+    previewImage(this, 'hotelImagePreview3');
+});
+
 </script>
 
 </body>

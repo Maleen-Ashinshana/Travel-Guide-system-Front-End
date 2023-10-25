@@ -8,6 +8,11 @@ const vehicleOverlay = document.getElementById("vehicleOverlay");
 const newVehiclePage = document.getElementById("newVehiclePage");
 const vehicleNewPageCloseButton = document.getElementById("vehicleNewPageCloseButton");
 
+
+const HotelOverlay = document.getElementById("hotelOverLay");
+const HotelOpenButton=document.getElementById("btn-add-hotel-page")
+const newHotelPage = document.getElementById("newHotelPage");
+const HotelCloseButton = document.getElementById("hotelNewPageCloseButton");
 openButton.addEventListener("click", () => {
     overlay.style.display = "block";
     newPage.style.display = "block";
@@ -21,6 +26,8 @@ closeButton.addEventListener("click", () => {
     overlay.style.display = "none";
     newPage.style.display = "none";
 });
+
+/*Vehicle*/
 vehiclePaneOpenButton.addEventListener("click", () => {
     vehicleOverlay.style.display = "block";
     newVehiclePage.style.display = "block";
@@ -28,4 +35,15 @@ vehiclePaneOpenButton.addEventListener("click", () => {
 vehicleNewPageCloseButton.addEventListener("click", () => {
     vehicleOverlay.style.display = "none";
     newVehiclePage.style.display = "none";
+});
+
+/*hotelOverlay.style.display = "none";*/
+/*Hotel*/
+HotelOpenButton.addEventListener("click", () => {
+    HotelOverlay.style.display = "block";
+    newHotelPage.style.display = "block";
+});
+HotelCloseButton.addEventListener("click", () => {
+    HotelOverlay.style.display = "none";
+    newHotelPage.style.display = "none";
 });

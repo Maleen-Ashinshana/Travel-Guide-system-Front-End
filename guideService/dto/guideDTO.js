@@ -10,7 +10,7 @@ export class GuideDTO{
       this.experience = experience;
       this.man_day_value = man_day_value;
       this.remark = remark;
-      this.guide_image = null;
+      this.profile_picture = null;
       this.guide_nic_image = null;
       this.guide_id_image = null;
     }

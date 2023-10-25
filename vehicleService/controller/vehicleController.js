@@ -44,9 +44,9 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
                 success:(responses=>{
                     console.log("SavedImage"   +responses.data);
                 }),
-                /*error:(error=>{
+                error:(error=>{
                     console.log("Not Saved Image"+error);
-                })*/
+                })
             })
 
         },
