@@ -135,3 +135,85 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
     })*/
 
 })
+/*$(document).ready(function() {
+    $.ajax({
+        url: 'http://localhost:8080/vehicle/api/v1/vehicle',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+
+
+
+            data.forEach(function (item) {
+
+                console.log(item)
+                const card = `
+                 <div class="card" id="load-vehicle-filed-card">
+                 <img src="data:image/!**;base64,${item.vehicle_image}" id="load-vehicle-image">
+                 <p>Vehicle Brand: ${item.vehicle_brand}</p>
+                 <p>Vehicle Category: ${item.vehicle_category}</p>
+                  <p>Vehicle Type: ${item.vehicle_type}</p>
+                  <p>Fuel Type: ${item.fuel_type}</p>
+                  <p>Fuel Usage: ${item.fuel_usage}</p>
+                  <p>Hybrid Type: ${item.hybrid_or_no}</p>
+                  <p>Seat Capacity: ${item.seat_capacity}</p>
+                  <p>Transmission: ${item.transmission}</p>
+                  <p>Driver Name: ${item.driver_name}</p>
+                  <p>Driver Contact: ${item.driver_contact_number}</p>
+                </div>
+                `;
+
+                $('#vehicleCardContainer').append(card)
+            })
+        },
+        error: function () {
+            console.error('Failed to retrieve data');
+        }
+    })
+})*/
+$(document).ready(function() {
+    $.ajax({
+        url: 'http://localhost:8080/vehicle/api/v1/vehicle',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            data.forEach(function (vehicle) {
+                console.log(vehicle.vehicle_id + "******");
+                console.log(vehicle.vehicle_brand + "******");
+                console.log(vehicle.vehicle_category + "*******");
+                // Make an AJAX request to retrieve images for the current vehicle
+                $.ajax({
+                    type: "GET",
+                    url: `http://localhost:8080/vehicle/api/v1/vehicleImage/${vehicle.vehicle_id}`,
+                    dataType: 'json',
+                    success: function (images) {
+                        console.log("LoadImage " + JSON.stringify(images));
+                        const card = `
+                            <div class="card" id="load-vehicle-filed-card">
+                                <img src="data:image/**;base64,${images[0].vehicle_image}" id="load-vehicle-image">
+                                <p>Vehicle Brand: ${vehicle.vehicle_brand}</p>
+                                <p>Vehicle Category: ${vehicle.vehicle_category}</p>
+                                <p>Vehicle Type: ${vehicle.vehicle_type}</p>
+                                <p>Fuel Type: ${vehicle.fuel_type}</p>
+                                <p>Fuel Usage: ${vehicle.fuel_usage}</p>
+                                <p>Hybrid Type: ${vehicle.hybrid_or_no}</p>
+                                <p>Seat capacity: ${vehicle.seat_capacity}</p>
+                                <p>Transmission: ${vehicle.transmission}</p>
+                                <p>Remark: ${vehicle.remark}</p>
+                                <p>Driver Name: ${vehicle.driver_name}</p>
+                                <p>Driver Contact Number: ${vehicle.driver_contact_number}</p>
+                            </div>
+                        `;
+                        $('#vehicleCardContainer').append(card);
+                    },
+                    error: function (error) {
+                        console.log("Not Load Image: " + error);
+                    }
+                });
+            });
+        },
+        error: function () {
+            console.error('Failed to retrieve data');
+        }
+    });
+});

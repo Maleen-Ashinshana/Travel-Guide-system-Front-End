@@ -57,4 +57,49 @@ document.getElementById('btn-hotel-save').addEventListener('click',function (){
         }
 
     })
-})
+});
+
+$(document).ready(function() {
+    $.ajax({
+        url: 'http://localhost:8086/hotel/api/v1/hotel',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            data.forEach(function (hotel) {
+                console.log(hotel.hotel_id + "******");
+                console.log(hotel.hotel_name + "******");
+                console.log(hotel.hotel_category + "*******");
+                // Make an AJAX request to retrieve images for the current vehicle
+                $.ajax({
+                    type: "GET",
+                    url: `http://localhost:8086/hotel/api/v1/hotelImage/${hotel.hotel_id}`,
+                    dataType: 'json',
+                    success: function (images) {
+                        console.log("LoadImage " + JSON.stringify(images));
+                        const card = `
+                            <div class="card" id="load-vehicle-filed-card">
+                                <img src="data:image/**;base64,${images[0].hotel_image}" id="load-vehicle-image">
+                                <p>Vehicle Brand: ${hotel.hotel_name}</p>
+                                <p>Vehicle Category: ${hotel.hotel_category}</p>
+                                <p>Vehicle Type: ${hotel.location}</p>
+                                <p>Fuel Type: ${hotel.email}</p>
+                                <p>Fuel Usage: ${hotel.contact_number1}</p>
+                                <p>Hybrid Type: ${hotel.contact_number2}</p>
+                                <p>Seat capacity: ${hotel.hotel_fee}</p>
+                                <p>Transmission: ${hotel.remark}</p>
+             
+                            </div>
+                        `;
+                        $('#hotelCardConteiner').append(card);
+                    },
+                    error: function (error) {
+                        console.log("Not Load Image: " + error);
+                    }
+                });
+            });
+        },
+        error: function () {
+            console.error('Failed to retrieve data');
+        }
+    });
+});

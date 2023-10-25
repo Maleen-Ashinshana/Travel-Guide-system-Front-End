@@ -1676,6 +1676,23 @@ p {
     border-radius: 20px;
     font-weight: bold;
 }
+.vehicleCardContainer{
+    border: 1px solid #0c4128;
+    width: fit-content;
+    height: fit-content;
+}
+#load-vehicle-filed-card{
+    border: 1px solid purple;
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    left: 5%;
+
+}
+#load-vehicle-filed-card p{
+    position: relative;
+    top: 30%;
+}
 /*
 #from-hotel-name-group{
 
