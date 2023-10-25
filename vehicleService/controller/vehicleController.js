@@ -17,21 +17,9 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
     const driver_name = $('#txt-vehicle-driver').val();
     const driver_contact_number = $('#txt-vehicle-driverContact').val();
     const vehicle_image = $('#vehicle-image-input')[0].files[0];
-    /*const vehicle_id=vehicle_id;*/
-
-    /*const vehicleImageData = {
-        vehicle_id: vehicle_id, // Use the same generated ID
-        vehicle_image: vehicle_image,
-    };*/
 
 
-// Rest of your code
-// ...
-
-// Use vehicle_id in your code
-
-
-    const model = new VehicleModel(/*vehicle_id*/driver_name, driver_contact_number, vehicle_brand, vehicle_category, vehicle_type, fuel_type, fuel_usage, hybrid_or_no, seat_capacity, transmission, remark);
+    const model = new VehicleModel(driver_name, driver_contact_number, vehicle_brand, vehicle_category, vehicle_type, fuel_type, fuel_usage, hybrid_or_no, seat_capacity, transmission, remark);
     const imgModel=new VehicleImageModel(vehicle_image);
     $.ajax({
         type:"POST",
@@ -39,35 +27,26 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
         data: JSON.stringify(model),
         contentType: 'application/json', // Set the content type
         success: function(response) {
-            // Handle the response from the backend
-            /*console.log(response.vehicle_id);*/
-            console.log("saved"+response.vehicle_id)
-            function generateUniqueId() {
-                // Implement your unique ID generation logic here
-                // For simplicity, we'll use a timestamp-based ID in this example
-                return Date.now();
-            }
 
-// Generate a unique vehicle_id
-            const vehicle_id = generateUniqueId();
-            /*const vId=response.vehicle_id;*/
-            /*console.log(vId+"response")*/
+            console.log("saved"+response.vehicle_id)
+
+            console.log(response.vehicle_id  +  "NEW")
+
             const  formData=new FormData();
             formData.append("imgModel",new Blob([JSON.stringify(imgModel)],{type:'application/json'}));
             formData.append("vehicle_image",vehicle_image);
             $.ajax({
                 type:"POST",
-                url:`http://localhost:8080/vehicle/api/v1/vehicleImage?vehicle_id=${vehicle_id}`,
+                url:`http://localhost:8080/vehicle/api/v1/vehicleImage/${response.vehicle_id}`,
                 data:formData,
                 processData: false,
                 contentType: false,
-
-                success:(response=>{
-                    console.log("SavedImage"   +response.data);
+                success:(responses=>{
+                    console.log("SavedImage"   +responses.data);
                 }),
-                error:(error=>{
-                    console.log("Not Saved Image"+error.responseText);
-                })
+                /*error:(error=>{
+                    console.log("Not Saved Image"+error);
+                })*/
             })
 
         },
