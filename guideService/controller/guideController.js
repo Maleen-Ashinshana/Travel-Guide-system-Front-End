@@ -2,7 +2,7 @@ import {GuideDTO} from "../dto/guideDTO.js";
 
 export  class GuideController{
     constructor() {
-        this.guideUrl="http://localhost:9091/Guide/api/v1/guide";
+        this.guideUrl="http://localhost:9092/Guide/api/v1/guide";
 
     }
 /*    loadGuidersData(Data){
@@ -76,7 +76,7 @@ document.getElementById('btn-save-guide').addEventListener('click',function (){
 
     $.ajax({
         type:"POST",
-        url:"http://localhost:9091/Guide/api/v1/guide",
+        url:"http://localhost:9092/Guide/api/v1/guide",
         data:formData,
         processData: false,
         contentType: false,
@@ -180,7 +180,7 @@ function createCard(item) {
 
 $(document).ready(function() {
     $.ajax({
-        url: 'http://localhost:9091/Guide/api/v1/guide',
+        url: 'http://localhost:9092/Guide/api/v1/guide',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -200,8 +200,7 @@ $(document).ready(function() {
                         <p>Experience: ${item.experience}</p>
                         <p>Man Day Value: ${item.man_day_value}</p>
                         <p>Remark: ${item.remark}</p>
-                        <img src="data:image/**;base64,${item.guide_nic_image}" id="load-guide-nic-image">
-                        <img src="data:image/**;base64,${item.guide_id_image}" id="load-guide-id-image">
+                        
                         <img src="../../icon/garbage-bin_2450285.png" id="load-guide-delete-image">
                         <img src="../../icon/pencil.png" id="load-guide-update-image">
                     </div>

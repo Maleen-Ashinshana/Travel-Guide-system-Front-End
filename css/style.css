@@ -30,10 +30,11 @@ body{
 }
 .nav-link{
     color: white;
-    /*position: relative;
-    left: 1800%;*/
     font-size: 1em;
     font-weight: bold;
+    /* left: 10%; */
+    position: relative;
+    top: 10%;
 }
 #admin-navItem{
     position: absolute;
@@ -681,7 +682,135 @@ button:hover{
     height: 755px;
     position: absolute;
     top: 100%;
+    background: #ddd;
 }
+
+/*Guide Search*/
+.search-div{
+    border: 1px solid white;
+    width: 50%;
+    height: 7%;
+    position: relative;
+    left: 25%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    border-radius: 10px;
+}
+.search-input {
+    /*border: 1px solid purple;*/
+    width: 80%;
+    height: 75%;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    top: -26%;
+    left: -8%;
+
+}
+#btn-search-guide{
+    position: relative;
+    left: 84%;
+    bottom: 133%;
+    width: 15%;
+    height: 67%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    border-radius: 10px;
+    color: white;
+    font-style: oblique;
+    font-weight: bolder;
+    border: 1px solid white;
+}
+#guide-admin-label{
+    color: black;
+}
+
+
+#guide-search-form {
+    position: relative;
+   /* position: relative;
+    top: 50%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 30%;
+    height: 45px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid black;
+    padding: 5px;
+    /*border: 1px solid #0a53be;*/
+    top: 5%;
+}
+
+#search-guide-input {
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    width: 100%;
+    height: 38.5px;
+    line-height: 30px;
+    outline: 0px;
+    border: 0px;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+#guide-search-form:hover,
+#guide-search-form:valid {
+    width: 40%;
+    cursor: pointer;
+}
+
+#guide-search-form:hover input,
+#guide-search-form:valid input {
+    display: block;
+}
+
+#guide-search-form:hover .fa,
+#guide-search-form:valid .fa {
+    background: #07051a;
+    color: white;
+    position: relative;
+    left: 93%;
+    top: -13%;
+}
+
+a {
+    display: none;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+#guide-search-form:valid a {
+    display: block;
+}
+
+
+
 
 /*Guide login Css*/
 
@@ -689,145 +818,168 @@ button:hover{
 .card {
     float: left;
     padding: 0 1.7rem;
-    width: 30%;
+    width: 25%;
     height: 10px;
     left: 8%;
     top: 13%;
-    border: 1px solid red;
+  /*  border: 1px solid red;*/
 }
 /*#load-guide-image{
     width: 50px;
     height: ;
 }*/
 #load-guide-filed-card{
-    width: 23%;
-    height: 45%;
+    width: 20%;
+    height: 40%;
+    top: 5%;
+    background: white;
+    box-shadow: 5px 5px;
+    border: 1px solid black;
+    text-align: justify;
+    border-radius:10px ;
+    /*background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);*/
+  /*  color: white;*/
+    /*filter: blur(1px);*/
+
+}
+#load-guide-filed-card p{
+
+    position: relative;
+    left: 0%;
+    top: 5%;
+    font-weight: bold;
+/* color: white; */
 }
 #load-guide-image,#load-guide-nic-image,#load-guide-id-image{
-    border: 1px solid blue;
-    width: 30%;
-    height: 20%;
+   /* border: 1px solid blue;*/
+    width: 50%;
+    height: 35%;
+    position: relative;
+    left: 25%;
+    top: 3%;
+    border-radius: 10px;
 }
 #load-guide-delete-image,#load-guide-update-image{
-    width: 5%;
-    position: absolute;
-    left: 90%;
-    top: 80%;
+     width: 5%;
+     position: absolute;
+     left: 90%;
+     top: 80%;
+
 }
 #load-guide-update-image{
-    top: 90%;
+top: 90%;
 }
 
 .card .menu-content {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+margin: 0;
+padding: 0;
+list-style-type: none;
 }
 .card .menu-content::before, .card .menu-content::after {
-    content: "";
-    display: table;
+content: "";
+display: table;
 }
 .card .menu-content::after {
-    clear: both;
+clear: both;
 }
 .card .menu-content li {
-    display: inline-block;
+display: inline-block;
 }
 .card .menu-content a {
-    color: #fff;
+color: #fff;
 }
 .card .menu-content span {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    font-size: 10px;
-    font-weight: 700;
-    font-family: "Open Sans";
-    transform: translate(-50%, 0);
+position: absolute;
+left: 50%;
+top: 0;
+font-size: 10px;
+font-weight: 700;
+font-family: "Open Sans";
+transform: translate(-50%, 0);
 }
 .card .wrapper {
-    background-color: #fff;
-    min-height: 332px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
-    width: 136%;
-    left: -27px;
+background-color: #fff;
+min-height: 332px;
+position: relative;
+overflow: hidden;
+box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+width: 136%;
+left: -27px;
 }
 .card .wrapper:hover .data {
-    transform: translateY(0);
+transform: translateY(0);
 }
 .card .data {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    transform: translateY(calc(70px + 1em));
-    transition: transform 0.3s;
+position: absolute;
+bottom: 0;
+width: 100%;
+transform: translateY(calc(70px + 1em));
+transition: transform 0.3s;
 }
 .card .data .content {
-    padding: 1em;
-    position: relative;
-    z-index: 1;
-    left: 0%;
-    height: 145px;
-    width: 100%;
-    bottom: 2px;
+padding: 1em;
+position: relative;
+z-index: 1;
+left: 0%;
+height: 145px;
+width: 100%;
+bottom: 2px;
 }
 .card .author {
-    font-size: 12px;
+font-size: 12px;
 }
 .card .title {
-    margin-top: 10px;
+margin-top: 10px;
 }
 .card .text {
-    height: 120px;
-    margin: 0;
+height: 120px;
+margin: 0;
 }
 .card input[type=checkbox] {
-    display: none;
+display: none;
 }
 .card input[type=checkbox]:checked + .menu-content {
-    transform: translateY(-60px);
+transform: translateY(-60px);
 }
 
 .example-1 .date {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #77d7b9;
-    color: #fff;
-    padding: 0.8em;
+position: absolute;
+top: 0;
+left: 0;
+background-color: #77d7b9;
+color: #fff;
+padding: 0.8em;
 }
 .example-1 .date span {
-    display: block;
-    text-align: center;
+display: block;
+text-align: center;
 }
 .example-1 .content {
-    background-color: #fff;
-    box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+background-color: #fff;
+box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
 }
 .example-1 .title a {
-    color: gray;
+color: gray;
 }
 .example-1 .menu-button {
-    position: absolute;
-    z-index: 999;
-    top: -30px;
-    right: -20px;
-    width: 25px;
-    text-align: center;
-    cursor: pointer;
+position: absolute;
+z-index: 999;
+top: -30px;
+right: -20px;
+width: 25px;
+text-align: center;
+cursor: pointer;
 }
 /*.example-1 .menu-button span {
-    width: 5px;
-    height: 5px;
-    background-color: gray;
-    color: gray;
-    position: relative;
-    top: -73px;
-    display: inline-block;
-    border-radius: 50%;
-    left: 53px;
+width: 5px;
+height: 5px;
+background-color: gray;
+color: gray;
+position: relative;
+top: -73px;
+display: inline-block;
+border-radius: 50%;
+left: 53px;
 }*/
 #guide-pic{
 /*    border: 1px solid red;*/
@@ -1071,7 +1223,7 @@ button:hover{
 }
 
 #cardContainer{
-    border: 1px solid red;
+   /* border: 1px solid red;*/
     width: 100%;
     height: 100%;
 
@@ -1681,19 +1833,40 @@ p {
     width: fit-content;
     height: fit-content;
 }
-#load-vehicle-filed-card{
-    border: 1px solid purple;
-    width: 20%;
-    height: 50%;
-    position: absolute;
-    left: 5%;
-
+.vehicleCard{
+    float: left;
+    padding: 0 1.7rem;
+    width: 26%;
+    left: 2%;
+    top: -15%;
+    height: 370px;
+    margin: 11px;
+    border: 1px solid black;
 }
 #load-vehicle-filed-card p{
     position: relative;
     top: 30%;
 }
+#load-vehicle-image{
+    border: 1px solid black;
+    width: 45%;
+    height: 20%;
+}
+.vehicleCardContainer{
+    border: 4px solid purple;
+   /* width: fit-content;
+    height: fit-content;*/
+    width: 100%;
+    height: 100%;
+}
+/*#load-vehicle-imag{
+    border: 1px solid black;
+    width: 80%;
+    !* height: 10cm; *!
+    height: 100%;
+}*/
 /*
 #from-hotel-name-group{
 
 }*/
+

@@ -200,6 +200,8 @@
     </div>
 </section>
 <section class="guide-admin-page" id="guide-admin-page">
+    <h1 id="guide-admin-label">Guide Admin</h1>
+
   <!--  <div class="example-1 card" id="example-1 card">-->
        <!-- <div class="wrapper" id="wrapper">-->
             <!--<div class="profile-pic" id="guide-pic">
@@ -240,14 +242,28 @@
   <!--  <div class="guid-c" id="guide-c">
 
     </div>-->
-    <div id="cardContainer"></div>
+   <!-- <form action="" id="guide-search-form">
+        <input type="search" required id="search-guide-input" placeholder="Search Name">
+        <i class="fa fa-search"></i>
+        <a href="javascript:void(0)" id="clear-btn">Clear</a>
+    </form>-->
+    <div id="cardContainer">
+        <div class="search-div" id="guide-search-div">
+     <input type="text" id="guide-search-input" class="search-input" placeholder="Search Name">
+        <button type="button" class="btn-search" id="btn-search-guide">Search</button>
+        </div>
+
+    </div>
+
 <img src="icon/plus.png" id="btn-add-guider-page">
+
     <!--<div  id="data-container" class="data-container"></div>-->
     <div id="overlay" class="overlay"></div>
     <div id="newPage" class="new-page">
         <img src="icon/icons8-close-90.png" id="closeButton">
         <div class="update-guide-filed" id="update-guide-filed">
             <h2 id="guide-lable">Guide</h2>
+
             <div class="form-group" id="from-group from1">
                 <label for="txt-guide-name" id="guid-name-lable" class="guide-lable">Name:</label>
                 <input type="text" id="txt-guide-name" name="name" required>
@@ -306,6 +322,7 @@
     </div>
 </section>
 <section class="vehicle-section" id="vehicle-section">
+    <div class="vehicleCardContainer" id="vehicleCardContainer"></div>
     <h1>Vehicle</h1>
     <img src="icon/plus.png" id="btn-add-vehicle-page">
     <div id="vehicleOverlay" class="overlay"></div>
@@ -405,8 +422,7 @@
         </div>
 
     </div>
-    <div class="vehicleCardContainer" id="vehicleCardContainer">
-    </div>
+
 </section>
 
 <section class="hotel-section" id="hotel-section">
