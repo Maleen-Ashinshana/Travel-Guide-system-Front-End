@@ -77,8 +77,8 @@ $(document).ready(function() {
                     success: function (images) {
                         console.log("LoadImage " + JSON.stringify(images));
                         const card = `
-                            <div class="card" id="load-vehicle-filed-card">
-                                <img src="data:image/**;base64,${images[0].hotel_image}" id="load-vehicle-image">
+                            <div class="hotel-card" id="load-hotel-filed-card" >
+                                <img src="data:image/**;base64,${images[0].hotel_image}" id="load-hotel-image">
                                 <p>Vehicle Brand: ${hotel.hotel_name}</p>
                                 <p>Vehicle Category: ${hotel.hotel_category}</p>
                                 <p>Vehicle Type: ${hotel.location}</p>
