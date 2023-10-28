@@ -342,7 +342,11 @@
             </div>
         </div>
     </nav>
-    <button type="button" class="btn-add-vehicle" id="btn-add-vehicle-page">Add Vehicle</button>
+
+    <div class="vehicleCardContainer" id="vehicleCardContainer">
+        <button type="button" class="btn-add-vehicle" id="btn-add-vehicle-page">Add Vehicle</button>
+    </div>
+
  <!--   <h1>Vehicle Admin</h1>
     <div class="vehicleCardContainer" id="vehicleCardContainer">
         <div class="search-div" id="vehicle-search-div">
@@ -433,8 +437,12 @@
                 <label for="txt-vehicle-driverContact" id="vehicleDriverContact-label" class="vehicle-label">Driver Contact:</label>
                 <input type="text" id="txt-vehicle-driverContact" name="driveName" required>
             </div>
+            <div id="imageForm">
+                <input type="file" id="fileInput" accept="image/*">
 
-            <div class="form-group" id="from-vehicle-image-group">
+            </div>
+            <div id="imageGallery"></div>
+           <!-- <div class="form-group" id="from-vehicle-image-group">
                 <label for="vehicle-image-input" id="vehicle-Image" class="vehicle-label">Vehicle Image:</label>
                 <input type="file" id="vehicle-image-input" name="vehicleImage" accept="image/*" required>
                 <img id="vehicleImagePreview" src="#" alt="vehicle Image">
@@ -443,7 +451,7 @@
                 <label for="vehicle-image-input2" id="vehicle-Image2" class="vehicle-label">Vehicle Image:</label>
                 <input type="file" id="vehicle-image-input2" name="vehicleImage" accept="image/*" required>
                 <img id="vehicleImagePreview2" src="#" alt="vehicle Image">
-            </div>
+            </div>-->
            <!-- <button type="button" class="save- button" id="btn-save-vehicle">Submit</button>-->
             <button type="button " id="btn-vehicle-save">Save</button>
         </div>
@@ -545,6 +553,7 @@
 <script type="module" src="hotelService/model/hotelModel.js"></script>
 <script type="module" src="hotelService/model/hotelImageModel.js"></script>
 <script type="module" src="hotelService/controller/hotelController.js"></script>
+<script type="module" src="Js/image.js"></script>
 <script>
     /*HotelOverlay.style.display = "block";*/
     function previewImage(input, previewId) {
@@ -613,5 +622,6 @@ document.getElementById('hotel-image-input3').addEventListener('change', functio
     }
     autoAdjustWidth()
 </script>
+
 </body>
 </html>

@@ -16,7 +16,7 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
     const remark = $('#txt-vehicle-remark').val();
     const driver_name = $('#txt-vehicle-driver').val();
     const driver_contact_number = $('#txt-vehicle-driverContact').val();
-    const vehicle_image = $('#vehicle-image-input')[0].files[0];
+    const vehicle_image = $('#fileInput')[0].files[0];
 
 
     const model = new VehicleModel(driver_name, driver_contact_number, vehicle_brand, vehicle_category, vehicle_type, fuel_type, fuel_usage, hybrid_or_no, seat_capacity, transmission, remark);
@@ -63,10 +63,14 @@ $(document).ready(function () {
         success: function (data) {
             console.log(data)
             data.forEach(function (vehicle) {
-                console.log(vehicle.vehicle_id)
+                console.log(vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null)
+
+                const cardId = `vehicle-card-${vehicle.vehicle_id}`;
+                console.log(cardId+"CRD")
+
                 // Create a card for each vehicle
                 const card = `
-                    <div class="vehicleCard" id="load-vehicle-filed-card">
+                    <div class="vehicleCard" id="load-vehicle-filed-card" style="background: #007BFF">
                           <img src="data:image/jpg;base64, ${vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null}"  class="vehicleImage">
                           <p>Vehicle Brand: ${vehicle.vehicle_brand}</p>
                           <p>Vehicle Category: ${vehicle.vehicle_category}</p>
@@ -83,8 +87,9 @@ $(document).ready(function () {
                         <img src="../../icon/pencil.png" id="load-vehicle-update-image" class="vehicle-icon">
                       </div>
                 `;
+               /* console.log(ve)*/
                 $('#vehicleCardContainer').append(card);
-
+                /*console.log()*/
                 // Make an AJAX request to retrieve the vehicle image
                 $.ajax({
                     type: "GET",
