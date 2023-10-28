@@ -1586,11 +1586,11 @@ p {
     width: 10%;
     height: 45px;
     position: relative;
-    left: 85%;
+    left: 45%;
     top: 20px;
     background: #007BFF;
     border: 1px solid #007BFF;
-    border-radius:10px ;
+    border-radius: 10px;
     box-shadow: 1px 1px;
     color: white;
     font-weight: bold;
@@ -1600,27 +1600,89 @@ p {
 .vehicleCard{
     float: left;
     padding: 0 1.7rem;
-    width: 26%;
+    width: 42%;
     left: 2%;
     /*top: -15%;*/
-    height: 380px;
-    margin: 11px;
+    height: 210px;
+    margin: 15px;
     border: 1px solid black;
     background: white;
     position: relative;
-    top: 5%;
+    top: 15%;
     border-radius: 10px;
     box-shadow: 5px 5px;
 }
 #load-vehicle-filed-card p{
-    position: relative;
-    top: 4%;
+   /* position: relative;*/
+    /*top: -90%;
+    !*font-weight: bold;*!
+    left: 35%;*/
+}
+#brand{
+    font-size: 1.4em;
+    /* top: -5%; */
+    position: absolute;
+    top: 20px;
+    left: 58%;
     font-weight: bold;
 }
+#category{
+    position: absolute;
+    left: 34%;
+    top: 25%;
+}
+#type{
+    position: absolute;
+    left: 78%;
+    top: 25%;
+}
+#fuel{
+    position: absolute;
+    left: 34%;
+    top: 40%;
+}
+#usage{
+    position: absolute;
+    left: 78%;
+    top: 40%;
+}
+#hy{
+    position: absolute;
+    left: 34%;
+    top: 55%;
+}
+#se{
+    position: absolute;
+    left: 78%;
+    top: 55%;
+}
+#ta{
+    position: absolute;
+    left: 34%;
+    top: 68%;
+}
+#re{
+    position: absolute;
+    left: 78%;
+    top: 68%;
+}
+#dn{
+    position: absolute;
+    left: 34%;
+    top: 80%;
+}
+#dc{
+    position: absolute;
+    left: 63%;
+    top: 80%;
+}
+
+
 #load-vehicle-image{
     border: 1px solid black;
     width: 45%;
     height: 20%;
+
 }
 .vehicleCardContainer{
     width: 100%;
@@ -1657,12 +1719,11 @@ p {
     width: 50%;
 }*/
 .vehicleCard img{
-    border: 1px solid blue;
-    width: 140px;
-    height: 100px;
+    width: 200px;
+    height: 208px;
     position: relative;
-    left: 28%;
-    top: 3%;
+    left: -5%;
+    top: 0%;
     border-radius: 10px;
 }
 

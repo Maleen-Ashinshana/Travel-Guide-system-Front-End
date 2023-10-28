@@ -70,19 +70,19 @@ $(document).ready(function () {
 
                 // Create a card for each vehicle
                 const card = `
-                    <div class="vehicleCard" id="load-vehicle-filed-card" style="background: #007BFF">
+                    <div class="vehicleCard" id="load-vehicle-filed-card">
                           <img src="data:image/jpg;base64, ${vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null}"  class="vehicleImage">
-                          <p>Vehicle Brand: ${vehicle.vehicle_brand}</p>
-                          <p>Vehicle Category: ${vehicle.vehicle_category}</p>
-                          <p>Vehicle Type: ${vehicle.vehicle_type}</p>
-                          <p>Fuel Type: ${vehicle.fuel_type}</p>
-                          <p>Fuel Usage: ${vehicle.fuel_usage}</p>
-                          <p>Hybrid Type: ${vehicle.hybrid_or_no}</p>
-                          <p>Seat capacity: ${vehicle.seat_capacity}</p>
-                          <p>Transmission: ${vehicle.transmission}</p>
-                          <p>Remark: ${vehicle.remark}</p>
-                          <p>Driver Name: ${vehicle.driver_name}</p>
-                          <p>Driver Contact Number: ${vehicle.driver_contact_number}</p>
+                          <p id="brand">${vehicle.vehicle_brand}</p>
+                          <p id="category">Vehicle Category : ${vehicle.vehicle_category}</p>
+                          <p id="type">Vehicle Type: ${vehicle.vehicle_type}</p>
+                          <p id="fuel">Fuel Type: ${vehicle.fuel_type}</p>
+                          <p id="usage">Fuel Usage: ${vehicle.fuel_usage}</p>
+                          <p id="hy">Hybrid Type: ${vehicle.hybrid_or_no}</p>
+                          <p id="se">Seat capacity: ${vehicle.seat_capacity}</p>
+                          <p id="ta">Transmission: ${vehicle.transmission}</p>
+                          <p id="re">Remark: ${vehicle.remark}</p>
+                          <p id="dn">Driver Name: ${vehicle.driver_name}</p>
+                          <p id="dc">Contact Number: ${vehicle.driver_contact_number}</p>
                         <img src="../../icon/garbage-bin_2450285.png" id="load-vehicle-delete-image" class="vehicle-icon">
                         <img src="../../icon/pencil.png" id="load-vehicle-update-image" class="vehicle-icon">
                       </div>
