@@ -2,6 +2,7 @@ const fileInput = document.getElementById('fileInput');
 const imageForm = document.getElementById('imageForm');
 const imageGallery = document.getElementById('imageGallery');
 
+
 fileInput.addEventListener('change', handleFileSelect);
 
 function handleFileSelect(event) {
@@ -25,3 +26,4 @@ function handleFileSelect(event) {
     // Reset the current file input to clear the selected files
     fileInput.value = "";
 }
+

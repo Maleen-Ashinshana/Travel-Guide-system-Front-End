@@ -491,8 +491,27 @@
 </section>
 
 <section class="hotel-section" id="hotel-section">
- <h1>Hotel</h1>
-    <img src="icon/plus.png" id="btn-add-hotel-page">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarH">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="position: relative;left: -200%;color: white">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white">Hotel</a>
+                    </li>
+                    <!--<li class="nav-item" id="logOut">
+                        <a class="nav-link " href="#" style="color: white">Log Out</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--<img src="icon/plus.png" id="btn-add-hotel-page">-->
     <div id="hotelOverLay" class="overlay">
         <img src="icon/icons8-close-90.png" id="hotelNewPageCloseButton" >
     </div>
@@ -535,7 +554,7 @@
             <label for="txt-hotel-remark" id="hotelRemark-label" class="hotel-label">Hotel Remark:</label>
             <textarea id="txt-hotel-remark" name="remarks"></textarea>
         </div>
-        <div class="form-group" id="from-hotel-image-group1">
+        <!--<div class="form-group" id="from-hotel-image-group1">
             <label for="hotel-image-input1" id="hotel-Image1" class="hotel-label">Vehicle Image:</label>
             <input type="file" id="hotel-image-input1" name="hotelImage" accept="image/*" required>
             <img id="hotelImagePreview1" src="#" alt="hotel Image" class="hotelImagePrive">
@@ -549,7 +568,13 @@
             <label for="hotel-image-input3" id="hotel-Image3" class="hotel-label">Vehicle Image:</label>
             <input type="file" id="hotel-image-input3" name="hotelImage" accept="image/*" required>
             <img id="hotelImagePreview3" src="#" alt="hotel Image" class="hotelImagePrive">
+        </div>-->
+        <div id="imageFormHotel">
+            <input type="file" id="fileInputHotel" accept="image/*">
+
         </div>
+        <div id="imageGalleryHotel"></div>
+
         <button type="button " id="btn-hotel-save">Save</button>
        <!-- <div class="form-group" id="from-hotel-category-group">
             <label for="hotelCategory" class="hotelCategory-label">Hotel Category </label>
@@ -562,7 +587,12 @@
         </div>-->
 
     </div>
-    <div class="hotelCardConteiner"></div>
+    <div class="hotelCardConteiner">
+        <img src="icon/logout-64.png" class="exit" id="exitHotel">
+        <input type="text" class="search" id="searchHotel" placeholder="Search Hotel Name">
+        <img src="icon/download%20(3).png" id="search-btn-hotel" >
+        <img src="icon/add-64.png" class="btn-add-vehicle" id="btn-add-hotel-page">
+    </div>
 </div>
 
 </section>
@@ -584,6 +614,7 @@
 <script type="module" src="hotelService/model/hotelImageModel.js"></script>
 <script type="module" src="hotelService/controller/hotelController.js"></script>
 <script type="module" src="Js/image.js"></script>
+<script type="module" src="Js/hotelImages.js"></script>
 <script>
     /*HotelOverlay.style.display = "block";*/
     function previewImage(input, previewId) {

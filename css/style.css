@@ -2014,14 +2014,36 @@ p {
     height: 100%;
     position: absolute;
     top: 200%;
-    display: none;
-    background: #ddd;
+    /*display: none;*/
+    background: white;
+}
+#btn-add-hotel1-page{
+    position: absolute;
+right: 10px;
+    bottom: 20px;
 }
 #btn-add-hotel-page{
     width: 2%;
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+#searchHotel{
+  top: -8%;
+}
+#exitHotel{
+/*border: 1px solid red;*/
+    width: 2%;
+    position: absolute;
+    right: 1%;
+    top: -5%;
+}
+#search-btn-hotel{
+  /*  border: 1px solid red;*/
+    width: 2%;
+    position: absolute;
+    right: 12%;
+    top:-5%;
 }
 #newHotelPage{
     width: 30cm;
@@ -2095,7 +2117,40 @@ p {
     top: -40%;
     left: 69%;
 }
-#hotel-Image1,#hotel-Image2,#hotel-Image3{
+
+#imageFormHotel{
+   /* border: 1px solid deeppink;*/
+    width: 30%;
+    height: 5%;
+    position: absolute;
+    top: 51%;
+}
+#fileInputHotel{
+/*    border: 1px solid green;*/
+    position: relative;
+    top: -47%;
+    left: -17%;
+    width: 64%;
+    height: 43px;
+}
+#imageGalleryHotel{
+    display: flex;
+    flex-wrap: wrap;
+    /*border: 1px solid green;*/
+    position: relative;
+    /*top: -18%;*/
+    top: -10%;
+    /*width: 100%;*/
+}
+.image-preview {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    object-fit: cover;
+    /*border: 1px solid red;*/
+}
+
+/*#hotel-Image1,#hotel-Image2,#hotel-Image3{
     background: #a39b9b;
     width: 50%;
     height: 35%;
@@ -2107,19 +2162,32 @@ p {
     position: relative;
     top: -160%;
     width: 140px;
-}
+}*/
 
 #btn-hotel-save{
     width: 12%;
     height: 6%;
-    background: linear-gradient(to right top, rgb(122, 122, 152) 30%, rgb(170, 187, 231) 70%);
+    background: #007BFF;
     position: relative;
-    top: -25%;
+    top: -5%;
     left: 45%;
     color: white;
     border: 1px solid white;
     border-radius: 20px;
     font-weight: bold;
+}
+.hotelCardConteiner{
+    border: 5px solid green;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#load-hotel-filed-card{
+    border: 5px solid red;
+    width: 50%;
+    height: 50%;
+    position:absolute ;
+    left: 10%;
 }
 /*.vehicleCardContainer{
     border: 1px solid #0c4128;
