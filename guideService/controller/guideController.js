@@ -217,28 +217,65 @@ $(document).ready(function() {
     });
 
 });
-document.getElementById('btn-search-guide').addEventListener('click', function () {
-    console.log("search")
-    const guideNameInput = document.getElementById('guide-search-input').value.trim().toLowerCase();
-    const cards = document.querySelectorAll('.vehicleCard');
+$(document).ready(function () {
+    // Function to filter and show only the selected vehicle card
+    function filterAndShowCard(searchTerm) {
+        const container = $('#cardContainer');
 
-    cards.forEach(card => {
-        const cardGuideName = card.querySelector('p').textContent.toLowerCase().replace('name:', '').trim();
+        // Loop through the vehicle cards
+        $('.card').each(function () {
+            const card = $(this);
+            const guideName = card.find('p:contains("Name:")').text();
 
-        if (cardGuideName === guideNameInput) {
-            card.style.display = 'block';
-            console.log("Done");
-        } else {
-            card.style.display = 'none';
-        }
+            // Check if the card's guide_name matches the search term
+            if (guideName.toLowerCase().includes(searchTerm.toLowerCase())) {
+                card.show();
+            } else {
+                card.hide();
+            }
+        });
+    }
+
+    // Initial loading of all vehicle cards
+    filterAndShowCard('');
+
+    // Add an event listener to the search button
+    $('#search-btn-guide').click(function () {
+        const searchTerm = $('#searchGuide').val();
+        filterAndShowCard(searchTerm);
     });
 });
 
-    const deleteImg=document.getElementById('load-guide-delete-image');
-    deleteImg.addEventListener('click',function (){
-        /*alert()*/
-        console.log("Delete")
-    })
+/*$(document).ready(function () {
+    // Function to filter and show only the selected vehicle card
+    function filterAndShowCard(searchTerm) {
+        const container = $('#cardContainer');
+
+        // Loop through the vehicle cards
+        $('.card').each(function () {
+            const card = $(this);
+            const brand = card.find('#name').text();
+
+            // Check if the card's brand matches the search term
+            if (brand.toLowerCase().includes(searchTerm.toLowerCase())) {
+                card.show();
+            } else {
+                card.hide();
+            }
+        });
+    }
+
+    // Initial loading of all vehicle cards
+    filterAndShowCard('');
+
+    // Add an event listener to the search button
+    $('#search-btn-guide').click(function () {
+        console.log("SEARCH")
+        const searchTerm = $('#searchGuide').val();
+        filterAndShowCard(searchTerm);
+    });
+});*/
+
 
 
 

@@ -682,7 +682,7 @@ button:hover{
     height: 755px;
     position: absolute;
     top: 100%;
-    background: #ddd;
+    background: white;
 }
 
 /*Guide Search*/
@@ -837,10 +837,31 @@ a {
     border: 1px solid black;
     text-align: justify;
     border-radius:10px ;
+    left: 7%;
     /*background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);*/
   /*  color: white;*/
     /*filter: blur(1px);*/
 
+}
+#btn-add-guider-page{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    width: 2%;
+}
+#search-btn-guide{
+    /*border: 1px solid red;*/
+    width: 2%;
+    position: absolute;
+    right: 13%;
+    top: 1%;
+}
+#exitGuide{
+    position: absolute;
+  /*  border: 1px solid red;*/
+    right: 1%;
+    width: 2%;
+    top: 1%;
 }
 #load-guide-filed-card p{
 
@@ -1574,36 +1595,78 @@ p {
     left: 33cm;
 }
 .container-fluid{
-    background:  #0073cf;
+    background:  black;
 
 }
 .nav-item a{
     color: white;
     position: relative;
     left: -100%;
+    font-weight: initial;
+}
+.search{
+    width: 20%;
+    height: 4%;
+    border-radius: 50px;
+    position: absolute;
+    left: 65%;
+    top: -2%;
+    background: white;
+}
+#search-btn{
+    /*background: aqua;*/
+    width: 25px;
+    position: absolute;
+    right: 13%;
+    top: 1%;
+}
+#exit{
+    width: 1.5%;
+    position: absolute;
+    right: 2px;
+    top: 1%;
+}
+#add-vehicle-pane{
+    position: absolute;
+    right: 18px;
+    bottom: 10px;
+    width: 30px;
 }
 #btn-add-vehicle-page{
     width: 10%;
     height: 45px;
-    position: relative;
-    left: 45%;
-    top: 20px;
-    background: #007BFF;
+    position: absolute;
+    left: 85%;
+    top: 65px;
+    background: red;
     border: 1px solid #007BFF;
     border-radius: 10px;
     box-shadow: 1px 1px;
     color: white;
     font-weight: bold;
 }
-
+#btn-delete {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    left: 55%;
+    top: 45%;
+}
+#btn-update{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    left: 60%;
+    top: 45%;
+}
 
 .vehicleCard{
     float: left;
     padding: 0 1.7rem;
     width: 42%;
-    left: 2%;
-    /*top: -15%;*/
-    height: 210px;
+    left: 5%;
+    /* top: -15%; */
+    height: 260px;
     margin: 15px;
     border: 1px solid black;
     background: white;
@@ -1618,6 +1681,10 @@ p {
     !*font-weight: bold;*!
     left: 35%;*/
 }
+
+
+
+
 #brand{
     font-size: 1.4em;
     /* top: -5%; */
@@ -1677,6 +1744,22 @@ p {
     top: 80%;
 }
 
+#btn-delete-vehicle{
+    background: red;
+    position: relative;
+    top: 55%;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 10px;
+}
+#btn-update-guide{
+    background: green;
+    position: relative;
+    top: 55%;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 10px;
+}
 
 #load-vehicle-image{
     border: 1px solid black;
@@ -1719,13 +1802,14 @@ p {
     width: 50%;
 }*/
 .vehicleCard img{
-    width: 200px;
-    height: 208px;
+    width: 205px;
+    height: 258px;
     position: relative;
     left: -5%;
     top: 0%;
     border-radius: 10px;
 }
+
 
 /*#btn-add-vehicle-page{
     width: 2%;
@@ -1906,6 +1990,7 @@ p {
     border-radius: 20px;
     font-weight: bold;
 }
+
 /*
 #btn-save-vehicle{
     width: 10%;

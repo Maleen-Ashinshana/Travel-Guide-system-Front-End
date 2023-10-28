@@ -2,7 +2,47 @@ import {VehicleModel} from "../model/vehicleModel.js";
 import {VehicleImageModel} from "../model/vehicleImageModel.js";
 export class VehicleController{
 
+
+    constructor() {
+        this.vehicle=[];
+        this.search=$('#search').val()
+        /*this.vid=vehicle_id;*/
+    }
 }
+
+/*const vehicleId = card.attr("id").replace("load-vehicle-filed-card-", "");*/
+/*console.log(this.vehicle_id+"NEWWWW")*/
+// When the delete button is clicked
+/*$(document).on("click", "#btn-delete", function () {
+    console.log("JKHJHHJHJUH")
+    const vehicleId = $(this).data("vehicle_id");
+
+    $.ajax({
+        type: "DELETE",
+        url: `http://localhost:8080/vehicle/api/v1/vehicle/b24f1cfa-1f28-4e5f-8556-71c750bd8261`,
+        success: function () {
+            // Vehicle data deleted, now delete related images
+            $.ajax({
+                type: "DELETE",
+                url: `http://localhost:8080/vehicle/api/v1/vehicleImage/b24f1cfa-1f28-4e5f-8556-71c750bd8261`,
+                success: function () {
+
+                    $(this).closest(".vehicleCard").remove();
+                },
+                error: function (error) {
+                    console.error("Failed to delete vehicle images: " + error);
+                }
+            });
+        },
+        error: function (error) {
+            console.error("Failed to delete vehicle data: " + error);
+        }
+    });
+});*/
+console.log()
+
+
+/*console.log(this.vehiles+"*-+*-+")*/
 document.getElementById('btn-vehicle-save').addEventListener('click',function () {
     console.log("OK")
     const vehicle_type = $('#vehicle-type').val();
@@ -27,6 +67,7 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
         data: JSON.stringify(model),
         contentType: 'application/json', // Set the content type
         success: function(response) {
+
             console.log("saved"+response)
             const  formData=new FormData();
             formData.append("imgModel",new Blob([JSON.stringify(imgModel)],{type:'application/json'}));
@@ -64,14 +105,15 @@ $(document).ready(function () {
             console.log(data)
             data.forEach(function (vehicle) {
                 console.log(vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null)
-
+                /*const vehicleC=[];*/
                 const cardId = `vehicle-card-${vehicle.vehicle_id}`;
                 console.log(cardId+"CRD")
+                console.log(vehicle)
 
                 // Create a card for each vehicle
                 const card = `
                     <div class="vehicleCard" id="load-vehicle-filed-card">
-                          <img src="data:image/jpg;base64, ${vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null}"  class="vehicleImage">
+                          <img src="data:image/jpg;base64, ${vehicle.imageDTOS.length !== 0 ? vehicle.imageDTOS[0].vehicle_image : null}"  class="vehicleImage">
                           <p id="brand">${vehicle.vehicle_brand}</p>
                           <p id="category">Vehicle Category : ${vehicle.vehicle_category}</p>
                           <p id="type">Vehicle Type: ${vehicle.vehicle_type}</p>
@@ -83,14 +125,13 @@ $(document).ready(function () {
                           <p id="re">Remark: ${vehicle.remark}</p>
                           <p id="dn">Driver Name: ${vehicle.driver_name}</p>
                           <p id="dc">Contact Number: ${vehicle.driver_contact_number}</p>
-                        <img src="../../icon/garbage-bin_2450285.png" id="load-vehicle-delete-image" class="vehicle-icon">
-                        <img src="../../icon/pencil.png" id="load-vehicle-update-image" class="vehicle-icon">
+                        <img src="../../icon/garbage-bin_2450285.png" class="img" id="btn-delete">
+                        <img src="../../icon/pencil.png" class="img" id="btn-update">
                       </div>
                 `;
                /* console.log(ve)*/
                 $('#vehicleCardContainer').append(card);
-                /*console.log()*/
-                // Make an AJAX request to retrieve the vehicle image
+
                 $.ajax({
                     type: "GET",
                     url: `http://localhost:8080/vehicle/api/v1/vehicleImage/${vehicle.vehicle_id}`,
@@ -112,10 +153,128 @@ $(document).ready(function () {
         error: function () {
             console.error('Failed to retrieve data');
         }
+
     });
 });
 
+$(document).ready(function () {
+    // Function to filter and show only the selected vehicle card
+    function filterAndShowCard(searchTerm) {
+        const container = $('#vehicleCardContainer');
 
+        // Loop through the vehicle cards
+        $('.vehicleCard').each(function () {
+            const card = $(this);
+            const brand = card.find('#brand').text();
+
+            // Check if the card's brand matches the search term
+            if (brand.toLowerCase().includes(searchTerm.toLowerCase())) {
+                card.show();
+            } else {
+                card.hide();
+            }
+        });
+    }
+
+    // Initial loading of all vehicle cards
+    filterAndShowCard('');
+
+    // Add an event listener to the search button
+    $('#search-btn').click(function () {
+        console.log("SEARCH")
+        const searchTerm = $('#search').val();
+        filterAndShowCard(searchTerm);
+    });
+});
+/*$(document).on("click", "#btn-update", function () {
+
+})*/
+
+/*$(document).on("click", "#btn-update", function () {
+    // Get the vehicle information from the clicked card
+    var vehicleId = $(this).closest('.vehicleCard').attr('id');
+    var vehicleBrand = $(this).closest('.vehicleCard').find('#brand').text();
+    var vehicleCategory = $(this).closest('.vehicleCard').find('#category').text();
+    var vehicleType = $(this).closest('.vehicleCard').find('#type').text();
+    // Add more data fields as needed
+
+    // Encode the data for passing in the URL
+    var queryParams = `?id=${vehicleId}&brand=${encodeURIComponent(vehicleBrand)}&category=${encodeURIComponent(vehicleCategory)}&type=${encodeURIComponent(vehicleType)}`;
+    // Add more query parameters as needed
+
+    // Specify the URL of the new page along with the query parameters
+    var updatePageUrl = `update-vehicle.html${queryParams}`;
+
+    // Open the new page in a separate tab or window
+    window.open(updatePageUrl, "_blank");
+});*/
+
+
+
+/*$(document).on("click", "#btn-delete", function () {
+    console.log("OK")
+    $.ajax({
+        type: "DELETE",
+        url: `http://localhost:8080/vehicle/api/v1/vehicleImage/${image_id}`,
+        success: function () {
+            console.log("Image deleted successfully");
+            // You can perform additional actions here after the image is deleted.
+        },
+        error: function (error) {
+            console.error("Failed to delete image: " + error);
+        }
+    });
+})*/
+
+
+
+/*$(document).ready(function () {
+    // Existing code...
+
+    // Event handler for the Delete button
+    $(document).on("click", "#btn-delete", function () {
+        // Get the vehicle ID associated with the clicked Delete button
+        const card = $(this).closest(".vehicleCard");
+        const vehicleId = card.attr("id").replace("vehicle-card-", "");
+        console.log(vehicleId.vehicle_id+"*-*-*--*-*")
+        console.log(vehicleId.vehicle_image_id)
+
+        // Make a DELETE request to delete the vehicle images
+        $.ajax({
+            type: "DELETE",
+            url: `http://localhost:8080/vehicle/api/v1/vehicleImage/${vehicleId.vehicle_image_id}`,
+            success: function () {
+                // After deleting the images, make another DELETE request to delete the vehicle
+                $.ajax({
+                    type: "DELETE",
+                    url: `http://localhost:8080/vehicle/api/v1/vehicle/${vehicleId.vehicle_id}`,
+                    success: function () {
+                        // Handle the success, e.g., remove the card from the UI
+                        card.remove();
+                    },
+                    error: function (error) {
+                        console.log("Failed to delete vehicle: " + error);
+                    }
+                });
+            },
+            error: function (error) {
+                console.log("Failed to delete vehicle images: " + error);
+            }
+        });
+    });
+
+    // Rest of your existing code...
+});*/
+/*document.getElementById('search-btn').addEventListener('click',function(){
+    console.log("search")
+    console.log(vehicle+"GTGTGT")
+    const  search=this.vehicle.filter(vehicle=>{
+        return vehicle.vehicle_brand.includes(this.search.val());
+    });
+    console.log(vehicle+"WE")
+    console.log(search+"SEACRH")
+    return search;
+    });*/
 /*$(document).ready(function() {
     $.ajax({
         url: 'http://localhost:8080/vehicle/api/v1/vehicle',
