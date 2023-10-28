@@ -61,11 +61,13 @@ $(document).ready(function () {
         method: 'GET',
         dataType: 'json',
         success: function (data) {
+            console.log(data)
             data.forEach(function (vehicle) {
+                console.log(vehicle.vehicle_id)
                 // Create a card for each vehicle
                 const card = `
                     <div class="vehicleCard" id="load-vehicle-filed-card">
-                          <img src="" id="load-vehicle-image-${vehicle.vehicle_image}" class="vehicleImage">
+                          <img src="data:image/jpg;base64, ${vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null}"  class="vehicleImage">
                           <p>Vehicle Brand: ${vehicle.vehicle_brand}</p>
                           <p>Vehicle Category: ${vehicle.vehicle_category}</p>
                           <p>Vehicle Type: ${vehicle.vehicle_type}</p>
@@ -89,6 +91,7 @@ $(document).ready(function () {
                     url: `http://localhost:8080/vehicle/api/v1/vehicleImage/${vehicle.vehicle_id}`,
                     dataType: 'json',
                     success: function (images) {
+                        console.log(images)
                         const imageElement = $(`.vehicleImage[data-vehicle-id="${vehicle.vehicle_id}"]`);
                         if (images.length > 0) {
                             const base64Image = images[0].vehicle_image;

@@ -3,7 +3,8 @@ import {GuideDTO} from "../dto/guideDTO.js";
 export  class GuideController{
     constructor() {
         this.guideUrl="http://localhost:9092/Guide/api/v1/guide";
-
+        searchGuide();
+        /*searchCard()*/
     }
 /*    loadGuidersData(Data){
         const guide=document.getElementById("data-container")
@@ -201,7 +202,7 @@ $(document).ready(function() {
                         <p>Man Day Value: ${item.man_day_value}</p>
                         <p>Remark: ${item.remark}</p>
                         
-                        <img src="../../icon/garbage-bin_2450285.png" id="load-guide-delete-image">
+                        <img src="../../icon/garbage-bin_2450285.png" id="load-guide-delete-image" class="btn-delete">
                         <img src="../../icon/pencil.png" id="load-guide-update-image">
                     </div>
                 `;
@@ -216,7 +217,105 @@ $(document).ready(function() {
     });
 
 });
+document.getElementById('btn-search-guide').addEventListener('click', function () {
+    console.log("search")
+    const guideNameInput = document.getElementById('guide-search-input').value.trim().toLowerCase();
+    const cards = document.querySelectorAll('.vehicleCard');
 
+    cards.forEach(card => {
+        const cardGuideName = card.querySelector('p').textContent.toLowerCase().replace('name:', '').trim();
+
+        if (cardGuideName === guideNameInput) {
+            card.style.display = 'block';
+            console.log("Done");
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+    const deleteImg=document.getElementById('load-guide-delete-image');
+    deleteImg.addEventListener('click',function (){
+        /*alert()*/
+        console.log("Delete")
+    })
+
+
+
+/*document.getElementById('btn-search-guide').addEventListener('click',function (){
+    console.log("search")
+    const  guideNameInput=document.getElementById('guide-search-input');
+    const card=document.querySelectorAll('.vehicleCard');
+
+    card.forEach(card=>{
+        const cardGuideName=card.querySelector('p').textContent.toLowerCase().replace('name:','');
+        if (cardGuideName === guideNameInput){
+            card.style.display='block';
+            console.log("Done")
+        }else {
+            card.style.display='none'
+        }
+    });
+});*/
+/*function searchGuide(){
+    const searchInput=document.getElementById('btn-search-guide');
+    const card=document.querySelectorAll('.cardGuideContener')
+
+    console.log("Search")
+    searchInput.addEventListener("input", ()=>{
+        const searchCard=searchInput.value.toLowerCase();
+
+        card.forEach(card=>{
+            const guideName=card.querySelector('p[data-guide_name]').textContent.toLowerCase();
+            if (guideName.includes(searchCard)){
+                card.style.display="block";
+            }else {
+                card.style.display="none";
+            }
+        });
+    });
+}*/
+/*function searchCard() {
+    const guideNameInput = document.getElementById('guide-search-input').value.toLowerCase();
+    const cards = document.querySelectorAll('.cardGuideContener');
+
+    cards.forEach(card => {
+        const cardGuideName = card.querySelector('p').textContent.toLowerCase().replace('guide_name: ', '');
+
+        if (cardGuideName === guideNameInput) {
+            card.style.backgroundColor = 'yellow'; // Highlight the card (you can customize this)
+        } else {
+            card.style.backgroundColor = ''; // Remove the highlight from other cards
+        }
+    });
+}*/
+
+/*$(document).ready(function() {
+    $.ajax({
+        // Your existing code to retrieve and display cards.
+        // ...
+
+        // Event handler for the delete button
+        document
+        /!*$().on('click', function() {
+        const card = $(this).closest('.card');
+        const cardId = card.data('card-id');
+
+        $.ajax({
+            url: `http://localhost:9092/Guide/api/v1/guide/${cardId}`,
+            method: 'DELETE',
+            success: function() {
+                // Remove the card from the UI upon successful deletion
+                card.remove();
+                console.log('Delete'); // Log "Delete" in the console
+            },
+            error: function() {
+                console.error('Failed to delete the card');
+            }
+        });
+    });*!/
+});
+});*/
 
 
 
