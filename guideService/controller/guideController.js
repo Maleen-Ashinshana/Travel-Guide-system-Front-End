@@ -3,7 +3,7 @@ import {GuideDTO} from "../dto/guideDTO.js";
 export  class GuideController{
     constructor() {
         this.guideUrl="http://localhost:9092/Guide/api/v1/guide";
-        searchGuide();
+
         /*searchCard()*/
     }
 /*    loadGuidersData(Data){
@@ -40,6 +40,24 @@ export  class GuideController{
         })
     }*/
 }
+$('#cardContainer').on("click",".btn-delete-guide",function (e){
+    console.log(e.target.id)
+    const guideId=e.target.id;
+    $.ajax({
+        type: "DELETE",
+        url: `http://localhost:9092/Guide/api/v1/guide/${guideId}`,
+        dataType: 'json',
+        success: ()=> {
+            /*this.getAllVehicles()
+            this.loadData()*/
+            console.log("DELETED")
+        },
+
+        error: function (error) {
+            console.log("Failed to Delete: " + error);
+        }
+    });
+})
 document.getElementById('btn-save-guide').addEventListener('click',function (){
     const guide_name=$('#txt-guide-name').val()
     const guide_address=$('#txt-guide-address').val()
@@ -189,10 +207,10 @@ $(document).ready(function() {
             data.forEach(function(item) {
 
                 console.log(item)
+
                 const card = `
 
                     <div class="card" id="load-guide-filed-card">
-                   
                        <img src="data:image/**;base64,${item.profile_picture}" id="load-guide-image">
                         <p>Name: ${item.guide_name}</p>
                         <p>Address: ${item.address}</p>
@@ -202,11 +220,11 @@ $(document).ready(function() {
                         <p>Man Day Value: ${item.man_day_value}</p>
                         <p>Remark: ${item.remark}</p>
                         
-                        <img src="../../icon/garbage-bin_2450285.png" id="load-guide-delete-image" class="btn-delete">
+                        <img src="../../icon/garbage-bin_2450285.png" id="${item.guide_id}" class="btn-delete-guide">
                         <img src="../../icon/pencil.png" id="load-guide-update-image">
                     </div>
                 `;
-
+                console.log(item.guide_id)
                 $('#cardContainer').append(card);
             });
         },

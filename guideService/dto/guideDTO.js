@@ -1,7 +1,7 @@
 export class GuideDTO{
 
     constructor(guide_name,guide_address,age,contact_number,gender,experience,man_day_value,remark) {
-
+      this.guide_id=null;
       this.guide_name = guide_name;
       this.guide_address = guide_address;
       this.age = age;

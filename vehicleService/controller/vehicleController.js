@@ -176,7 +176,7 @@ $('#vehicleCardContainer').on("click", ".btn-delete", function (e) {
         },
 
         error: function (error) {
-            console.log("Failed to load image: " + error);
+            console.log("Failed to Delete: " + error);
         }
     });
     /*console.log(this.vehicle.vehicle_id)*/
@@ -329,10 +329,18 @@ $(document).ready(function () {
 
     // Add an event listener to the search button
     $('#search-btn').click(function () {
-        console.log("SEARCH")
+        console.log("SEARCH");
         const searchTerm = $('#search').val();
         filterAndShowCard(searchTerm);
+
+        // Calculate the new left position
+        const currentLeft = parseInt($('#search-btn').css('right'), 1);
+        const newLeft = currentLeft + ($(window).width() * 0.5);
+
+        // Apply the new left position
+        $('#search-btn').css('right', newLeft);
     });
+
 });
 
 
