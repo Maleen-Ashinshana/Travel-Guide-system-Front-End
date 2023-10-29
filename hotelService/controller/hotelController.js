@@ -3,6 +3,26 @@ import {HotelModel} from "../model/hotelModel.js";
 export class HotelController{
 
 }
+$('#hotelCardConteiner').on("click", ".btn-delete-hotel", function (e) {
+    const hotelId=e.target.id;
+    console.log(hotelId)
+    $.ajax({
+        type: "DELETE",
+        url: `http://localhost:8086/hotel/api/v1/hotel/${hotelId}`,
+        dataType: 'json',
+        success: ()=> {
+            /*this.getAllVehicles()
+            this.loadData()*/
+            console.log("DELETED")
+        },
+
+        error: function (error) {
+            console.log("Failed to Delete: " + error);
+        }
+    });
+
+
+})
 document.getElementById('btn-hotel-save').addEventListener('click',function (){
 
     const hotelName = $('#txt-hotel-name').val();
@@ -58,32 +78,38 @@ document.getElementById('btn-hotel-save').addEventListener('click',function (){
             console.error("No");
         }
 
-    })
-})
+    });
+});
+
 $(document).ready(function () {
     $.ajax({
         url: 'http://localhost:8086/hotel/api/v1/hotel',
         method: 'GET',
         dataType: 'json',
         success: function (data) {
+            console.log(data+"DATA")
             data.forEach(function (hotel) {
                 console.log(hotel)
                 console.log(hotel.imageDTOS.length !== 0 ? hotel.imageDTOS[0].hotel_images : null)
                 // Create a card for each hotel
                 const card = `
-                    <div class="hotel-card" id="load-hotel-filed-card">
-                        <img src="data:image/**;base64, ${hotel.imageDTOS.length !== 0 ? hotel.imageDTOS[0].hotel_images : null}" class="hotelImage" data-hotel-id="${hotel.hotel_id}">
-                        <p>Hotel Name: ${hotel.hotel_name}</p>
-                        <p>Hotel Category: ${hotel.hotel_category}</p>
-                        <p>Location: ${hotel.location}</p>
-                        <p>Email: ${hotel.email}</p>
-                        <p>Contact Number1: ${hotel.contact_number1}</p>
-                        <p>Contact Number2: ${hotel.contact_number2}</p>
-                        <p>Hotel Fee: ${hotel.hotel_fee}</p>
-                        <p>Remark: ${hotel.remark}</p>
+                    <div class="hotelCard" id="load-hotel-filed-card">
+                        <img src="data:image/!**;base64,${hotel.imageDTOS.length !== 0 ? hotel.imageDTOS[0].hotel_images : null}"   class="hotelImage" id="hotelImage">
+                        <p id="hotelName">${hotel.hotel_name}</p>
+                        <p id="hotelCategory">Hotel Category: ${hotel.hotel_category}</p>
+                        <p id="hotelLocation">Location: ${hotel.location}</p>
+                        <p id="hotelEmail">Email: ${hotel.email}</p>
+                        <p id="hotelContact1">Contact Number1: ${hotel.contact_number1}</p>
+                        <p id="hotelContact2">Contact Number2: ${hotel.contact_number2}</p>
+                        <p id="hotelFee">Hotel Fee: ${hotel.hotelFee}</p>
+                        <p id="hotelRemark">Remark: ${hotel.remark}</p>
+                        
+                        <button type="button" class="btn-delete-hotel" id="${hotel.hotel_id}">Delete</button>
+                        <button type="button" class="btn-update-hotel">Update</button>
                     </div>
                 `;
-                $('#hotelCardContainer').append(card);
+                console.log(hotel.hotel_id+"kakakaakakak")
+                $('#hotelCardConteiner').append(card);
 
                 $.ajax({
                     type: "GET",
@@ -107,7 +133,38 @@ $(document).ready(function () {
         }
     });
 });
+$(document).ready(function () {
+    // Function to filter and show only the selected vehicle card
+    function filterAndShowCard(searchTerm) {
+        const container = $('#hotelCardConteiner');
 
+        // Loop through the vehicle cards
+        $('.hotelCard').each(function () {
+            const card = $(this);
+            const hotelCa = card.find('p:contains("Hotel Category:")').text();
+            const hotelName = card.find('#hotelName').text();
+
+            // Check if the card's brand matches the search term
+            if (hotelName.toLowerCase().includes(searchTerm.toLowerCase()) || hotelCa.toLowerCase().includes(searchTerm.toLowerCase())) {
+                card.show();
+            } else {
+                card.hide();
+            }
+        });
+    }
+
+    // Initial loading of all vehicle cards
+    filterAndShowCard('');
+
+    // Add an event listener to the search button
+    $('#search-btn-hotel').click(function () {
+        console.log("SEARCH");
+        const searchTerm = $('#searchHotel').val();
+        filterAndShowCard(searchTerm);
+
+    });
+
+});
 /*$(document).ready(function () {
     $.ajax({
         url: 'http://localhost:8086/hotel/api/v1/hotel',

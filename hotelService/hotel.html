@@ -33,6 +33,12 @@
             </div>
         </div>
     </nav>
+    <div class="hotelCardConteiner"  id="hotelCardConteiner">
+        <img src="../icon/logout-64.png" class="exit" id="exitHotel">
+        <input type="text" class="search" id="searchHotel" placeholder="Search Hotel Name">
+        <img src="../icon/download%20(3).png" id="search-btn-hotel" >
+        <img src="../icon/add-64.png" class="btn-add-vehicle" id="btn-add-hotel-page">
+    </div>
     <!--<img src="icon/plus.png" id="btn-add-hotel-page">-->
     <div id="hotelOverLay" class="overlay">
         <img src="../icon/icons8-close-90.png" id="hotelNewPageCloseButton" >
@@ -100,13 +106,8 @@
         <button type="button " id="btn-hotel-save">Save</button>
 
     </div>
-    <div class="hotelCardConteiner">
-        <img src="../icon/logout-64.png" class="exit" id="exitHotel">
-        <input type="text" class="search" id="searchHotel" placeholder="Search Hotel Name">
-        <img src="../icon/download%20(3).png" id="search-btn-hotel" >
-        <img src="../icon/add-64.png" class="btn-add-vehicle" id="btn-add-hotel-page">
-    </div>
-    </div>
+
+
 
 </section>
 <script src="../assect/JQuary/jquery-3.6.4.min.js"></script>
@@ -121,15 +122,20 @@
     const VehicleOverlay = document.getElementById("hotelOverLay");
     const VehicleNewPage = document.getElementById("newHotelPage");
 
+    const card=document.getElementById("hotelCardConteiner");
+
 
     VehicleOpenButton.addEventListener("click", () => {
         VehicleOverlay.style.display = "block";
         VehicleNewPage.style.display = "block";
+        card.style.display="none";
+
     });
 
     VehicleCloseButton.addEventListener("click", () => {
         VehicleOverlay.style.display = "none";
         VehicleNewPage.style.display = "none";
+        card.style.display="block";
     });
 </script>
 </body>
