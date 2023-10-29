@@ -1,0 +1,596 @@
+.vehicle-section{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    /*border: 4px solid red;*/
+    position: absolute;
+    /*top: 100%;*/
+    /*display: none;*/
+}
+
+.navbar{
+    width: 100%;
+    height: 40px;
+
+}
+#logOut{
+    position: relative;
+    left: 33cm;
+}
+.container-fluid{
+    background:  black;
+
+}
+.nav-item a{
+    color: white;
+    position: relative;
+    left: 6%;
+    font-weight: initial;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.new-page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*  background-color: white;*/
+    /*padding: 20px;*/
+    /* border: 1px solid #ccc;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+    display: none;
+}
+#vehicleNewPageCloseButton{
+    background-color: transparent;
+    width: 30%;
+    position: relative;
+    left: 1%;
+    bottom: 300px;
+}
+.search{
+    width: 20%;
+    height: 4%;
+    border-radius: 50px;
+    position: absolute;
+    left: 65%;
+    top: 1%;
+    background: white;
+    border: 1px solid red ;
+
+}
+#search-btn{
+    background: aqua;
+    width: 25px;
+    position: relative;
+    right: 13%;
+    top: 1%;
+}
+#exit{
+    width: 1.5%;
+    position: absolute;
+    right: 2px;
+    top: 1%;
+
+}
+#add-vehicle-pane{
+    position: absolute;
+    right: 18px;
+    bottom: 10px;
+    width: 30px;
+    display: block;
+}
+/*#btn-add-vehicle-page{
+    width: 10%;
+    height: 45px;
+    position: absolute;
+    left: 85%;
+    top: 65px;
+    background: red;
+    border: 1px solid #007BFF;
+    border-radius: 10px;
+    box-shadow: 1px 1px;
+    color: white;
+    font-weight: bold;
+}*/
+#btn-delete {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    left: 55%;
+    top: 45%;
+}
+#btn-update{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    left: 60%;
+    top: 45%;
+}
+
+.vehicleCard{
+    float: left;
+    padding: 0 1.7rem;
+    width: 42%;
+    left: 5%;
+    /* top: -15%; */
+    height: 260px;
+    margin: 15px;
+    border: 1px solid black;
+    background: white;
+    position: relative;
+    top: 15%;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+}
+#load-vehicle-filed-card p{
+    /* position: relative;*/
+    /*top: -90%;
+    !*font-weight: bold;*!
+    left: 35%;*/
+}
+
+
+
+
+#brand{
+    font-size: 1.4em;
+    /* top: -5%; */
+    position: absolute;
+    top: 20px;
+    left: 58%;
+    font-weight: bold;
+}
+#category{
+    position: absolute;
+    left: 34%;
+    top: 25%;
+}
+#type{
+    position: absolute;
+    left: 78%;
+    top: 25%;
+}
+#fuel{
+    position: absolute;
+    left: 34%;
+    top: 40%;
+}
+#usage{
+    position: absolute;
+    left: 78%;
+    top: 40%;
+}
+#hy{
+    position: absolute;
+    left: 34%;
+    top: 55%;
+}
+#se{
+    position: absolute;
+    left: 78%;
+    top: 55%;
+}
+#ta{
+    position: absolute;
+    left: 34%;
+    top: 68%;
+}
+#re{
+    position: absolute;
+    left: 78%;
+    top: 68%;
+}
+#dn{
+    position: absolute;
+    left: 34%;
+    top: 80%;
+}
+#dc{
+    position: absolute;
+    left: 63%;
+    top: 80%;
+}
+
+/*#btn-delete-vehicle{
+    background: red;
+    position: relative;
+    top: 55%;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 10px;
+}*/
+#btn-update-guide{
+  /*  background: green;*/
+    position: relative;
+    top: 55%;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#load-vehicle-image{
+    /*border: 1px solid black;*/
+    width: 45%;
+    height: 20%;
+
+}
+.vehicleCardContainer{
+    width: 100%;
+    height: 100%;
+    background: white;
+    /*border: 1px solid red;*/
+
+}
+
+/*#load-vehicle-delete-image{
+    width: 6%;
+    height: 6%;
+    border-radius: 0px;
+    position: relative;
+    left: 95%;
+    !* bottom: 29%; *!
+    top: -30%;
+    border: 1px solid white;
+}*/
+#load-vehicle-update-image{
+    height: 6%;
+    width: 6%;
+    position: relative;
+    border-radius: 0px;
+    left: 88%;
+    top: -20%;
+    border: 1px solid white;
+}
+
+/*.vehicle-card{
+    border: 4px solid red;
+}*/
+/*#load-vehicle-image{
+    border: 1px solid blue;
+    width: 50%;
+}*/
+.vehicleCard img{
+    width: 205px;
+    height: 258px;
+    position: relative;
+    left: -5%;
+    top: 0%;
+    border-radius: 10px;
+}
+
+
+#btn-add-vehicle-page{
+    width: 2%;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+#vehicleNewPageCloseButton{
+    position: relative;
+    width: 2%;
+    left: 105%;
+    top: -10px;
+
+}
+.close-btn{
+    width: 40%;
+    position: relative;
+    left: 19cm;
+    top: -8cm;
+}
+.vehicleFiledSection{
+    background-color: white;
+    width: 1200px;
+    height: 650px;
+  /*  border: 1px solid blue;*/
+    position: relative;
+    top: -5px;
+}
+.vehicle-label{
+    font-weight: bold;
+    position: relative;
+    font-size: 1.2em;
+    left: 30%;
+}
+.form-group{
+    /*border: 1px solid green;*/
+    width: 30%;
+    height: 10%;
+    position: absolute;
+    left: 1%;
+}
+#vehicle-type {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 50%;
+}
+#from-vehicle-brand-group{
+    left: 36%;
+}
+#txt-vehicle-brand{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 4%;
+}
+#from-vehicle-category-group{
+    left: 69%;
+}
+#vehicle-category {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 4%;
+}
+#from-vehicle-fuelType-group{
+    top: 14%;
+}
+#vehicle-fuelType{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#from-vehicle-fuelUsage-group{
+    top: 14%;
+    left: 36%;
+}
+#txt-vehicle-fuelUsage{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#from-vehicle-HybridType-group{
+    top: 14%;
+    left: 69%;
+}
+#vehicle-hybridType{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#from-vehicle-seat-group{
+    top: 28%;
+}
+#txt-vehicle-seat{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#from-vehicle-tra-group{
+    top: 28%;
+    left: 36%;
+}
+#vehicle-transmission{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#from-vehicle-remark-group{
+    top: 28%;
+    left: 69%;
+}
+#txt-vehicle-remark{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#from-vehicle-driver-group{
+    top: 42%;
+
+}
+#txt-vehicle-driver{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#from-vehicle-driverContact-group{
+    top: 42%;
+    left: 36%;
+
+}
+#txt-vehicle-driverContact{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    top: 5%;
+}
+#imageForm{
+    position: relative;
+    top: 55%;
+    left: 10%;
+}
+#imageGallery{
+    /*border: 1px solid green;*/
+    position: relative;
+    top: 55%;
+}
+.image-preview {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    object-fit: cover;
+    /*border: 1px solid red;*/
+}
+/*.vehicle-label{
+    color: black;
+    font-size: 1em;
+    position: relative;
+   !* bottom: 117%;*!
+    !*width: 40px;*!
+}
+#from-vehicle-brand-group{
+    position: relative;
+    top: -5%;
+    left: 35%;
+}
+#from-vehicle-category-group{
+    position: relative;
+    left: 69%;
+    top: -15%;
+}
+#from-vehicle-fuelType-group{
+    position: relative;
+    top:-10%
+}
+#from-vehicle-fuelUsage-group{
+    position: relative;
+    left: 35%;
+    top: -20%;
+}
+#from-vehicle-HybridType-group{
+    position: relative;
+    left: 69%;
+    top: -30%;
+}
+#from-vehicle-seat-group{
+    position: relative;
+    top: -25%;
+}
+#from-vehicle-transmission-group{
+    position: relative;
+    top: -35%;
+    left: 35%;
+}
+#from-vehicle-remark-group{
+    position: relative;
+    left: 69%;
+    top: -45%;
+}
+#txt-vehicle-remark{
+    height: 55%;
+}
+#from-vehicle-driver-group{
+    position: relative;
+    border: 1px solid red;
+    top: 10%;
+    width: 20%;
+}
+#from-vehicle-driverContact-group{
+    position: relative;
+    top: -50%;
+    left: 35%;
+    border: 1px solid red;
+    width: 20%;
+
+}
+!*#imageForm{
+    border: 1px solid black;
+    position: relative;
+    top: -40%;
+    height: 20%;
+}*!
+#imageForm{
+    position: relative;
+    top: 32%;
+    height: 5%;
+    border: 1px solid rebeccapurple;
+}
+#imageGallery {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid green;
+    position: absolute;
+    !*top: -18%;*!
+    top: 70%;
+
+}
+
+.image-preview {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    object-fit: cover;
+    !*border: 1px solid red;*!
+    !*position: relative;
+    top: 100px;*!
+    !*border: 1px solid red;
+    width: 110px;
+    top: -100%;*!
+
+}
+#fileInput{
+    !*border: 1px solid green;*!
+    width: 20%;
+    height: 40px;
+    position: relative;
+    left: -40%;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    !* position: absolute;*!
+}
+!*#vehicle-Image{
+    background: #a39b9b;
+    margin: 5px;
+    top: -23%;
+    width: 40%;
+    left: 30%;
+    border-radius: 10px;
+    height: 30px;
+}
+#vehicleImagePreview{
+    border: 1px solid red;
+    width: 110px;
+    top: -18%;
+}
+#from-vehicle-image-group2{
+    border: 1px solid black;
+    position: relative;
+    top: -60%;
+    height: 20%;
+    left: 40%;
+}
+#vehicle-Image2{
+    background: #a39b9b;
+    margin: 5px;
+    top: -23%;
+    width: 40%;
+    left: 30%;
+    border-radius: 10px;
+    height: 30px;
+}*!
+#vehicleImagePreview2{
+    border: 1px solid red;
+    width: 110px;
+    top: -18%;
+}*/
+#btn-vehicle-save{
+    width: 10%;
+    height: 5%;
+    background: #007BFF;
+    /* background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%); */
+    position: relative;
+    top: 60%;
+    left: 47%;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.delete-vehicle{
+    font-size: 0.8em;
+    border-radius: 0px;
+    position: relative;
+    left: 30%;
+    top: 45%;
+    width: 15%;
+    height: 9%;
+    justify-content: center;
+    text-align: center;
+}

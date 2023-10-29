@@ -1,3 +1,5 @@
+
+
 const openButton=document.getElementById("btn-add-guider-page")
 const vehiclePaneOpenButton=document.getElementById("add-vehicle-pane")
 /*const guideUpdateOpenButton=document.getElementById("btn-guide-pane")*/
@@ -35,14 +37,14 @@ closeButton.addEventListener("click", () => {
 });
 
 /*Vehicle*/
-vehiclePaneOpenButton.addEventListener("click", () => {
+/*vehiclePaneOpenButton.addEventListener("click", () => {
     vehicleOverlay.style.display = "block";
     newVehiclePage.style.display = "block";
 });
 vehicleNewPageCloseButton.addEventListener("click", () => {
     vehicleOverlay.style.display = "none";
     newVehiclePage.style.display = "none";
-});
+});*/
 
 /*hotelOverlay.style.display = "none";*/
 /*Hotel*/

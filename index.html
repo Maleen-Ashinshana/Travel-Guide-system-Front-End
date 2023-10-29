@@ -372,7 +372,6 @@
         <input type="text" class="search" id="search" placeholder="Search Vehicle Name">
         <img src="icon/download%20(3).png" id="search-btn" >
         <img src="icon/add-64.png" class="btn-add-vehicle" id="add-vehicle-pane">
-
         <!--id="btn-add-vehicle-page"-->
        <!-- <button type="button" class="btn-add-vehicle" id="btn-add-vehicle-page" >&lt;!&ndash;Add Vehicle&ndash;&gt;</button>-->
     </div>
@@ -609,44 +608,16 @@
 <script type="module" src="UserService/controller/userController.js"></script>
 <script type="module" src="vehicleService/model/vehicleModel.js"></script>
 <script type="module" src="vehicleService/model/vehicleImageModel.js"></script>
-<script type="module" src="vehicleService/controller/vehicleController.js"></script>
+<!--<script type="module" src="vehicleService/controller/vehicleController.js"></script>-->
 <script type="module" src="hotelService/model/hotelModel.js"></script>
 <script type="module" src="hotelService/model/hotelImageModel.js"></script>
 <script type="module" src="hotelService/controller/hotelController.js"></script>
 <script type="module" src="Js/image.js"></script>
 <script type="module" src="Js/hotelImages.js"></script>
 <script>
-    /*HotelOverlay.style.display = "block";*/
-    function previewImage(input, previewId) {
-        const preview = document.getElementById(previewId);
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                preview.src = e.target.result;
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    document.getElementById('profilePicture').addEventListener('change', function() {
-        previewImage(this, 'profilePicturePreview');
-    });
-
-    document.getElementById('idImage').addEventListener('change', function() {
-        previewImage(this, 'idImagePreview');
-    });
-
-    document.getElementById('nicImage').addEventListener('change', function() {
-        previewImage(this, 'nicImagePreview');
-    });
-
-    document.getElementById('applicationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Handle form submission here
-        // You can use JavaScript or a backend script to handle form data
-    });
 
 </script>
+<!--<script  src="./main.js" type="module"></script>-->
 <script> function previewImage(input, previewId) {
     const preview = document.getElementById(previewId);
     if (input.files && input.files[0]) {

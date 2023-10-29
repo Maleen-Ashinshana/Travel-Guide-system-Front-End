@@ -1614,9 +1614,9 @@ p {
     background: white;
 }
 #search-btn{
-    /*background: aqua;*/
+    background: aqua;
     width: 25px;
-    position: absolute;
+    position: relative;
     right: 13%;
     top: 1%;
 }
@@ -1625,14 +1625,16 @@ p {
     position: absolute;
     right: 2px;
     top: 1%;
+
 }
 #add-vehicle-pane{
     position: absolute;
     right: 18px;
     bottom: 10px;
     width: 30px;
+    display: block;
 }
-#btn-add-vehicle-page{
+/*#btn-add-vehicle-page{
     width: 10%;
     height: 45px;
     position: absolute;
@@ -1644,8 +1646,8 @@ p {
     box-shadow: 1px 1px;
     color: white;
     font-weight: bold;
-}
-#btn-delete {
+}*/
+.btn-delete {
     width: 18px;
     height: 18px;
     position: relative;
@@ -1744,14 +1746,14 @@ p {
     top: 80%;
 }
 
-#btn-delete-vehicle{
+/*#btn-delete-vehicle{
     background: red;
     position: relative;
     top: 55%;
     border: 1px solid white;
     border-radius: 5px;
     margin: 10px;
-}
+}*/
 #btn-update-guide{
     background: green;
     position: relative;
@@ -1772,18 +1774,19 @@ p {
     height: 100%;
     background: white;
     border: 1px solid red;
+
 }
 
-#load-vehicle-delete-image{
+/*#load-vehicle-delete-image{
     width: 6%;
     height: 6%;
     border-radius: 0px;
     position: relative;
     left: 95%;
-    /* bottom: 29%; */
+    !* bottom: 29%; *!
     top: -30%;
     border: 1px solid white;
-}
+}*/
 #load-vehicle-update-image{
     height: 6%;
     width: 6%;
@@ -1801,7 +1804,7 @@ p {
     border: 1px solid blue;
     width: 50%;
 }*/
-.vehicleCard img{
+#vehicleImage{
     width: 205px;
     height: 258px;
     position: relative;
@@ -1811,12 +1814,12 @@ p {
 }
 
 
-/*#btn-add-vehicle-page{
+#btn-add-vehicle-page{
     width: 2%;
     position: absolute;
     right: 10px;
     bottom: 10px;
-}*/
+}
 #vehicleNewPageCloseButton{
     position: relative;
     width: 2%;
@@ -1990,7 +1993,17 @@ p {
     border-radius: 20px;
     font-weight: bold;
 }
-
+.delete-vehicle{
+    font-size: 0.8em;
+    border-radius: 0px;
+    position: relative;
+    left: 30%;
+    top: 45%;
+    width: 15%;
+    height: 9%;
+    justify-content: center;
+    text-align: center;
+}
 /*
 #btn-save-vehicle{
     width: 10%;
@@ -2014,7 +2027,7 @@ p {
     height: 100%;
     position: absolute;
     top: 200%;
-    /*display: none;*/
+    display: none;
     background: white;
 }
 #btn-add-hotel1-page{
