@@ -1,0 +1,128 @@
+.navbar{
+    width: 100%;
+    height: 1.1cm;
+    position: absolute;
+
+    /*border: 1px solid red;*/
+}
+.container-fluid{
+    background-color: black;
+    position: relative;
+    top: -5%;
+    height: fit-content;
+}
+#add-area-pane{
+    width: 2%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+.exit{
+    /*border: 1px solid red;*/
+    position: absolute;
+    right: 10px;
+    width: 2%;
+    top: 4px;
+}
+#search-btn{
+    /*border: 1px solid red;*/
+    width: 2%;
+    position: absolute;
+    right: 120px;
+    top: 4px;
+}
+#search{
+    /*border: 1px solid red;*/
+    position: absolute;
+    right: 160px;
+    width: 20%;
+    top: 5px;
+    border-radius: 50px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+#newAreaPage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+      background-color: white;
+    /*padding: 20px;*/
+    /* border: 1px solid #ccc;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+    display: none;
+  /*  border: 4px solid red;*/
+    width: 60%;
+    height: 55%;
+    border-radius: 20px;
+
+}
+#vehicleNewPageCloseButton{
+    background-color: transparent;
+    /*border: 4px solid blue;*/
+    width: 4%;
+    position: relative;
+    left: 30cm;
+    bottom: 120px;
+}
+#from-area-group{
+    position: relative;
+    left: 3%;
+  /*  border: 1px solid  red;*/
+    width: 45%;
+}
+#area-label{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#txt-area{
+    width: 65%;
+    height: 1cm;
+}
+#imageForm{
+ /*   border: 1px solid red;*/
+    width: 300px;
+    position: relative;
+    top: 8%;
+    left: 3%;
+}
+#imageGallery{
+   /* border: 1px solid green;*/
+    position: relative;
+    top: 12%;
+}
+.image-preview {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    object-fit: cover;
+    /*border: 1px solid red;*/
+}
+.btn-save{
+    background-color: #007BFF;
+    border: 1px solid #007BFF;
+    width: 10%;
+    height: 8%;
+    position: absolute;
+    left: 48%;
+    top: 90%;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+}
+.areaCard{
+    border: 1px solid blue;
+    width: 31%;
+    height: 8cm;
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+}

@@ -32,10 +32,15 @@
     top: 30%;
 }
 .form-group{
-   /* border: 1px solid black;*/
+    /*border: 1px solid black;*/
     width: 20%;
     height: 20%;
 }
+#package-type{
+    width: 50%;
+    height: 0.9cm;
+}
+
 /*
 .travelCetagory p{
     font-weight: bold;
