@@ -118,11 +118,51 @@
     border-radius: 50px;
 }
 .areaCard{
-    border: 1px solid blue;
-    width: 31%;
+    border: 1px solid black;
+    width: 23%;
     height: 8cm;
     position: relative;
     display: inline-block;
     margin-left: 20px;
     margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    background: white;
+}
+.areaImage{
+    width: 50%;
+    height: 50%;
+    border: 1px solid red;
+    position: relative;
+    left: 22%;
+    top: 3%;
+    border-radius: 5px;
+}
+.areaCard p{
+    position: relative;
+    left: 10%;
+    top: 8%;
+    margin: unset;
+    font-weight: bold;
+}
+.btn-delete{
+    background-color: red;
+    font-size: 0.8em;
+    border: 1px solid red;
+    border-radius: 40px;
+    color: white;
+    position: relative;
+    left: 65%;
+    top: 20%;
+}
+.btn-update{
+    background-color: slategrey;
+    font-size: 0.8em;
+    border: 1px solid slategrey;
+    border-radius: 40px;
+    color: white;
+    position: relative;
+    left: 65%;
+    top: 20%;
+
 }
