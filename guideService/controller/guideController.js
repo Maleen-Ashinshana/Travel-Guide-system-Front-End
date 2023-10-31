@@ -221,7 +221,7 @@ $(document).ready(function() {
                         <p>Remark: ${item.remark}</p>
                         
                         <img src="../../icon/garbage-bin_2450285.png" id="${item.guide_id}" class="btn-delete-guide">
-                        <img src="../../icon/pencil.png" id="load-guide-update-image">
+                        <img src="../../icon/pencil.png" id="load-guide-update-image" class="btn-update-guide">
                     </div>
                 `;
                 console.log(item.guide_id)

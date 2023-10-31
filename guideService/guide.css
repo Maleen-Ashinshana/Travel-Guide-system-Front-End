@@ -1,0 +1,1101 @@
+.navbar-expand-lg{
+    width: 100%;
+    height: 1cm;
+    /*border: 1px solid red;*/
+}
+.container-fluid{
+    background-color: black;
+}
+.btn-add-vehicle{
+   /* border: 1px solid red;*/
+   width: 2%;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.exit{
+/*    border: 1px solid red;*/
+    width: 2%;
+    position: absolute;
+    right: 0.9%;
+    top: 0%;
+}
+.search{
+    /*border: 1px solid red;*/
+    position: absolute;
+    right: 120px;
+    width: 300px;
+    top: 5px;
+    border-radius: 50px;
+}
+#search-btn-guide{
+    /*border: 1px solid red;*/
+    position: absolute;
+    width: 2%;
+    right: 85px;
+    top: 4px;
+}
+#newPage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    /*padding: 20px;*/
+    /* border: 1px solid #ccc;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+    display: none;
+    /*  border: 4px solid red;*/
+    width: 70%;
+    height: 80%;
+    border-radius: 20px;
+
+}
+#closeButton{
+    background-color: transparent;
+    /*border: 4px solid blue;*/
+    width: 4%;
+    position: relative;
+    left: 30cm;
+    bottom: 10px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.form-group{
+    position: relative;
+    top: -1cm;
+    display: inline-block;
+   /* border: 1px solid red;*/
+    width: 31%;
+    height: 1.5cm;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.guide-lable{
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+    left: 40%;
+}
+.form-group input[type="text"],.form-group label[for="idImage"],
+.form-group label[for="nicImage"]{
+    width: 100%;
+    height: 1cm;
+}
+.form-group label[for="profilePicture"],
+.form-group label[for="idImage"],
+.form-group label[for="nicImage"]{
+    /*border: 1px solid green;*/
+    border-radius: 50px;
+}
+#guid-remark-lable{
+    position: relative;
+    top: 0cm;
+}
+#remarks{
+    width: 100%;
+    height: 1cm;
+}
+#from-group5{
+    position: relative;
+    top: -1cm;
+}
+#gender{
+    width: 100%;
+    height: 1cm;
+}
+#from-group7{
+    top: -0.7cm;
+    width: 64%;
+}
+.img{
+    width: 31%;
+    height: 5cm;
+}
+#guid-nicImage-lable ,#guid-idImage-lable,#guid-image-lable{
+    width: 70%;
+    left: 20%;
+    background-color: #dfdfdf;
+    text-align: center;
+    justify-content: center;
+    font-weight: initial;
+    border-radius:10px ;
+}
+#from-group9,#from-group10{
+    top: -0.8cm;
+}
+
+
+.form-group input[type="file"] {
+    display: none;
+}
+.gImage{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 20%;
+    top: -0.5cm;
+}
+#btn-save-guide{
+    background-color: #007BFF;
+    border: 1px solid #007BFF;
+    border-radius: 20px;
+    width: 10%;
+    height: 0.8cm;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 48%;
+    top: 15cm;
+}
+#cardContainer{
+    width: 100%;
+    height: 99vh;
+    /*border: 1px solid red;*/
+}
+#load-guide-filed-card{
+    width: 23%;
+    height: 9cm;
+    border: 1px solid black;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+}
+#load-guide-image{
+    width: 40%;
+    height:4cm;
+    position: relative;
+    left: 30%;
+    top: 10px;
+    border-radius: 10px;
+}
+.card p{
+    font-weight: bold;
+    margin: unset;
+    position: relative;
+    top: 5%;
+    left: 10px;
+}
+.btn-delete-guide,.btn-update-guide{
+    width: 5%;
+    position: relative;
+    left: 80%;
+    margin-left: 10px;
+    top: -20px;
+}
+/*
+.guide-admin-page{
+    !* border: 4px solid black;*!
+    width: 100%;
+    height: 755px;
+    position: absolute;
+    top: 100%;
+    background: white;
+    !*display: none;*!
+}
+
+!*Guide Search*!
+.search-div{
+    border: 1px solid white;
+    width: 50%;
+    height: 7%;
+    position: relative;
+    left: 25%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    border-radius: 10px;
+}
+.search-input {
+    !*border: 1px solid purple;*!
+    width: 80%;
+    height: 75%;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    top: -26%;
+    left: -8%;
+
+}
+.btn-search{
+    position: relative;
+    left: 84%;
+    bottom: 133%;
+    width: 15%;
+    height: 67%;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    border-radius: 10px;
+    color: white;
+    font-style: oblique;
+    font-weight: bolder;
+    border: 1px solid white;
+}
+#guide-admin-label{
+    color: black;
+}
+
+
+#guide-search-form {
+    position: relative;
+    !* position: relative;
+     top: 50%;*!
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 30%;
+    height: 45px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid black;
+    padding: 5px;
+    !*border: 1px solid #0a53be;*!
+    top: 5%;
+}
+
+#search-guide-input {
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    width: 100%;
+    height: 38.5px;
+    line-height: 30px;
+    outline: 0px;
+    border: 0px;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+#guide-search-form:hover,
+#guide-search-form:valid {
+    width: 40%;
+    cursor: pointer;
+}
+
+#guide-search-form:hover input,
+#guide-search-form:valid input {
+    display: block;
+}
+
+#guide-search-form:hover .fa,
+#guide-search-form:valid .fa {
+    background: #07051a;
+    color: white;
+    position: relative;
+    left: 93%;
+    top: -13%;
+}
+
+a {
+    display: none;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+#guide-search-form:valid a {
+    display: block;
+}
+
+
+
+
+!*Guide login Css*!
+
+
+.card {
+    float: left;
+    padding: 0 1.7rem;
+    width: 25%;
+    height: 10px;
+    left: 8%;
+    top: 13%;
+    !*  border: 1px solid red;*!
+}
+!*#load-guide-image{
+    width: 50px;
+    height: ;
+}*!
+#load-guide-filed-card{
+    width: 20%;
+    height: 40%;
+    top: 5%;
+    background: white;
+    box-shadow: 5px 5px;
+    border: 1px solid black;
+    text-align: justify;
+    border-radius:10px ;
+    left: 7%;
+    !*background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);*!
+    !*  color: white;*!
+    !*filter: blur(1px);*!
+
+}
+#btn-add-guider-page{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    width: 2%;
+}
+#search-btn-guide{
+    !*border: 1px solid red;*!
+    width: 2%;
+    position: absolute;
+    right: 13%;
+    top: 1%;
+}
+#exitGuide{
+    position: absolute;
+    !*  border: 1px solid red;*!
+    right: 1%;
+    width: 2%;
+    top: 1%;
+}
+#load-guide-filed-card p{
+
+    position: relative;
+    left: 0%;
+    top: 5%;
+    font-weight: bold;
+    !* color: white; *!
+}
+#load-guide-image,#load-guide-nic-image,#load-guide-id-image{
+    !* border: 1px solid blue;*!
+    width: 50%;
+    height: 35%;
+    position: relative;
+    left: 25%;
+    top: 3%;
+    border-radius: 10px;
+}
+.btn-delete-guide{
+    width: 8%;
+    position: absolute;
+    left: 90%;
+    top: 60%;
+
+}
+#load-guide-update-image{
+    width: 5%;
+    position: absolute;
+    left: 90%;
+    top: 60%;
+
+}
+#load-guide-update-image{
+    top: 90%;
+}
+
+.card .menu-content {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.card .menu-content::before, .card .menu-content::after {
+    content: "";
+    display: table;
+}
+.card .menu-content::after {
+    clear: both;
+}
+.card .menu-content li {
+    display: inline-block;
+}
+.card .menu-content a {
+    color: #fff;
+}
+.card .menu-content span {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: "Open Sans";
+    transform: translate(-50%, 0);
+}
+.card .wrapper {
+    background-color: #fff;
+    min-height: 332px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+    width: 136%;
+    left: -27px;
+}
+.card .wrapper:hover .data {
+    transform: translateY(0);
+}
+.card .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform 0.3s;
+}
+.card .data .content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+    left: 0%;
+    height: 145px;
+    width: 100%;
+    bottom: 2px;
+}
+.card .author {
+    font-size: 12px;
+}
+.card .title {
+    margin-top: 10px;
+}
+.card .text {
+    height: 120px;
+    margin: 0;
+}
+.card input[type=checkbox] {
+    display: none;
+}
+.card input[type=checkbox]:checked + .menu-content {
+    transform: translateY(-60px);
+}
+
+.example-1 .date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #77d7b9;
+    color: #fff;
+    padding: 0.8em;
+}
+.example-1 .date span {
+    display: block;
+    text-align: center;
+}
+.example-1 .content {
+    background-color: #fff;
+    box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+}
+.example-1 .title a {
+    color: gray;
+}
+.example-1 .menu-button {
+    position: absolute;
+    z-index: 999;
+    top: -30px;
+    right: -20px;
+    width: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+!*.example-1 .menu-button span {
+width: 5px;
+height: 5px;
+background-color: gray;
+color: gray;
+position: relative;
+top: -73px;
+display: inline-block;
+border-radius: 50%;
+left: 53px;
+}*!
+#guide-pic{
+    !*    border: 1px solid red;*!
+    width: 40%;
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    height: 40%;
+}
+
+#guide-img-span{
+    font-size: 0.5em;
+}
+
+#guide-output{
+    border: 1px solid black;
+    width: 90%;
+    left: 8px;
+    height: 90%;
+}
+!*#guide-pic{
+    color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    !*position: relative;*!
+    transition: all 0.3s ease;
+    !*border: 1px solid red;*!
+    position: absolute;
+    left: 25%;
+    top: 0%;
+    width: 10%;
+    height: 40%;
+}*!
+#guide-pic:hover .-label {
+    display: none;
+    !* display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: rgba(0, 0, 0, 0.8);
+     z-index: 10000;
+     color: #fafafa;
+  !*   border: 4px solid red;*!
+     transition: background-color 0.2s ease-in-out;
+     border-radius: 100px;
+     margin-bottom: 0;
+
+     position: absolute;
+     width: 90%;
+     height: 90%;
+
+     !*left: 10%;*!
+     top: -40%;*!
+}
+!*.example-1 .menu-button span::after, .example-1 .menu-button span::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: currentColor;
+    position: absolute;
+    border-radius: 50%;
+}
+.example-1 .menu-button span::before {
+    left: -10px;
+}
+.example-1 .menu-button span::after {
+    right: -10px;
+}*!
+#delete-icon{
+    width: 10%;
+    position: relative;
+    left: 0%;
+    top: 100%;
+}
+#delete-icon1{
+    width: 10%;
+    position: relative;
+    left: 20%;
+    top: -43%;
+}
+.example-1 .menu-content {
+
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    transition: transform 0.3s;
+    transform: translateY(0);
+}
+.example-1 .menu-content li {
+    width: 100%;
+    float: left;
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    height: 40px;
+    !* height: 31%; *!
+    position: relative;
+    !* top: -21%; *!
+    bottom: -19px;
+}
+.example-1 .menu-content a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+.example-1 .menu-content span {
+    top: -10px;
+}
+
+.pencile{
+    width: 5%;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.btn-delete-guide{
+
+    width: 8%;
+    position: relative;
+    !*right: -35%*!;
+    left: 98%;
+    top: -12%;
+    display: inline-block;
+}
+
+.guide-lebles{
+    !* border: 1px solid red;*!
+    color: black;
+    font-size: 0.8em;
+    position: relative;
+    top: 75px;
+    margin-top: -78px;
+    width: 30%;
+    left: -25%;
+    !* width: 10%;
+    !*width: 10%;*!
+}
+!*#guide-adrress{
+    position: relative;
+    top: -45px;
+}
+#guide-address-lable{
+    position: relative;
+    top: -63px;
+}
+#guide-age{
+    position: relative;
+    top: -63px;
+}
+#guide-age-lable{
+    position: relative;
+    top: -80px;
+}
+#guide-gender{
+    position: relative;
+    top: -78px;
+}
+#guide-gender-lable{
+    position: relative;
+    top: -97px;
+}*!
+
+!*#guide-email{
+    position: relative;
+    top: -95px;
+}
+#guide-email-lable{
+    position: relative;
+    top: -115px;
+}*!
+!*#guide-contact{
+    position: relative;
+    top: -95px;
+}
+#guide-contact-lable{
+    position: relative;
+    top: -115px;
+}*!
+.guide-lables-filed{
+    !* border: 1px solid blue;*!
+    color: #6a1a21;
+    font-size: 0.8em;
+    margin: 0;
+    !* left: -66px; *!
+    width: 90px;
+    position: relative;
+    top: -5%;
+    left: 25%;
+}
+!*#btn-add-guider-page{
+    width: 2%;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+}*!
+!*open blurre page*!
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.new-page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    !*  background-color: white;*!
+    !*padding: 20px;*!
+    !* border: 1px solid #ccc;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*!
+    display: none;
+}
+#closeButton{
+    background-color: transparent;
+    width: 30%;
+    position: relative;
+    left: 800%;
+    bottom: 300px;
+}
+#update-guide-filed{
+    width: 1300px;
+    height: 700px;
+    background-color: white;
+    position: absolute;
+    left: -600px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 20px;
+}
+
+#cardContainer{
+    !* border: 1px solid red;*!
+    width: 100%;
+    height: 100%;
+
+}
+.card{
+    float: left;
+    padding: 0 1.7rem;
+    width: 23%;
+    left: 2%;
+    top: 13%;
+    height: 250px;
+    margin: 10px;
+}
+
+
+#guide-lable{
+    position: relative;
+    left: 48%;
+    font-family: monospace;
+}
+
+#applicationForm{
+    !*    border: 1px solid red;
+        width: 50%;
+        height: 50%;*!
+}
+!*#from-group\ from1{
+    !*border: 1px solid red;*!
+    width: 30%;
+    height: 10%;
+    position: relative;
+    top: 10%;
+    left: 5%;
+}
+#from-group\ from2{
+    border: 1px solid red;
+}*!
+.form-group{
+    border: 1px solid white;
+    width: 30%;
+    height: 10%;
+    position: relative;
+    top: 5%;
+    left: 1%;
+}
+
+!*.form-group label {
+    display: block;
+    font-weight: bold;
+}*!
+.guide-lable{
+    color: black;
+    font-size: 1em;
+    position: relative;
+    bottom: 117%;
+}
+#from-group\ from2{
+    position: relative;
+    left: 35%;
+    top: -5%;
+}
+#from-group\ from3{
+    position: relative;
+    left: 68%;
+    top: -15%;
+}
+#from-group\ from4{
+    position: relative;
+    top: -10%;
+}
+#from-group\ from5{
+    position: relative;
+    top: -20%;
+    left: 35%;
+}
+#from-group\ from6{
+    position: relative;
+    left: 68%;
+    top: -30%;
+}
+#from-group\ from7{
+    position: relative;
+    left: 35%;
+    top: -30%;
+}
+#from-group\ from8{
+    position: relative;
+    top: -15%;
+    height: 20%;
+}
+#from-group\ from9{
+    position: relative;
+    top: -35%;
+    left: 35%;
+    height: 20%;
+}
+#from-group\ from10{
+    position: relative;
+    top: -55%;
+    left: 68%;
+    height: 20%;
+}
+#from-group\ fromValue{
+    position: relative;
+    top: -20%;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    position: relative;
+    !* top: 15px; *!
+    bottom: 127px;
+    left: 0px;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 35px;
+    !* padding: 10px; *!
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+}
+.form-group textarea {
+    height: 100px;
+}
+
+.form-group .form-group {
+    margin: 0 0 10px;
+}
+
+.form-group input[type="file"] {
+    display: none;
+}
+.form-group label[for="profilePicture"],
+.form-group label[for="idImage"],
+.form-group label[for="nicImage"] {
+    !*background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);*!
+    background-color: #a39b9b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    left: 5%;
+}
+.form-group label[for="profilePicture"],
+.form-group label[for="idImage"],
+.form-group label[for="nicImage"] {
+    !* background-color: #007BFF;*!
+    !* background-color: #007BFF; *!
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    bottom: 100px;
+    width: 55%;
+    height: 35%;
+}
+
+
+!*.form-group label[for="profilePicture"]:hover,
+.form-group label[for="idImage"]:hover,
+.form-group label[for="nicImage"]:hover {
+    background-color: #0056b3;
+
+}*!
+
+.form-group img {
+    !*   border: 1px solid blue;*!
+    !*max-width: 100px;
+    margin-top: 10px;*!
+    !* width: 100px;
+     height: 100px;*!
+    max-width: 120px;
+    position: relative;
+    top: -108%;
+    left: 33%;
+}
+!*#btn-save-guide {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}*!
+!*#name{
+    !* color: black; *!
+    border: 1px solid black;
+    width: 100%;
+    height: 55%;
+    position: relative;
+    bottom: 180%;
+    background: white;
+}*!
+!*.guide-input-container{*!
+!*    border: 1px solid red;*!
+!*    width: 50%;*!
+!*    height: 40px;*!
+!*    position: absolute;*!
+!*    top: 45%;*!
+!*    left: 10%;*!
+!*color: black;*!
+
+!*!*    border: 1px solid white;*!
+!*    width: 80%;*!
+!*    height: 90%;*!
+!*    position: relative;*!
+!*    left: 10%;*!
+!*    top: 5%;*!
+!*    box-shadow: black;*!*!
+.guide-input-container{
+    !*border: 1px solid blue;*!
+    position: relative;
+    !* margin-bottom: 25px; *!
+    top: 30%;
+    width: 50%;
+    height: 50px;
+    bottom: -10px;
+    left: 2%;
+    margin-top: 20px;
+
+    !* border-bottom: 1px solid #555;
+     background: transparent;
+     width: 70%;
+     height: 45px;
+     padding: 8px 0 5px 0;
+     font-size: 14px;
+     !* color: red; *!
+     position: absolute;
+     left: 13%;
+     top: -50%;*!
+}
+.guide-input-container label{
+    position:absolute;
+    top: -43px;
+    left: -50px;
+    font-size:14px;
+    color:black;
+    pointer-event:none;
+    transition: all 0.5s ease-in-out;
+}
+.guide-input-container input{
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    height: 45px;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    !* color: red; *!
+    position: absolute;
+    !* left: 15%;*!
+    top: -50%;
+}
+.guide-input-container input:focus{
+    border:none;
+    outline:none;
+    border-bottom:1px solid #AABBE7 ;
+}
+.guide-input-container input:focus ~ label,
+.guide-input-container input:valid ~ label{
+    top:-70px;
+    font-size:10px;
+    left:  -50px;;
+}
+#btn-save-guide{
+    background: linear-gradient(to right top, #7A7A98 30%, #AABBE7 70%);
+    width: 13%;
+    height: 6%;
+    position: absolute;
+    left: 43%;
+    bottom: 1%;
+    border-radius: 35px;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+#choose-guide-pic{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #dfdfdf;
+    position: relative;
+    left: 65%;
+    bottom: 300px;
+}
+#btn-choose-guide{
+    width: 17.5%;
+    height: 5%;
+    position: relative;
+    bottom: 320px;
+    left: 28%;
+    background: white;
+}
+
+.data-container{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: gray;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    top: 10%;
+}
+h2 {
+    margin: 0 0 20px;
+}
+
+p {
+    margin: 0;
+}*/

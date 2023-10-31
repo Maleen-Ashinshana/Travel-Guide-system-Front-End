@@ -1,6 +1,6 @@
-import {VehicleController} from "./vehicleService/controller/vehicleController.js";
+/*import {VehicleController} from "./vehicleService/controller/vehicleController.js";
 
-new VehicleController()
+new VehicleController()*/
 function previewImage(input, previewId) {
     const preview = document.getElementById(previewId);
     if (input.files && input.files[0]) {
