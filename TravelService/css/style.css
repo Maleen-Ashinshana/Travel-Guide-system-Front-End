@@ -19,26 +19,64 @@
     height: 20%;
     border: 1px solid black;
     position: absolute;
-    left: 5%;
+    left: 2%;
     top: 10%;
     font-weight: bold;
 }
 .travelCetagory{
     border: 1px solid;
-    width: 90%;
-    height: 40%;
+    width: 96%;
+    height: 100%;
     position: absolute;
-    left: 5%;
+    left: 2%;
     top: 30%;
 }
 .form-group{
-    /*border: 1px solid black;*/
-    width: 20%;
-    height: 20%;
+    border: 1px solid black;
+    width: 25%;
+    height: 5%;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 #package-type{
     width: 50%;
     height: 0.9cm;
+}
+#from-area-package{
+    border: 1px solid red;
+    width: 20%;
+    position: relative;
+    top:3%
+}
+#area-type{
+    width: 60%;
+}
+#calendar{
+    position: absolute;
+    left: 37%;
+    top: 0%;
+}
+#start-date{
+    position: absolute;
+    left: 27%;
+    top: 0;
+}
+#end-date{
+    position: absolute;
+    left: 53%;
+    top: 0;
+}
+#calendar-end{
+   position: absolute;
+    left: 63%;
+    top: 0;
+}
+#map {
+    border: 1px solid red;
+    height: 385px;
+    width: 100%;
+    position: absolute;
+    top: 15%;
 }
 
 /*

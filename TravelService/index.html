@@ -48,8 +48,44 @@
         <option value="Super">Super Luxury</option>
       </select>
     </div>
+
+    <div class="form-group" id="from-area-package">
+      <label for="area-type" class="area-label">Travel Area:</label>
+      <select id="area-type" name="area-type" required >
+        <option value="">Select Area</option>
+      </select>
+    </div>
+      <label id="start-date">Travel Start Date :</label>
+      <input type="date" id="calendar">
+
+      <label id="end-date">Travel End Date :</label>
+      <input type="date" id="calendar-end">
+
+    <div id="map"></div>
+
   </div>
 </section>
+<script src="../assect/JQuary/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!--<script type="module" src="../TravelArea/model/AreaModel.js"></script>
+<script type="module" src="../TravelArea/model/AreaImageModel.js"></script>
+<script type="module" src="../TravelArea/controller/AreaController.js"></script>-->
+<script type="module" src="model/TravelModel.js"></script>
+<script type="module" src="controller/TravelController.js"></script>
+<script type="module" src="../Js/celender.js"></script>
+
+<script>const apiKey = 'YOUR_API_KEY';
+
+function initMap() {
+  const mapOptions = {
+    center: { lat: 37.7749, lng: -122.4194 }, // Center the map at a specific location
+    zoom: 12, // Set the initial zoom level
+  };
+
+  const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+}</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDczKkBNZu7gXEYkwm16LGsDIEJPHdbqlM&callback=initMap">
+</script>
 </body>
 </html>

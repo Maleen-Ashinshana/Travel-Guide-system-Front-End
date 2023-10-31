@@ -30,9 +30,10 @@ document.getElementById('btn-singUp').addEventListener('click', function () {
         alert("Please fill in all fields before creating an account.");
     }
 });
-document.getElementById('btn-admin-login').addEventListener('click', function () {
+/*document.getElementById('btn-admin-login').addEventListener('click', function () {
+    event.preventDefault();
     console.log("OK")
-    /*var enteredUserRole = document.getElementById('login-role').value; // Removed () after value
+    var enteredUserRole = document.getElementById('login-role').value; // Removed () after value
     var enteredUserName = document.getElementById('login-name').value;
     var enteredUserPassword = document.getElementById('login-password').value;
 
@@ -42,8 +43,24 @@ document.getElementById('btn-admin-login').addEventListener('click', function ()
         window.location.href = 'vehicle.html';
     } else {
         document.getElementById('errorText').textContent = 'Incorrect User Role';
-    }*/
-});
+    }
+});*/
+/*document.getElementById('btn-admin-login').addEventListener('click', function () {
+    var enteredUserName = document.getElementById('login-name').value;
+    var enteredPassword = document.getElementById('login-password').value;
+
+    // Perform your authentication here, e.g., check against valid credentials
+    var validUserName = 'Maleen'; // Replace with valid username
+    var validPassword = 'm1234'; // Replace with valid password
+
+    if (enteredUserName === validUserName && enteredPassword === validPassword) {
+        // Redirect to the 'vehicle.html' page upon successful login
+        window.location.href = 'vehicle.html';
+    } else {
+        document.getElementById('errorText').textContent = 'Incorrect username or password.';
+    }
+});*/
+
 
 /*document.getElementById('btn-admin-login').addEventListener('click',function (){
 
