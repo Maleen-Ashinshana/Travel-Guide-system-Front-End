@@ -23,4 +23,26 @@ $(document).ready(function (){
             console.log("NO",error)
         }
     })
+});
+
+$(document).ready(function (){
+    $.ajax({
+        url:'http://localhost:8086/hotel/api/v1/hotel',
+        method:'GET',
+        dataType:'json',
+        success:function (data){
+            console.log(data)
+            const areaSelector=$('#hotel');
+
+            $.each(data,function (index,area){
+                areaSelector.append($('<option>',{
+                    value:area.area_id,
+                    text:area.area_location
+                }));
+            });
+        },
+        error:function (error){
+            console.log("NO",error)
+        }
+    })
 })

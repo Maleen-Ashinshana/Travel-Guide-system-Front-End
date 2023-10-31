@@ -30,6 +30,47 @@ document.getElementById('btn-singUp').addEventListener('click', function () {
         alert("Please fill in all fields before creating an account.");
     }
 });
+document.getElementById('btn-admin-login').addEventListener('click', function () {
+     const userRole=$('#login-role').val();
+     const useName=$('#login-name').val();
+     const usePassword=$('#login-password').val();
+    $.ajax({
+        type: 'POST', // You may use GET or other methods depending on your backend
+        url: '/login', // Replace with the actual URL of your backend endpoint
+        data: JSON.stringify({ userRole, useName, usePassword }),
+        contentType: 'application/json',
+        success: function (response) {
+            if (response === 'success') {
+                // Credentials are correct, perform the login action
+                window.location.href = 'vehicle.html'; // Redirect to the dashboard or another page
+            } else {
+                // Credentials are incorrect, display an error message
+                $('#errorText').text('Incorrect credentials');
+            }
+        },
+        error: function () {
+            // Handle the error, e.g., show a generic error message
+            $('#errorText').text('An error occurred');
+        }
+    });
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*document.getElementById('btn-admin-login').addEventListener('click', function () {
     event.preventDefault();
     console.log("OK")

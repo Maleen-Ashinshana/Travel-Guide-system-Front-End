@@ -78,6 +78,13 @@
     position: absolute;
     top: 15%;
 }
+#from-hotel{
+    position: absolute;
+    top: 70%;
+}
+#hotel{
+    width: 70%;
+}
 
 /*
 .travelCetagory p{
