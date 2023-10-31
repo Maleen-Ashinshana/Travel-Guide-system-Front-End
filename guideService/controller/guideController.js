@@ -45,7 +45,7 @@ $('#cardContainer').on("click",".btn-update-guide",function (e){
             console.log(id.guide_name)
         },
         error: function (error) {
-            console.log("No: " + error);
+            console.log("No " + error);
         }
     });
 
