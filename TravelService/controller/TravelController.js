@@ -27,101 +27,49 @@ $(document).ready(function (){
         }
     })
 });
+/*
+$(document).ready(function () {
+    const packageTypeSelector = $('#package-type');
+    const hotelCategorySelector = $('#hotel-category'); // Use the correct selector ID
 
-/*$(document).ready(function () {
-    $.ajax({
-        url: 'http://localhost:8086/hotel/api/v1/hotel',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-            const hotelSelector = $('#hotel');
+    const regularHotelCategories = ['1 Star', '2 Star'];
 
-            $.each(data, function (index, hotel) {
-                hotelSelector.append($('<option>', {
-                    value: hotel.hotel_id,
-                    text: hotel.hotel_name
-                }));
-            });
-        },
-        error: function (error) {
-            console.log("Error: ", error);
+    function populateHotelCategories(packageType) {
+        hotelCategorySelector.empty(); // Clear existing options
+
+        let categories;
+        if (packageType === 'Regular') {
+            categories = regularHotelCategories;
         }
-    });
-});*/
-/*$(document).ready(function () {
-    const hotelSelector = $('#hotel');
-    const hotelDetailsDiv = $('#hotelImages');
+        // Add more conditions for other package types if needed
 
-    // Populate the hotel dropdown with options
-    $.ajax({
-        url: 'http://localhost:8086/hotel/api/v1/hotel',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-
-            $.each(data, function (index, hotel) {
-                hotelSelector.append($('<option>', {
-                    value: hotel.hotel_id,
-                    text: hotel.hotel_name
-                }));
-            });
-        },
-        error: function (error) {
-            console.log("Error: ", error);
-        }
-    });
-
-    hotelSelector.change(function () {
-        const selectedHotelId = hotelSelector.val();
-
-        $.ajax({
-            url: 'http://localhost:8086/hotel/api/v1/hotel/' + selectedHotelId,
-            method: 'GET',
-            dataType: 'json',
-            success: function (hotelDetails) {
-                console.log(hotelDetails.imageDTOS.length !== 0 ? hotelDetails.imageDTOS[0].hotel_images : null)
-                console.log("Selected hotel details:", hotelDetails);
-
-                hotelDetailsDiv.html('');
-                hotelDetailsDiv.append('<img src="data:image/!**;base64,${hotelDetails.imageDTOS.length !== 0 ? hotelDetails.imageDTOS[0].hotel_images : null}"   class="hotelImage" id="hotelImage">')
-                hotelDetailsDiv.append('<p>Hotel Category: ' + hotelDetails.hotel_category + '</p>');
-                hotelDetailsDiv.append('<p>Location: ' + hotelDetails.location + '</p>');
-                hotelDetailsDiv.append('<p>Email: ' + hotelDetails.email + '</p>');
-                hotelDetailsDiv.append('<p>Contact Number1: ' + hotelDetails.contact_number1 + '</p>');
-                hotelDetailsDiv.append('<p>Contact Number2: ' + hotelDetails.contact_number2 + '</p>');
-                hotelDetailsDiv.append('<p>Hotel Fee: ' + hotelDetails.hotelFee + '</p>');
-                hotelDetailsDiv.append('<p>Remark: ' + hotelDetails.remark + '</p>');
-
-                loadHotelImage(selectedHotelId);
-            },
-            error: function (error) {
-                console.log("Failed to fetch hotel details:", error);
-            }
-        });
-    });
-    function loadHotelImage(hotelId) {
-        $.ajax({
-            url: 'http://localhost:8086/hotel/api/v1/hotelImage/' + hotelId,
-            method: 'GET',
-            dataType: 'json',
-            success: function (images) {
-                if (images.length > 0) {
-                    const base64Image = images[0].hotel_image;
-                    hotelDetailsDiv.append('<img src="data:image/jpeg;base64,' + base64Image + '" alt="Hotel Image">');
-                }
-            },
-            error: function (error) {
-                console.log("Failed to load hotel image: " + error);
-            }
+        // Populate the hotel categories selector
+        categories.forEach(function (category) {
+            hotelCategorySelector.append($('<option>', {
+                value: category, // Assuming category is a string
+                text: category,
+            }));
         });
     }
-});*/
+
+    // Initial population based on the default selected package
+    const initialPackageType = packageTypeSelector.val();
+    populateHotelCategories(initialPackageType);
+
+    // Event handler for package-type change
+    packageTypeSelector.change(function () {
+        const selectedPackageType = packageTypeSelector.val();
+        populateHotelCategories(selectedPackageType);
+    });
+});
+*/
+
+
 
 $(document).ready(function () {
     const hotelSelector = $('#hotel');
     const hotelDetailsDiv = $('#hotelImages');
+    const packageType = $('#package-type');
 
     // Populate the hotel dropdown with options
     $.ajax({
@@ -134,7 +82,9 @@ $(document).ready(function () {
             $.each(data, function (index, hotel) {
                 hotelSelector.append($('<option>', {
                     value: hotel.hotel_id,
-                    text: hotel.hotel_name
+                    text: hotel.hotel_name,
+                    category:hotel.hotel_category
+
                 }));
             });
         },
@@ -142,6 +92,7 @@ $(document).ready(function () {
             console.log("Error: ", error);
         }
     });
+
 
     hotelSelector.change(function () {
         const selectedHotelId = hotelSelector.val();
@@ -151,18 +102,17 @@ $(document).ready(function () {
             method: 'GET',
             dataType: 'json',
             success: function (hotelDetails) {
-                console.log(hotelDetails.imageDTOS.length !== 0 ? hotelDetails.imageDTOS[0].hotel_images : null)
-                console.log("Selected hotel details:", hotelDetails);
+
 
                 hotelDetailsDiv.html('');
                 hotelDetailsDiv.append(`<img src="data:image/jpeg;base64,${hotelDetails.imageDTOS.length !== 0 ? hotelDetails.imageDTOS[0].hotel_images : null}" class="hotelImage" id="hotelImage">`);
-                hotelDetailsDiv.append('<p>Hotel Category: ' + hotelDetails.hotel_category + '</p>');
-                hotelDetailsDiv.append('<p>Location: ' + hotelDetails.location + '</p>');
-                hotelDetailsDiv.append('<p>Email: ' + hotelDetails.email + '</p>');
-                hotelDetailsDiv.append('<p>Contact Number1: ' + hotelDetails.contact_number1 + '</p>');
-                hotelDetailsDiv.append('<p>Contact Number2: ' + hotelDetails.contact_number2 + '</p>');
-                hotelDetailsDiv.append('<p>Hotel Fee: ' + hotelDetails.hotelFee + '</p>');
-                hotelDetailsDiv.append('<p>Remark: ' + hotelDetails.remark + '</p>');
+                hotelDetailsDiv.append('<p class="hFiled">Hotel Category: ' + hotelDetails.hotel_category + '</p>');
+                hotelDetailsDiv.append('<p class="hFiled" id="location">Location: ' + hotelDetails.location + '</p>');
+                hotelDetailsDiv.append('<p class="hFiled" id="email">Email: ' + hotelDetails.email + '</p>');
+                hotelDetailsDiv.append('<p class="hFiled" id="con1">Contact Number1: ' + hotelDetails.contact_number1 + '</p>');
+                hotelDetailsDiv.append('<p class="hFiled" id="con2">Contact Number2: ' + hotelDetails.contact_number2 + '</p>');
+                hotelDetailsDiv.append('<p class="hFiled" id="hotelFee">Hotel Fee: ' + hotelDetails.hotelFee + '</p>');
+                hotelDetailsDiv.append('<p class="hFiled" id="remark">Remark: ' + hotelDetails.remark + '</p>');
 
 
                 loadHotelImage(selectedHotelId);
@@ -190,221 +140,149 @@ $(document).ready(function () {
         });
     }
 });
+$(document).ready(function () {
+    const vehicleSelector = $('#vehicles');
+    const vehicleDetailsDiv = $('#vehicle');
 
-
-/*$(document).ready(function () {
-    // Populate the hotel dropdown with options
     $.ajax({
-        url: 'http://localhost:8086/hotel/api/v1/hotel',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            const hotelSelector = $('#hotel');
-            data.forEach(function (hotel) {
-                hotelSelector.append($('<option>', {
-                    value: hotel.hotel_id,
-                    text: hotel.hotel_name
-                }));
-            });
-        },
-        error: function () {
-            console.error('Failed to retrieve data');
-        }
-    });
-
-    // Add a change event handler to the hotel dropdown
-    $('#hotel').change(function () {
-        const selectedHotelId = $(this).val();
-        // Fetch hotel details based on the selected hotel ID
-        $.ajax({
-            url: 'http://localhost:8086/hotel/api/v1/hotel/' + selectedHotelId,
-            method: 'GET',
-            dataType: 'json',
-            success: function (hotelData) {
-                console.log(hotelData)
-                const div=$('#hotelImages');
-
-                // Update the hotel details section with the retrieved data
-                /!*$('#hotel-image').attr('src', hotelData.image_url);
-                $('#star-rating').text('Star Rating: ' + hotelData.star_rating);*!/
-            },
-            error: function (error) {
-                console.log("Failed to fetch hotel details:", error);
-            }
-        });
-    });
-});*/
-
-/*$(document).ready(function () {
-    $.ajax({
-        url: 'http://localhost:8086/hotel/api/v1/hotel',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            console.log(data+"DATA")
-            data.forEach(function (hotel) {
-                console.log(hotel)
-
-
-                $.ajax({
-                    type: "GET",
-                    url: `http://localhost:8086/hotel/api/v1/hotelImage/${hotel.hotel_id}`,
-                    dataType: 'json',
-                    success: function (images) {
-                        const imageElement = $(`.hotelImage[data-hotel-id="${hotel.hotel_id}"]`);
-                        if (images.length > 0) {
-                            const base64Image = images[0].hotel_image;
-                            imageElement.attr('src', `data:image/jpeg;base64,${base64Image}`);
-                        }
-                    },
-                    error: function (error) {
-                        console.log("Failed to load image: " + error);
-                    }
-                });
-            });
-        },
-        error: function () {
-            console.error('Failed to retrieve data');
-        }
-    });
-});*/
-/*$(document).ready(function () {
-    // Populate the hotel dropdown with options
-    $.ajax({
-        url: 'http://localhost:8086/hotel/api/v1/hotel',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            const hotelSelector = $('#hotel');
-            $.each(data, function (index, hotel) {
-                hotelSelector.append($('<option>', {
-                    value: hotel.hotel_id,
-                    text: hotel.hotel_name
-                }));
-            });
-        },
-        error: function (error) {
-            console.log("NO", error);
-        }
-    });
-
-    // Add a change event handler to the hotel dropdown
-    $('#hotel').change(function () {
-        const selectedHotelId = $(this).val();
-        // Fetch hotel details based on the selected hotel ID (adjust the URL accordingly)
-        $.ajax({
-            url: 'http://localhost:8086/hotel/api/v1/hotelImage/' + selectedHotelId, // Adjust the URL
-            method: 'GET',
-            dataType: 'json',
-            success: function (hotelData) {
-                console.log(hotelData)
-                console.log(hotelData.hotel_name)
-                // Update the hotel details section with the retrieved data
-               /!* $('#hotel-image').attr('src', hotelData.image_url); // Set the image source
-                $('#star-rating').text('Star Rating: ' + hotelData.star_rating);*!/
-            },
-            error: function (error) {
-                console.log("Failed to fetch hotel details:", error);
-            }
-        });
-    });
-});*/
-
-
-/*$(document).ready(function () {
-    $.ajax({
-        url: 'http://localhost:8086/hotel/api/v1/hotel',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            console.log(data+"DATA")
-            data.forEach(function (hotel) {
-                console.log(hotel)
-                console.log(hotel.imageDTOS.length !== 0 ? hotel.imageDTOS[0].hotel_images : null)
-                // Create a card for each hotel
-                const card = `
-                    <div class="hotelCard" id="load-hotel-filed-card">
-                        <img src="data:image/!**;base64,${hotel.imageDTOS.length !== 0 ? hotel.imageDTOS[0].hotel_images : null}"   class="hotelImage" id="hotelImage">
-                        <p id="hotelName">${hotel.hotel_name}</p>
-                        <p id="hotelCategory">Hotel Category: ${hotel.hotel_category}</p>
-                        <p id="hotelLocation">Location: ${hotel.location}</p>
-                        <p id="hotelEmail">Email: ${hotel.email}</p>
-                        <p id="hotelContact1">Contact Number1: ${hotel.contact_number1}</p>
-                        <p id="hotelContact2">Contact Number2: ${hotel.contact_number2}</p>
-                        <p id="hotelFee">Hotel Fee: ${hotel.hotelFee}</p>
-                        <p id="hotelRemark">Remark: ${hotel.remark}</p>
-
-                        <button type="button" class="btn-delete-hotel" id="${hotel.hotel_id}">Delete</button>
-                        <button type="button" class="btn-update-hotel">Update</button>
-                    </div>
-                `;
-                console.log(hotel.hotel_id+"kakakaakakak")
-                $('#hotelCardConteiner').append(card);
-
-                $.ajax({
-                    type: "GET",
-                    url: `http://localhost:8086/hotel/api/v1/hotelImage/${hotel.hotel_id}`,
-                    dataType: 'json',
-                    success: function (images) {
-                        const imageElement = $(`.hotelImage[data-hotel-id="${hotel.hotel_id}"]`);
-                        if (images.length > 0) {
-                            const base64Image = images[0].hotel_image;
-                            imageElement.attr('src', `data:image/jpeg;base64,${base64Image}`);
-                        }
-                    },
-                    error: function (error) {
-                        console.log("Failed to load image: " + error);
-                    }
-                });
-            });
-        },
-        error: function () {
-            console.error('Failed to retrieve data');
-        }
-    });
-});*/
-
-/*$(document).ready(function () {
-    $.ajax({
-        url: 'http://localhost:8086/hotel/api/v1/hotel',
+        url: 'http://localhost:8080/vehicle/api/v1/vehicle',
         method: 'GET',
         dataType: 'json',
         success: function (data) {
             console.log(data);
-            const hotelSelector = $('#hotel'); // Use a more appropriate name
 
-            $.each(data, function (index, hotel) {
-                hotelSelector.append($('<option>', {
-                    value: hotel.hotel_id,     // Corrected field name to "hotel_id"
-                    text: hotel.hotel_name    // Corrected field name to "hotel_name"
+            $.each(data, function (index, vehicle) {
+                vehicleSelector.append($('<option>', {
+                    value: vehicle.vehicle_id,
+                    text: vehicle.vehicle_brand
                 }));
             });
         },
         error: function (error) {
-            console.log("NO", error);
+            console.log("Error: ", error);
         }
+    });
+
+    vehicleSelector.change(function () {
+        const selectedVehicleId = vehicleSelector.val();
+
+        $.ajax({
+            url: 'http://localhost:8080/vehicle/api/v1/vehicle/' + selectedVehicleId,
+            method: 'GET',
+            dataType: 'json',
+            success: function (vehicleDetails) {
+                vehicleDetailsDiv.html('');
+                /*vehicleDetailsDiv.append(`<img src="data:image/jpeg;base64,${vehicleDetails.imageDTOS.length !== 0 ? vehicleDetails.imageDTOS[0].vehicle_image : null}" class="vehicleImage" id ="vehicleImage">`);*/
+                vehicleDetailsDiv.append('<p class="vField">Vehicle Type: ' + vehicleDetails.vehicle_type + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="type">Vehicle Type: ' + vehicleDetails.vehicle_type + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="ftype">Fuel Type: ' + vehicleDetails.fuel_type + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="fuage">Fuel Usage: ' + vehicleDetails.fuel_usage + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="htype">Hybrid Type: ' + vehicleDetails.hybrid_or_no + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="seat">Seat capacity: ' + vehicleDetails.seat_capacity + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="tra">Transmission: ' + vehicleDetails.transmission + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="remark">Remark: ' + vehicleDetails.remark + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="dname">Driver Name: ' + vehicleDetails.driver_name + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="dcontact">Contact Number: ' + vehicleDetails.driver_contact_number + '</p>');
+
+                /*loadVehicleImage(selectedVehicleId);*/
+            },
+            error: function (error) {
+                console.log("Failed to fetch vehicle details:", error);
+            }
+        });
+    });
+
+    /*function loadVehicleImage(vehicleId) {
+        $.ajax({
+            url: 'http://localhost:8080/vehicle/api/v1/vehicleImage/' + vehicleId,
+            method: 'GET',
+            dataType: 'json',
+            success: function (images) {
+                if (images.length > 0) {
+                    const base64Image = images[0].vehicle_image;
+                    vehicleDetailsDiv.append('<img src="data:image/jpeg;base64,' + base64Image + '" alt="Vehicle Image">');
+                }
+            },
+            error: function (error) {
+                console.log("Failed to load vehicle image: " + error);
+            }
+        });
+    }*/
+});
+
+/*$(document).ready(function () {
+    $.ajax({
+        url: 'http://localhost:8080/vehicle/api/v1/vehicle',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
+            data.forEach(function (vehicle) {
+               /!* console.log(vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null)*!/
+                /!*const vehicleC=[];*!/
+
+
+                $.ajax({
+                    type: "GET",
+                    url: `http://localhost:8080/vehicle/api/v1/vehicleImage/${vehicle.vehicle_id}`,
+                    dataType: 'json',
+                    success: function (images) {
+                        console.log(images)
+                        const imageElement = $(`.vehicleImage[data-vehicle-id="${vehicle.vehicle_id}"]`);
+                        if (images.length > 0) {
+                            const base64Image = images[0].vehicle_image;
+                            imageElement.attr('src', `data:image/jpeg;base64,${base64Image}`);
+                        }
+                    },
+                    error: function (error) {
+                        console.log("Failed to load image: " + error);
+                    }
+                });
+            });
+        },
+        error: function () {
+            console.error('Failed to retrieve data');
+        }
+
+    });
+});*/
+/*$(document).ready(function () {
+    $.ajax({
+        url: 'http://localhost:8080/vehicle/api/v1/vehicle',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
+            data.forEach(function (vehicle) {
+                console.log(vehicle.imageDTOS.length!==0?vehicle.imageDTOS[0].vehicle_image:null)
+                /!*const vehicleC=[];*!/
+
+
+                $.ajax({
+                    type: "GET",
+                    url: `http://localhost:8080/vehicle/api/v1/vehicleImage/${vehicle.vehicle_id}`,
+                    dataType: 'json',
+                    success: function (images) {
+                        console.log(images)
+                        const imageElement = $(`.vehicleImage[data-vehicle-id="${vehicle.vehicle_id}"]`);
+                        if (images.length > 0) {
+                            const base64Image = images[0].vehicle_image;
+                            imageElement.attr('src', `data:image/jpeg;base64,${base64Image}`);
+                        }
+                    },
+                    error: function (error) {
+                        console.log("Failed to load image: " + error);
+                    }
+                });
+            });
+        },
+        error: function () {
+            console.error('Failed to retrieve data');
+        }
+
     });
 });*/
 
-/*
-$(document).ready(function (){
-    $.ajax({
-        url:'http://localhost:8086/hotel/api/v1/hotel',
-        method:'GET',
-        dataType:'json',
-        success:function (data){
-            console.log(data)
-            const areaSelector=$('#hotel');
 
-            $.each(data,function (index,area){
-                areaSelector.append($('<option>',{
-                    value:area.area_id,
-                    text:area.area_location
-                }));
-            });
-        },
-        error:function (error){
-            console.log("NO",error)
-        }
-    })
-})*/
+
+
