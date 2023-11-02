@@ -172,9 +172,8 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (vehicleDetails) {
                 vehicleDetailsDiv.html('');
-                /*vehicleDetailsDiv.append(`<img src="data:image/jpeg;base64,${vehicleDetails.imageDTOS.length !== 0 ? vehicleDetails.imageDTOS[0].vehicle_image : null}" class="vehicleImage" id ="vehicleImage">`);*/
+                vehicleDetailsDiv.append(`<img src="data:image/jpeg;base64,${vehicleDetails.imageDTOS.length !== 0 ? vehicleDetails.imageDTOS[0].vehicle_image : null}" class="vehicleImage" id ="vehicleImage">`);
                 vehicleDetailsDiv.append('<p class="vField">Vehicle Type: ' + vehicleDetails.vehicle_type + '</p>');
-                vehicleDetailsDiv.append('<p class="vField" id="type">Vehicle Type: ' + vehicleDetails.vehicle_type + '</p>');
                 vehicleDetailsDiv.append('<p class="vField" id="ftype">Fuel Type: ' + vehicleDetails.fuel_type + '</p>');
                 vehicleDetailsDiv.append('<p class="vField" id="fuage">Fuel Usage: ' + vehicleDetails.fuel_usage + '</p>');
                 vehicleDetailsDiv.append('<p class="vField" id="htype">Hybrid Type: ' + vehicleDetails.hybrid_or_no + '</p>');

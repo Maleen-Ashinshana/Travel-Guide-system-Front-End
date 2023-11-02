@@ -25,3 +25,24 @@ function handleFileSelectForHotel(event) {
     // Reset the current file input to clear the selected files
     HotelFileInput.value = "";
 }
+/*const HotelFileInput = document.getElementById('fileInputHotel');
+const HotelImageGallery = document.getElementById('imageGalleryHotel');
+
+HotelFileInput.addEventListener('change', handleFileSelectForHotel);
+
+function handleFileSelectForHotel(event) {
+    const HotelFiles = event.target.files;
+
+    for (let i = 0; i < HotelFiles.length; i++) {
+        const file = HotelFiles[i];
+        if (file.type.startsWith('image/')) {
+            const img = document.createElement('img');
+            img.className = 'image-preview';
+            img.src = URL.createObjectURL(file);
+            HotelImageGallery.appendChild(img);
+        }
+    }
+
+    // Reset the current file input to clear the selected files
+    event.target.value = "";
+}*/

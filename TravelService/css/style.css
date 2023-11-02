@@ -74,9 +74,10 @@
 #map {
     /*border: 1px solid red;*/
     height: 385px;
-    width: 100%;
+    width: 30%;
     position: absolute;
-    top: 15%;
+    top: 10%;
+    right: 0;
 }
 .hotels{
     width: 96%;
@@ -96,7 +97,7 @@
 }
 #hotelImages{
     border: 1px solid green;
-    width: 40%;
+    width: 65%;
     height: 80%;
     position: absolute;
     top: 10%;
@@ -131,6 +132,21 @@
     position: absolute;
     top: 10%;
     right: 0;
+}
+#vehicleImage{
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+}
+.vField{
+    font-weight: bold;
+    position: relative;
+    top: 58%;
+    left: 5%;
+    margin-top: -2%;
 }
 /*#location{
     left: 20%;
