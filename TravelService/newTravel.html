@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel</title>
+    <link rel="stylesheet" href="css/newStyle.css">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+</head>
+<body id="body" style="background: #e1e4ed">
+<section class="travelSection" id="travelSection">
+    <nav class="nav" id="nav">
+     <ul>
+         <li>Home</li>
+     </ul>
+    </nav>
+    <div class="customer-filed" id="customer-filed">
+        <!-- <p class="date" id="date">Date :</p>-->
+        <p class="customer" id="customer-id">Customer Id :</p>
+        <p class="customer" id="Customer-Name">Customer Name :</p>
+    </div>
+    <div class="package-conteiner" id="package-conteiner">
+
+        <div class="form-group" id="from-area-package">
+            <label for="area-type" class="area-label" id="area-label">Travel Area :</label>
+            <select id="area-type" name="area-type" required >
+                <option value="">Select Area</option>
+            </select>
+        </div>
+
+         <label id="start-date">Travel Start Date :</label>
+     <input type="date" id="calendar">
+
+        <label id="end-date">Travel End Date :</label>
+        <input type="date" id="calendar-end">
+
+        <div class="form-group" id="from-child-group">
+            <label for="txt-child" id="child-label" class="child-label">No Of Child :</label>
+            <input type="text" id="txt-child" name="seat" required>
+        </div >
+        <div class="form-group" id="from-adult-group">
+            <label for="txt-adult" id="adult-label" class="child-label">No Of Adult :</label>
+            <input type="text" id="txt-adult" name="seat" required>
+        </div >
+
+      <!--  <div class="guide">-->
+            <div class="form-group" id="from-guide-package">
+                <label for="guide-type" class="guide-label">Ned Guide:</label>
+                <select id="guide-type" name="guide-type" required >
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        <div class="form-group" id="from-hed-group">
+            <label for="txt-head-count" id="hed-label" class="child-label">Total Head Count :</label>
+            <input type="text" id="txt-head-count" name="seat" required>
+        </div >
+
+        <div class="guide" id="guide">
+
+            <div class="form-group" id="from-guides">
+                <label for="guides-type" class="guides-label">Guide:</label>
+                <select id="guides-type" name="guides-type" required >
+                    <option value="">Select Guide</option>
+
+                </select>
+            </div>
+            <div class="guide-details" id="guide-details">
+
+            </div>
+
+        </div>
+       <!-- </div>-->
+        <!--<h2>Package</h2>
+        <div class="div-container">
+            <div class="out-div" id="out-div1">
+                <div class="in-div" id="in-div1">
+                    <p  class="p" id="re" style="position: absolute;left: 30%">Regular</p>
+                    <label id="hotel-label">Hotel Category: Star1 and Star2</label>
+                    <label id="vehicle-label">Vehicle Category :Economy</label>
+                </div>
+            </div>
+            <div class="out-div" id="out-div">
+                <div class="in-div" id="in-div2">
+                    <p class="p" id="mid" style="position: absolute;left: 30%">Mid-level</p>
+                    <label id="hotel-label2">Hotel Category:Star3</label>
+                    <label id="vehicle-label2">Vehicle Category :Mid-Range</label>
+                </div>
+            </div>
+            <div class="out-div" id="out-div3">
+                <div class="in-div" id="in-div3">
+                    <p class="p" id="super" style="position: absolute;left: 30%">Luxury</p>
+                    <label id="hotel-label3">Hotel Category:Star4</label>
+                    <label id="vehicle-label3">Vehicle Category :Luxury</label>
+                </div>
+            </div>
+            <div class="out-div" id="out-div4">
+                <div class="in-div" id="in-div4">
+                    <p class="p" id="superL" style="position: absolute;left: 30%">Super Luxury</p>
+                    <label id="hotel-label">Hotel Category:Star4</label>
+                    <label id="vehicle-label3">Vehicle Category :Luxury</label>
+                </div>
+            </div>
+
+        </div>-->
+
+    </div>
+    <div class="form-group" id="from-travel-package">
+        <label for="package-type" class="package-label">Package Type:</label>
+        <select id="package-type" name="package-type" required >
+            <option value="regular">Regular</option>
+            <option value="mid"> Mid-level</option>
+            <option value="luxury">Luxury</option>
+            <option value="Super">Super Luxury</option>
+        </select>
+    </div>
+    <div class="hotels" id="hotels">
+        <div class="form-group" id="from-hotel">
+            <label for="hotel" class="hotel-label">Hotels:</label>
+            <select id="hotel" name="hotels" required >
+                <option value="" id="se">Select Hotel</option>
+            </select>
+        </div>
+
+        <div class="hotelImages" id="hotelImages">
+
+        </div>
+        <div id="map"></div>
+    </div>
+    <div class="vehicle-section" id="vehicle-section">
+        <div class="form-group" id="from-vehicle">
+            <label for="vehicles" class="vehicle-label">Vehicles:</label>
+            <select id="vehicles" name="hotels" required >
+                <option value="" id="ve">Select Vehicle</option>
+            </select>
+        </div>
+        <div class="vehicle" id="vehicle">
+
+        </div>
+    </div>
+<div class="total" id="total" >
+    <h2>Total:</h2>
+
+</div>
+    <div class="btn" id="btn-save">
+        <button id="btn-save-travel">Save</button>
+    </div>
+    <!--<button class="btn-save-travel" id="btn-save-travel">Save</button>-->
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../assect/JQuary/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!--<script type="module" src="../TravelArea/model/AreaModel.js"></script>
+<script type="module" src="../TravelArea/model/AreaImageModel.js"></script>
+<script type="module" src="../TravelArea/controller/AreaController.js"></script>-->
+<script type="module" src="model/TravelModel.js"></script>
+<script type="module" src="controller/TravelController.js"></script>
+<script type="module" src="../Js/celender.js"></script>
+<script type="module" src="model/date.js"></script>
+<script>
+
+</script>
+<script>const apiKey = 'YOUR_API_KEY';
+
+function initMap() {
+    const mapOptions = {
+        center: { lat: 37.7749, lng: -122.4194 }, // Center the map at a specific location
+        zoom: 12, // Set the initial zoom level
+    };
+
+    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+}</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDczKkBNZu7gXEYkwm16LGsDIEJPHdbqlM&callback=initMap">
+</script>
+</body>
+
+</html>

@@ -63,7 +63,110 @@ document.getElementById('btn-new-user-register').addEventListener("click", funct
         })
     })
 
-})
+});
+$(document).ready(function() {
+    $('#btn-login-user').click(function() {
+        console.log("Button clicked");
+        const username = $('#userName').val(); // Use 'username' here
+        const password = $('#userPassword').val(); // Use 'password' here
+        console.log(username);
+        console.log(password);
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:9095/User/api/v1/user",
+            data: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            contentType: "application/json", // Set the content type to JSON
+            dataType: 'json',
+            success: function(data) {
+                if (data.success) {
+                    $('#result').text("Login successful");
+                } else {
+                    $('#result').text("Login failed");
+                }
+            },
+            error: function(error) {
+                console.log("Error", error);
+            }
+        });
+
+    });
+});
+
+/*document.getElementById('btn-login-user').addEventListener('click', function() {
+    console.log("Button clicked");
+    const userName = $('#userName').val();
+    const password = $('#userPassword').val();
+    console.log(userName);
+    console.log(password);
+
+    $.ajax({
+        type: "POST", // Use POST method to send data securely
+        url: "http://localhost:9095/User/api/v1/user", // Replace with your backend URL
+        data: {
+            userName: userName,
+            userPassword: password
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.success) {
+                $('#result').text("Login successful");
+            } else {
+                $('#result').text("Login failed");
+            }
+        },
+        error: function(error) {
+            console.log("Error", error);
+        }
+
+    });
+});*/
+/*$.ajax({
+     type: "GET",
+     url: "http://localhost:9095/User/api/v1/user",
+     dataType: 'json',
+     success: function (data) {
+         // Handle the response data here
+         console.log("Success", data);
+     },
+     error: function (error) {
+         console.log("Error", error);
+     }
+ });*/
+
+/*document.getElementById('btn-login-user').addEventListener('click', function() {
+    console.log("Button clicked");
+    const userName=$('#userName').val();
+    const password=$('#userPassword').val()
+    console.log(userName)
+    console.log(password)
+
+    $.ajax({
+        type:"GET",
+        url:"http://localhost:9095/User/api/v1/user",
+        dataType:'json',
+        success:function (){
+
+        },
+        error:function (error){
+            console.log("No",error);
+        }
+    )}
+
+});*/
+
+/*document.addEventListener("DOMContentLoaded", function () {
+    const saveButton = document.getElementById("btn-hotel-save");
+
+    saveButton.addEventListener("click", function () {
+        // Your click event code here
+        alert("Save button clicked!"); // Example action
+    });
+});*/
+
 
 
 

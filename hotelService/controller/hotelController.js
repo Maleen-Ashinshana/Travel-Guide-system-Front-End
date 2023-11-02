@@ -35,6 +35,7 @@ document.getElementById('btn-hotel-save').addEventListener('click',function (){
     const remark=$('#txt-hotel-remark').val();
 
     const hotel_image=$('#fileInputHotel')[0].files[0];
+    console.log(hotelFee + "EEEEEEEE")
     /*const hotel_image=$('#hotel-image-input1,#hotel-image-input2,#hotel-image-input3')[0].files[0];*/
     /*    const hotel_image2=$('#hotel-image-input2')[0].files[0];
         const hotel_image2=$('#hotel-image-input3')[0].files[0];*/

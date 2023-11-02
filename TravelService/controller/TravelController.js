@@ -4,7 +4,31 @@ import {HotelController} from "../../hotelService/controller/hotelController.js"
 import {HotelImageModel} from "../../hotelService/model/hotelImageModel.js";
 import {HotelModel} from "../../hotelService/model/hotelModel.js";*/
 
+export class TravelController{
 
+    constructor() {
+    }
+}
+
+/*document.getElementById('#guide-type').addEventListener('click',function (){
+    console.log()
+})*/
+document.addEventListener("DOMContentLoaded", function () {
+    const guideTypeSelect = document.getElementById("guide-type");
+    const guideSection = document.getElementById("guide");
+
+    guideTypeSelect.addEventListener("change", function () {
+        const selectedValue = guideTypeSelect.value;
+
+        if (selectedValue === "yes") {
+            // Show the guide section
+            guideSection.style.display = "block";
+        } else {
+            // Hide the guide section
+            guideSection.style.display = "none";
+        }
+    });
+});
 
 $(document).ready(function (){
     $.ajax({
@@ -27,6 +51,65 @@ $(document).ready(function (){
         }
     })
 });
+
+$(document).ready(function (){
+    const guideSelector=$('#guides-type');
+    const guideDetailsDiv=$('#guide-details');
+
+    $.ajax({
+        url:'http://localhost:9092/Guide/api/v1/guide',
+        method:'GET',
+        dataType:'json',
+        success:function (data){
+            console.log(data)
+            const areaSelector=$('#guides-type');
+
+            $.each(data,function (index,guide){
+                areaSelector.append($('<option>',{
+                    value:guide.guide_id,
+                    text:guide.guide_name
+                }));
+            });
+        },
+        error:function (error){
+            console.log("NO",error)
+        }
+    });
+    guideSelector.change(function (){
+        const selectGuideId=guideSelector.val();
+
+        $.ajax({
+            url: 'http://localhost:9092/Guide/api/v1/guide/' + selectGuideId,
+            method: 'GET',
+            dataType: 'json',
+            success: function (guideDetails) {
+
+
+                guideDetailsDiv.html('');
+                /*<img src="data:image/!**;base64,${item.profile_picture}" id="load-guide-image">*/
+                guideDetailsDiv.append(`<img src="data:image/jpeg;base64,${guideDetails.profile_picture}" class="guideImage" id="guideImage">`);
+                guideDetailsDiv.append('<p class="gFiled" id="name">Guide Name: ' + guideDetails.guide_name + '</p>');
+                guideDetailsDiv.append('<p class="gFiled" id="=address">Address: ' + guideDetails.address + '</p>');
+                guideDetailsDiv.append('<p class="gFiled" id="age">Age: ' + guideDetails.age + '</p>');
+                guideDetailsDiv.append('<p class="gFiled" id="con">Contcat Number: ' + guideDetails.contact_number + '</p>');
+                guideDetailsDiv.append('<p class="gFiled" id="gender">Gender: ' + guideDetails.gender + '</p>');
+                guideDetailsDiv.append('<p class="gFiled" id="ex">Experience: ' + guideDetails.experience + '</p>');
+                guideDetailsDiv.append('<p class="gFiled" id="man">Man_day_value: ' + guideDetails.man_day_value + '</p>');
+                guideDetailsDiv.append('<p class="gFiled" id="remark">Remark: ' + guideDetails.remark + '</p>');
+
+
+                /*loadHotelImage(selectedHotelId);*/
+            },
+            error: function (error) {
+                console.log("Failed to fetch hotel details:", error);
+            }
+        });
+
+    })
+});
+
+
+
 /*
 $(document).ready(function () {
     const packageTypeSelector = $('#package-type');
@@ -105,7 +188,7 @@ $(document).ready(function () {
 
 
                 hotelDetailsDiv.html('');
-                hotelDetailsDiv.append(`<img src="data:image/jpeg;base64,${hotelDetails.imageDTOS.length !== 0 ? hotelDetails.imageDTOS[0].hotel_images : null}" class="hotelImage" id="hotelImage">`);
+                hotelDetailsDiv.append(`<img src="data:image/jpeg;base64,${hotelDetails.imageDTOS.length !== 0 ? hotelDetails.imageDTOS[0].hotel_images : null}" class="hotelImage" id="hotelImagee">`);
                 hotelDetailsDiv.append('<p class="hFiled">Hotel Category: ' + hotelDetails.hotel_category + '</p>');
                 hotelDetailsDiv.append('<p class="hFiled" id="location">Location: ' + hotelDetails.location + '</p>');
                 hotelDetailsDiv.append('<p class="hFiled" id="email">Email: ' + hotelDetails.email + '</p>');
@@ -173,7 +256,7 @@ $(document).ready(function () {
             success: function (vehicleDetails) {
                 vehicleDetailsDiv.html('');
                 vehicleDetailsDiv.append(`<img src="data:image/jpeg;base64,${vehicleDetails.imageDTOS.length !== 0 ? vehicleDetails.imageDTOS[0].vehicle_image : null}" class="vehicleImage" id ="vehicleImage">`);
-                vehicleDetailsDiv.append('<p class="vField">Vehicle Type: ' + vehicleDetails.vehicle_type + '</p>');
+                vehicleDetailsDiv.append('<p class="vField" id="vType">Vehicle Type: ' + vehicleDetails.vehicle_type + '</p>');
                 vehicleDetailsDiv.append('<p class="vField" id="ftype">Fuel Type: ' + vehicleDetails.fuel_type + '</p>');
                 vehicleDetailsDiv.append('<p class="vField" id="fuage">Fuel Usage: ' + vehicleDetails.fuel_usage + '</p>');
                 vehicleDetailsDiv.append('<p class="vField" id="htype">Hybrid Type: ' + vehicleDetails.hybrid_or_no + '</p>');

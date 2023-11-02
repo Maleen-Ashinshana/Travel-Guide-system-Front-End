@@ -106,18 +106,18 @@
             <h2 id="loginText">Login</h2>
             <p id="text">Don't have an account?Create your account,it takes less than a minute</p>
             <div class="input-container">
-                <input type="text" required=""/>
+                <input type="text" required="" id="userName"/>
                 <label>User Name</label>
                 <img src="icon/user.png">
             </div>
             <div class="input-container" id="password">
-                <input type="password" required=""/>
+                <input type="password" required="" id="userPassword"/>
                 <label>Password</label>
                 <img src="icon/padlock.png">
             </div>
 
 
-            <button type="button" class="btn-user-login">Login</button>
+            <button type="button" class="btn-user-login" id="btn-login-user">Login</button>
 
             <div class="middle-div" id="middle1"></div>
             <label class="or-lable">OR</label>
@@ -590,28 +590,28 @@
 <script src="assect/JQuary/jquery-3.6.4.min.js"></script>
 <script src="Js/style.js"></script>
 <script src="Js/userRegisterImage.js"></script>
-<script src="Js/addBluerrPage.js"></script>
+<!--<script src="Js/addBluerrPage.js"></script>-->
 <script type="module" src="Js/style.js"></script>
-<script type="module" src="Js/createNewCard.js"></script>
-<script type="module" src="guideService/dto/guideDTO.js"></script>
-<script type="module" src="guideService/controller/guideController.js"></script>
+<!--<script type="module" src="Js/createNewCard.js"></script>-->
+<!--<script type="module" src="guideService/dto/guideDTO.js"></script>-->
+<!--<script type="module" src="guideService/controller/guideController.js"></script>-->
 <script type="module" src="UserService/model/userModel.js"></script>
 <script type="module" src="UserService/controller/userController.js"></script>
-<script type="module" src="vehicleService/model/vehicleModel.js"></script>
-<script type="module" src="vehicleService/model/vehicleImageModel.js"></script>
+<!--<script type="module" src="vehicleService/model/vehicleModel.js"></script>
+<script type="module" src="vehicleService/model/vehicleImageModel.js"></script>-->
 <!--<script type="module" src="vehicleService/controller/vehicleController.js"></script>-->
-<script type="module" src="hotelService/model/hotelModel.js"></script>
+<!--<script type="module" src="hotelService/model/hotelModel.js"></script>
 <script type="module" src="hotelService/model/hotelImageModel.js"></script>
-<script type="module" src="hotelService/controller/hotelController.js"></script>
+<script type="module" src="hotelService/controller/hotelController.js"></script>-->
 <script type="module" src="Js/image.js"></script>
-<script type="module" src="Js/hotelImages.js"></script>
+<!--<script type="module" src="Js/hotelImages.js"></script>-->
 <script type="module" src="adminService/model/AdminModel.js" ></script>
 <script type="module" src="adminService/controller/adminController.js"></script>
 <script>
 
 </script>
 <!--<script  src="./main.js" type="module"></script>-->
-<script> function previewImage(input, previewId) {
+<!--<script> function previewImage(input, previewId) {
     const preview = document.getElementById(previewId);
     if (input.files && input.files[0]) {
         const reader = new FileReader();
@@ -639,14 +639,14 @@ document.getElementById('hotel-image-input3').addEventListener('change', functio
     previewImage(this, 'hotelImagePreview3');
 });
 
-</script>
-<script>
+</script>-->
+<!--<script>
     function  autoAdjustWidth(){
         const div = document.getElementById("cardContainer");
         div.style.width=div.scrollWidth+"px;"
     }
     autoAdjustWidth()
-</script>
+</script>-->
 
 </body>
 </html>
