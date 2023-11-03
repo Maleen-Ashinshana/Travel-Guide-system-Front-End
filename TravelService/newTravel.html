@@ -188,6 +188,13 @@ function initMap() {
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDczKkBNZu7gXEYkwm16LGsDIEJPHdbqlM&callback=initMap">
 </script>
+<script>
+    const urlParam=new URLSearchParams(window.location.search);
+    const name=urlParam.get('name');
+    if (name){
+        document.getElementById('Customer-Name').textContent=name;
+    }
+</script>
 </body>
 
 </html>

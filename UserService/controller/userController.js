@@ -126,6 +126,10 @@ document.getElementById('btn-new-user-register').addEventListener("click", funct
 
     });
 });*/
+/*function subName(){
+
+}*/
+
 $(document).ready(function() {
     $('#btn-login-user').click(function() {
         const userNameInput = $('#userName').val();
@@ -142,7 +146,11 @@ $(document).ready(function() {
             success: function(response) {
                 console.log(response)
                 console.log("Login Success");
-                window.location.href = ".../../TravelService/newTravel.html";
+                /*const name=document.getElementById('userName').value*/
+                if (userNameInput){
+                    window.location.href = `.../../TravelService/newTravel.html?userNameInput=${userNameInput}`;
+                }
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error("AJAX Error:", errorThrown);

@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 /*$(document).ready(function (){
+
     $.ajax({
       url:"http://localhost:9095/User/api/v1/user",
       method:'GET',
