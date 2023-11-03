@@ -64,7 +64,117 @@ document.getElementById('btn-new-user-register').addEventListener("click", funct
     })
 
 });
+/*$(document).ready(function() {
+    // Handle form submission
+    $("#loginForm").submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the values of the username and password inputs
+        var username = $("#usernameInput").val();
+        var password = $("#passwordInput").val();
+
+        // Make an AJAX request to the server
+        $.ajax({
+            type: "POST",
+            url: "/your-server-endpoint", // Replace with the actual server endpoint URL
+            data: { username: username, password: password },
+            success: function(response) {
+                // Handle the response from the server
+                var responseMessage = $("#responseMessage");
+                if (response.success) {
+                    responseMessage.text("Login successful");
+                } else {
+                    responseMessage.text("Login failed. Please check your credentials.");
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                // Handle errors here
+                console.error("AJAX Error:", errorThrown);
+            }
+        });
+    });
+});*/
+/*document.getElementById('btn-login-user').addEventListener('click', function() {
+    console.log("Button clicked");
+    const userNameInput = $('#userName').val();
+    const userPasswordInput = $('#userPassword').val();
+    console.log(userNameInput);
+    console.log(userPasswordInput);
+
+    $.ajax({
+        type: "POST", // Use POST method to send data securely
+        url: "http://localhost:9095/User/api/v1/user/login", // Replace with your backend URL
+        data: {
+            username: userNameInput,
+            password: userPasswordInput
+        },
+        dataType: 'json',
+        success: function(response) {
+            /!*var responseMessage = $("#responseMessage");*!/
+            if (response.success) {
+                console.log("Login Success")
+                /!*response.text("Login successful");*!/
+            } else {
+                console.log("Login failed. Please check your credentials.")
+                /!*response.text("Login failed. Please check your credentials.");*!/
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Handle errors here
+            console.error("AJAX Error:", errorThrown);
+        }
+
+    });
+});*/
 $(document).ready(function() {
+    $('#btn-login-user').click(function() {
+        const userNameInput = $('#userName').val();
+        const userPasswordInput = $('#userPassword').val();
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:9095/User/api/v1/user/login",
+            data: {
+                user_name: userNameInput,
+                password: userPasswordInput
+            },
+            dataType: 'json',
+            success: function(response) {
+                console.log(response)
+                console.log("Login Success");
+                window.location.href = ".../../TravelService/newTravel.html";
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("AJAX Error:", errorThrown);
+            }
+        });
+       /* $.ajax({
+            type: "POST",
+            url: "http://localhost:9095/User/api/v1/user/login",
+            data: JSON.stringify({
+                user_name: userNameInput,
+                password: userPasswordInput
+            }),
+            contentType: "application/json", // Set the content type to JSON
+            dataType: "json",
+            success: function(response) {
+                if (response.success) {
+                    console.log("Login Success");
+                } else {
+                    console.log("Login failed. Please check your credentials.");
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("AJAX Error:", errorThrown);
+            }
+        });*/
+
+    });
+});
+
+
+
+/*$(document).ready(function() {
     $('#btn-login-user').click(function() {
         console.log("Button clicked");
         const username = $('#userName').val(); // Use 'username' here
@@ -94,7 +204,7 @@ $(document).ready(function() {
         });
 
     });
-});
+});*/
 
 /*document.getElementById('btn-login-user').addEventListener('click', function() {
     console.log("Button clicked");

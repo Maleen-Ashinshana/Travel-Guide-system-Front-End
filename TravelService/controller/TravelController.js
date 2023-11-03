@@ -3,13 +3,33 @@ import {AreaImageModel} from "../../TravelArea/model/AreaImageModel.js";
 import {HotelController} from "../../hotelService/controller/hotelController.js";
 import {HotelImageModel} from "../../hotelService/model/hotelImageModel.js";
 import {HotelModel} from "../../hotelService/model/hotelModel.js";*/
+import {TravelModel} from "../model/TravelModel.js";
+
 
 export class TravelController{
 
     constructor() {
+        this.start_date=$('#calendar').val()
     }
 }
+document.getElementById('btn-save-travel').addEventListener('click',function (){
+    const startDate=$('#calendar').val();
+    const endDate=$('#calendar-end').val();
+    const travelArea=$('#area-type').val();
+    const no_of_child=$('#txt-child').val();
+    const no_of_adult=$('#txt-adult').val();
+    const total_head_count=$('#txt-head-count').val();
+    const guide=$('#guides-type').val();
+    const package_type=$('#package-type').val();
+    const hotel_type=$('#hotel').val();
+    const vehicle_type=$('#vehicles').val();
 
+    const travelModel=new TravelModel(startDate,endDate,travelArea,no_of_child,no_of_adult,total_head_count,guide,package_type,hotel_type,vehicle_type);
+    console.log(travelModel);
+
+    /*console.log(celender)*/
+   /* console.log("button clicked")*/
+})
 /*document.getElementById('#guide-type').addEventListener('click',function (){
     console.log()
 })*/
@@ -29,7 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+/*$(document).ready(function (){
+    $.ajax({
+      url:"http://localhost:9095/User/api/v1/user",
+      method:'GET',
+      dataType:'json',
+        success:function (data){
+            console.log(data)
+            console.log("Ok")
+        },
+        error:function (error){
+            console.log("Feil"+error)
+        }
 
+    })
+})*/
 $(document).ready(function (){
     $.ajax({
         url:'http://localhost:9091/travel/api/v1/area',

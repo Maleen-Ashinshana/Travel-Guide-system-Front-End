@@ -417,6 +417,14 @@ body{
 border: 1px solid #007BFF;
     box-shadow: 2px 2px 2px 2px #007BFF ;
 }
+#sum{
+    position: absolute;
+    border: 1px solid red;
+    width: 10%;
+    height: 10%;
+    top: 10%;
+    left: 20%;
+}
 /*
 #re #mid  #super #superL{
     position: absolute;
