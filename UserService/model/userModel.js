@@ -1,9 +1,9 @@
 export class UserModel{
 
 
-    constructor(userName,userAddress,userEmail,userPassword,userContact,userNIC,userAge,userRemark,registerDate,userGender,userProfile) {
-
-        this.userName = userName;
+    constructor(name,userAddress,userEmail,userPassword,userContact,userNIC,userAge,userRemark,registerDate,userGender,userProfile) {
+        this.use_id=null;
+        this.name = name;
         this.userAddress = userAddress;
         this.userEmail = userEmail;
         this.userPassword = userPassword;

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../UserService/admin.css">
+</head>
+<body>
+<section class="admin">
+    <nav class="nav" id="nav">
+        <ul>
+            <li>Home</li>
+        </ul>
+        <ul>
+            <li><img src="../icon/logout-64.png" id="logOut"></li>
+        </ul>
+    </nav>
+
+    <div class="filed">
+        <div class="form-group" id="from-admin-role">
+            <label for="admin-role" class="admin-label">Admin Role</label>
+            <select id="admin-role" name="admin-role" required >
+                <option value="VEHICLE_ADMIN">VEHICLE_ADMIN</option>
+                <option value="HOTEL_ADMIN">HOTEL_ADMIN</option>
+                <option value="TRAVEL_ADMIN">TRAVEL_ADMIN</option>
+                <option value="GUIDE_ADMIN">GUIDE_ADMIN</option>
+                <option value="AREA_ADMIN">AREA_ADMIN</option>
+            </select>
+        </div>
+        <div class="form-group" id="from-admin-name">
+            <label for="txt-admin-name" id="admin-label" class="admin-label">Admin User Name :</label>
+            <input type="text" id="txt-admin-name" name="name" required>
+        </div >
+        <div class="form-group" id="from-admin-password">
+            <label for="txt-admin-password" id="admin-p-label" class="admin-label">Admin Password :</label>
+            <input type="text" id="txt-admin-password" name="name" required>
+        </div >
+
+        <button class="admin-btn" id="btn-add-new-admin">Add</button>
+        <button class="admin-btn" id="btn-delete-new-admin">Delete</button>
+        <button class="admin-btn" id="btn-update-new-admin">Update</button>
+        <button class="admin-btn" id="btn-search-new-admin">Search</button>
+    </div>
+    <div class="admin-table-div">
+        <table class="admin-table" id="admin-table">
+            <thead id="thead">
+            <tr>
+                <th scope="col" id="admin-table-role" class="adminTh role">Admin Role</th>
+                <th scope="col" id="admin-table-name" class="adminTh name">Admin Name</th>
+                <th scope="col" id="admin-table-password" class="adminTh password">Admin Password</th>
+            </tr>
+            </thead>
+            <tbody id="admin-table-body" style="background: #f9fafb">
+
+            </tbody>
+
+        </table>
+    </div>
+
+</section>
+<script type="module" src="../assect/JQuary/jquery-3.6.4.min.js"></script>
+<script type="module" src="controller/createAdminController.js"></script>
+<script type="module" src="model/adminModel.js"></script>
+<script>
+    /*var adminRoleSelect = document.getElementById("admin-role");
+
+    // Add an event listener to the <select> element to prevent selecting "VEHICLE_ADMIN"
+    adminRoleSelect.addEventListener("change", function () {
+        if (adminRoleSelect.value === "VEHICLE_ADMIN") {
+            alert("You cannot select VEHICLE_ADMIN");
+            adminRoleSelect.value = ""; // Reset the value to an empty string
+        }
+    })*/
+/*    var adminRoleSelect = document.getElementById("admin-role");
+
+    // Set the value you want to be selected
+    var selectedValue = "VEHICLE_ADMIN";
+
+    // Loop through the options and set the selected attribute for the desired option
+    for (var i = 0; i < adminRoleSelect.options.length; i++) {
+        if (adminRoleSelect.options[i].value === selectedValue) {
+            adminRoleSelect.options[i].selected = true;
+        }
+    }
+
+    // Disable the <select> element
+    adminRoleSelect.disabled = true;*/
+    /*var adminRoleSelect = document.getElementById("admin-role");
+
+    // Disable the <select> element
+    adminRoleSelect.disabled = true;*/
+</script>
+</body>
+</html>

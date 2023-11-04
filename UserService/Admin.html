@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<section class="admin">
+    <nav class="nav" id="nav">
+        <ul>
+            <li>Home</li>
+        </ul>
+        <ul>
+            <li><img src="../icon/logout-64.png" id="logOut"></li>
+        </ul>
+    </nav>
+
+    <div class="filed">
+        <div class="form-group" id="from-admin-role">
+            <label for="admin-role" class="admin-label">Admin Role</label>
+            <select id="admin-role" name="admin-role" required >
+                <option value="VEHICLE_ADMIN">VEHICLE_ADMIN</option>
+                <option value="HOTEL_ADMIN">HOTEL_ADMIN</option>
+                <option value="TRAVEL_ADMIN">TRAVEL_ADMIN</option>
+                <option value="GUIDE_ADMIN">GUIDE_ADMIN</option>
+                <option value="AREA_ADMIN">AREA_ADMIN</option>
+            </select>
+        </div>
+        <div class="form-group" id="from-admin-name">
+            <label for="txt-admin-name" id="admin-label" class="admin-label">Admin User Name :</label>
+            <input type="text" id="txt-admin-name" name="name" required>
+        </div >
+        <div class="form-group" id="from-admin-password">
+            <label for="txt-admin-password" id="admin-p-label" class="admin-label">Admin Password :</label>
+            <input type="text" id="txt-admin-password" name="name" required>
+        </div >
+
+        <button class="admin-btn" id="btn-add-admin">Add</button>
+        <button class="admin-btn" id="btn-delete-admin">Delete</button>
+        <button class="admin-btn" id="btn-update-admin">Update</button>
+        <button class="admin-btn" id="btn-search-admin">Search</button>
+    </div>
+    <div class="admin-table-div">
+        <table class="admin-table" id="admin-table">
+            <thead id="thead">
+            <tr>
+                <th scope="col" id="admin-table-role" class="adminTh">Admin Role</th>
+                <th scope="col" id="admin-table-name" class="adminTh">Admin Name</th>
+                <th scope="col" id="admin-table-password" class="adminTh">Admin Password</th>
+            </tr>
+            </thead>
+           <tbody id="admin-table-body">
+
+           </tbody>
+
+        </table>
+    </div>
+
+</section>
+<script src="../assect/JQuary/jquery-3.6.4.min.js"></script>
+<script type="module" src="../adminService/model/adminNew.js"></script>
+<script type="module" src="../adminService/controller/createAdmin.js"></script>
+<script type="module" src="../Js/newAdmin.js"></script>
+<script  type="module" src="../adminService/controller/adminController.js"></script>
+<!--<script type="module" src="../adminService/controller/createAdmin.js"></script>-->
+<!--<script type="module" src="../adminService/model/adminModel.js"></script>-->
+<!--<script type="module" src="../adminService/controller/adminController.js"></script>-->
+<!--<script  type="module" src="../adminService/model/adminModel.js" ></script>-->
+<!--<script  type="module" src="../adminService/controller/adminController.js"></script>-->
+<!--<script  type="module" src="adminService/controller/createAdmin.js"></script>-->
+<!--<script>
+    /*import {AdminModel} from "../adminService/model/adminModel.js";*/
+    import { AdminModel } from '../adminService/model/adminModel.js';
+
+    document.getElementById('btn-add-admin').addEventListener('click', function () {
+        const name = $('#txt-admin-name').val();
+        const password = $('#txt-admin-password').val();
+        const role = $('#admin-role').val();
+
+        // Make sure the AdminModel constructor is correctly defined
+        const admin = new AdminModel(name, password, role);
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:9095/User/api/v1/admin",
+            data: JSON.stringify(admin), // Make sure the data is formatted correctly
+            contentType: 'application/json',
+            success: (response) => {
+                console.log("Saved " + response.data);
+                // Display a success message to the user
+                alert("Account created!");
+            },
+            error: (error) => {
+                console.log("Not Saved " + error.status + ": " + error.responseText);
+                // Display an error message to the user
+                alert("Account creation failed: " + error.responseText);
+            }
+        });
+    });
+
+</script>-->
+</body>
+</html>

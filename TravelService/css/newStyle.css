@@ -392,21 +392,21 @@ body{
     width: 30%;
     height: 10%;
     position: absolute;
-    border: 1px solid red;
+  /*  border: 1px solid red;*/
     top: 250%;
     right: 0;
 }
 .btn{
     width: 20%;
     height: 20%;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     position: absolute;
     left: 41%;
     top: 270%;
 }
 #btn-save-travel{
     position: absolute;
-    background: #007BFF;
+    background: #353b47;
     left: 30%;
     width: 35%;
     height: 20%;
@@ -414,12 +414,13 @@ body{
     font-weight: bold;
     font-size: 1.1em;
     border-radius: 20px;
-border: 1px solid #007BFF;
-    box-shadow: 2px 2px 2px 2px #007BFF ;
+    border: 1px solid #353b47;
+    text-align: center;
+   /* box-shadow: 2px 2px 2px 2px #007BFF ;*/
 }
 #sum{
     position: absolute;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 10%;
     height: 10%;
     top: 10%;

@@ -66,22 +66,23 @@
     <div class="main" id="main">
         <input type="checkbox" id="chk" aria-hidden="true">
 
-        <div class="signup">
+        <!--<div class="signup">
             <form>
                 <label for="chk" aria-hidden="true">Sign up</label>
-                <input type="name" name="role" placeholder="User Role" required=""id="singIn-role">
+                &lt;!&ndash;<input type="name" name="role" placeholder="User Role" required=""id="singIn-role">&ndash;&gt;
                 <input type="name" name="name" placeholder="User Name" required=""id="singIn-userName">
                 <input type="password" name="pswd" placeholder="Password" required="" id="singIn-password">
                 <button class="btn-admin-login" id="btn-singUp">Sign up</button>
             </form>
-        </div>
+        </div>-->
 
         <div class="login">
             <form>
                 <label for="chk" aria-hidden="true">Login</label>
-                <input type="name" name="role" placeholder="User Role" required=""id="login-role">
-                <input type="name" name="user name" placeholder="User Name" required="" id="login-name">
-                <input type="password" name="pswd" placeholder="Password" required="" id="login-password">
+               <!-- <input type="name" name="role" placeholder="User Role" required=""id="login-role">-->
+                <input type="text" placeholder="User Name"  id="login-name">
+
+                <input type="password"  placeholder="Password" id="login-password">
                 <button class="btn-admin-login" id="btn-admin-login">Login</button>
             </form>
         </div>
@@ -117,7 +118,13 @@
             </div>
 
 
-            <button type="button" class="btn-user-login" id="btn-login-user">Login</button>
+            <button type="button" class="btn-user-login" id="btn-login-user" onclick="function submitName() {
+                              const name=document.getElementById('userName').value;
+                              if (name){
+                                  window.location.href=`.../../TravelService/newTravel.html?name=${response.name}`;
+                              }
+            }
+            submitName()">Login</button>
 
             <div class="middle-div" id="middle1"></div>
             <label class="or-lable">OR</label>
@@ -200,151 +207,6 @@
 
     </div>
 </section>
-<!--<section class="guide-admin-page" id="guide-admin-page" style="display: block">
-   &lt;!&ndash; <h1 id="guide-admin-label">Guide Admin</h1>&ndash;&gt;
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#" style="position: relative;left: -200%;color: white">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white">Guide</a>
-                    </li>
-                    &lt;!&ndash;<li class="nav-item" id="logOut">
-                        <a class="nav-link " href="#" style="color: white">Log Out</a>
-                    </li>&ndash;&gt;
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-  &lt;!&ndash;  <div class="example-1 card" id="example-1 card">&ndash;&gt;
-       &lt;!&ndash; <div class="wrapper" id="wrapper">&ndash;&gt;
-            &lt;!&ndash;<div class="profile-pic" id="guide-pic">
-                <label class="-label" for="file" id="guide-lable">
-                    <span class="glyphicon glyphicon-camera" id="guide-camera"></span>
-                    <span id="guide-img-span">Change Image</span>
-                </label>
-                <img src="icon/add-image.png/" id="guide-output" width="200" />
-            </div>
-
-            <div class="data">
-                <div class="content">
-                    <label for="show-menu" class="menu-button">
-                        <img src="icon/option.png" class="menu-button">
-                    </label>
-
-                    <label class="guide-lebles" id="guide-name">Name :</label>
-                    <label class="guide-lables-filed" id="guide-name-lable">Text :</label>
-                    <label class="guide-lebles" id="guide-adrress">Address :</label>
-                    <label class="guide-lables-filed" id="guide-address-lable">Text :</label>
-                    <label class="guide-lebles" id="guide-age">Age :</label>
-                    <label class="guide-lables-filed" id="guide-age-lable">Text :</label>
-                    <label class="guide-lebles" id="guide-gender">Gender :</label>
-                    <label class="guide-lables-filed" id="guide-gender-lable">Text :</label>
-                    <label class="guide-lebles" id="guide-contact">Contact :</label>
-                    <label class="guide-lables-filed" id="guide-contact-lable">Text :</label>
-
-                </div>
-                <input type="checkbox" id="show-menu" />
-                <ul class="menu-content">
-
-                    <li><a href="#"></a><img src="icon/pencil.png" class="pencile" id="btn-guide-pane"></li>
-                    <li><a href="#"></a><img src="icon/garbage-bin_2450285.png" class="btn-delete-guide"></li>
-                </ul>
-            </div>&ndash;&gt;
-    &lt;!&ndash;    </div>
-    </div>&ndash;&gt;
-  &lt;!&ndash;  <div class="guid-c" id="guide-c">
-
-    </div>&ndash;&gt;
-   &lt;!&ndash; <form action="" id="guide-search-form">
-        <input type="search" required id="search-guide-input" placeholder="Search Name">
-        <i class="fa fa-search"></i>
-        <a href="javascript:void(0)" id="clear-btn">Clear</a>
-    </form>&ndash;&gt;
-    <div id="cardContainer" class="cardGuideContener">
-        <img src="icon/logout-64.png" class="exit" id="exitGuide">
-        <input type="text" class="search" id="searchGuide" placeholder="Search Guide Name">
-        <img src="icon/download%20(3).png" id="search-btn-guide" >
-        <img src="icon/add-64.png" class="btn-add-vehicle" id="btn-add-guider-page">
-        &lt;!&ndash;<div class="search-div" id="guide-search-div">
-           <input type="text" id="guide-search-input" class="search-input" placeholder="Search Name">
-        <button type="button" class="btn-search" id="btn-search-guide">Search</button>
-        </div>&ndash;&gt;
-
-    </div>
-
-&lt;!&ndash;<img src="icon/plus.png" id="btn-add-guider-page">&ndash;&gt;
-
-    &lt;!&ndash;<div  id="data-container" class="data-container"></div>&ndash;&gt;
-    <div id="overlay" class="overlay"></div>
-    <div id="newPage" class="new-page">
-        <img src="icon/icons8-close-90.png" id="closeButton">
-        <div class="update-guide-filed" id="update-guide-filed">
-            <h2 id="guide-lable">Guide</h2>
-
-            <div class="form-group" id="from-group from1">
-                <label for="txt-guide-name" id="guid-name-lable" class="guide-lable">Name:</label>
-                <input type="text" id="txt-guide-name" name="name" required>
-            </div>
-            <div class="form-group" id="from-group from2">
-                <label for="txt-guide-address" id="guid-address-lable" class="guide-lable">Address:</label>
-                <input type="text" id="txt-guide-address" name="name" required>
-            </div>
-            <div class="form-group" id="from-group from3">
-                <label for="txt-guide-age" id="guid-age-lable" class="guide-lable">Age:</label>
-                <input type="text" id="txt-guide-age" name="name" required>
-            </div>
-            <div class="form-group" id="from-group from4">
-                <label for="txt-guide-contact" id="guid-contact-lable" class="guide-lable">Contact:</label>
-                <input type="text" id="txt-guide-contact" name="name" required>
-            </div>
-            <div class="form-group" id="from-group from5">
-                <label for="gender" class="guide-lable">Gender:</label>
-                <select id="gender" name="gender" required >
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="form-group" id="from-group from6">
-                <label for="txt-guide-experiences" id="guid-experiences-lable" class="guide-lable">Experiences:</label>
-                <input type="text" id="txt-guide-experiences" name="name" required>
-            </div>
-            <div class="form-group" id="from-group fromValue">
-                <label for="txt-guide-manValue" id="guid-manValue-lable" class="guide-lable">Man Day Value:</label>
-                <input type="text" id="txt-guide-manValue" name="name" required>
-            </div>
-            <div class="form-group" id="from-group from7">
-                <label for="remarks" id="guid-remark-lable" class="guide-lable">Remarks:</label>
-                <textarea id="remarks" name="remarks"></textarea>
-            </div>
-            <div class="form-group" id="from-group from8">
-                <label for="profilePicture" id="guid-image-lable" class="guide-lable">Upload Profile Picture:</label>
-                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
-                <img id="profilePicturePreview" src="#" alt="Profile Picture">
-            </div>
-            <div class="form-group" id="from-group from9">
-                <label for="idImage" id="guid-idImage-lable" class="guide-lable">ID Image:</label>
-                <input type="file" id="idImage" name="idImage" accept="image/*" required>
-                <img id="idImagePreview" src="#" alt="ID Image">
-            </div>
-            <div class="form-group" id="from-group from10">
-                <label for="nicImage" id="guid-nicImage-lable" class="guide-lable">NIC Image:</label>
-                <input type="file" id="nicImage" name="nicImage" accept="image/*" required>
-                <img id="nicImagePreview" src="#" alt="NIC Image">
-            </div>
-            <button type="submit" class="submit-button"id="btn-save-guide">Submit</button>
-        </div>
-
-    </div>
-</section>-->
 <section class="vehicle-section" id="vehicle-section">
     <nav class="navbar navbar-expand-lg bg-body-tertiary" >
         <div class="container-fluid">
@@ -573,7 +435,6 @@
 
         </div>
         <div id="imageGalleryHotel"></div>
-
         <button type="button " id="btn-hotel-save">Save</button>
 
     </div>

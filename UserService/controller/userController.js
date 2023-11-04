@@ -15,7 +15,7 @@ export class UserController{
 document.getElementById('btn-new-user-register').addEventListener("click", function () {
 
 
-    const userName=$('#txt-user-name').val()
+    const name=$('#txt-user-name').val()
     const userAddress=$('#txt-user-address').val()
     const userEmail=$('#txt-user-email').val()
     const userContact=$('#txt-user-contact').val()
@@ -27,12 +27,12 @@ document.getElementById('btn-new-user-register').addEventListener("click", funct
     const userRemark=$('#txt-user-remark').val()
     const userProfile=$('#file')[0].files[0]
 
-    const dto=new UserModel(userName,userAddress,userEmail,userPassword,userContact,userNIC,userAge,userRemark,registerDate,userGender,userProfile);
+    const dto=new UserModel(name,userAddress,userEmail,userPassword,userContact,userNIC,userAge,userRemark,registerDate,userGender,userProfile);
 
 
     const formData = new FormData();
     formData.append("userModel", new Blob([JSON.stringify(dto)], { type: 'application/json' }));
-    formData.append('userName',userName);
+    formData.append('name',name);
     formData.append('userAddress', userAddress);
     formData.append('registerDate', registerDate);
     formData.append('userEmail', userEmail);
@@ -134,8 +134,26 @@ $(document).ready(function() {
     $('#btn-login-user').click(function() {
         const userNameInput = $('#userName').val();
         const userPasswordInput = $('#userPassword').val();
-
         $.ajax({
+            type: "POST",
+            url: "http://localhost:9095/User/api/v1/user/login",
+            data: {
+                user_name: userNameInput,
+                password: userPasswordInput
+            },
+            dataType: 'json',
+            success: function(response) {
+                console.log(response.name);
+                window.location.href = `.../../TravelService/newTravel.html?name=${response.name}`;
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("AJAX Error:", errorThrown);
+                alert("Please Enter correct user name and password")
+                // Handle the AJAX error (e.g., show an error message)
+            }
+        });
+        /*$.ajax({
             type: "POST",
             url: "http://localhost:9095/User/api/v1/user/login",
             data: {
@@ -146,7 +164,7 @@ $(document).ready(function() {
             success: function(response) {
                 console.log(response)
                 console.log("Login Success");
-                /*const name=document.getElementById('userName').value*/
+                /!*const name=document.getElementById('userName').value*!/
                 if (userNameInput){
                     window.location.href = `.../../TravelService/newTravel.html?userNameInput=${userNameInput}`;
                 }
@@ -155,7 +173,7 @@ $(document).ready(function() {
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error("AJAX Error:", errorThrown);
             }
-        });
+        });*/
        /* $.ajax({
             type: "POST",
             url: "http://localhost:9095/User/api/v1/user/login",

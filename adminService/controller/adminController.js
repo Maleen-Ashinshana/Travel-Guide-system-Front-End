@@ -1,5 +1,65 @@
-import {AdminModel} from "../model/AdminModel.js";
+import {AdminModel} from "../model/adminModel.js";
+export class AdminController{
 
+}
+document.getElementById('btn-admin-login').addEventListener('click', function () {
+    console.log("OK");
+    event.preventDefault();
+    const userName = $('#login-name').val();
+    const userPassword = $('#login-password').val();
+
+    console.log(userName, userPassword);
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:9095/User/api/v1/admin/adminLogin",
+        data: {
+            name: userName,
+            password: userPassword
+        },
+        dataType: 'json',
+        success: function (response) {
+            console.log(response);
+            console.log(response.roleType.split("role=")[1]);
+            const role = response.roleType.split("role=")[1].split(")")[0];
+
+            // Handle successful login
+            if (role === "VEHICLE_ADMIN") {
+                console.log("Vehicle is a VEHICLE_ADMIN");
+                window.location.href = ".../../vehicleService/vehicle.html";
+            } else if (role === "USER_ADMIN") {
+                console.log("User is a USER_ADMIN");
+                window.location.href = "adminService/new.html";
+            } else if (role === "HOTEL_ADMIN") {
+                console.log("Hotel is a HOTEL_ADMIN");
+                window.location.href = ".../../hotelService/hotel.html";
+            } else if (role === "GUIDE_ADMIN") {
+                console.log("Guide is a GUIDE_ADMIN");
+                window.location.href = ".../../guideService/guide.html";
+            } else if (role === "AREA_ADMIN") {
+                console.log("Area is an AREA_ADMIN");
+                window.location.href = ".../../TravelArea/area.html";
+            } else {
+                console.log("User is not an ADMIN");
+                alert("Invalid username or password.");
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            event.preventDefault();
+            console.error("AJAX Error:", errorThrown);
+            alert("An error occurred during the login."+textStatus);
+        }
+    });
+});
+
+/*function displayErrorMessage(message) {
+    const errorMessageElement = document.getElementById('error-message');
+    errorMessageElement.textContent = message;
+}*/
+
+
+
+/*USER ADMIN*/
 document.getElementById('btn-singUp').addEventListener('click', function () {
     console.log("Log");
     event.preventDefault();
@@ -7,7 +67,7 @@ document.getElementById('btn-singUp').addEventListener('click', function () {
     const password = $('#singIn-password').val();
     const role = $('#singIn-role').val();
 
-    if (admin_name && password && role) {
+
         const admin = new AdminModel(admin_name, password, role);
         $.ajax({
             type: "POST",
@@ -18,6 +78,8 @@ document.getElementById('btn-singUp').addEventListener('click', function () {
                 console.log("Saved " + response.data);
                 // Display a success message to the user
                 alert("Account created!");
+                window.location.href=`../../index.html`;
+
             },
             error: (error) => {
                 console.log("Not Saved" + error.responseText);
@@ -25,19 +87,19 @@ document.getElementById('btn-singUp').addEventListener('click', function () {
                 alert("Account creation failed: " + error.responseText);
             }
         });
-    } else {
+    /*} else {
         // Display an error message to the user for missing input
         alert("Please fill in all fields before creating an account.");
-    }
+    }*/
 });
-document.getElementById('btn-admin-login').addEventListener('click', function () {
+/*document.getElementById('btn-admin-login').addEventListener('click', function () {
      const userRole=$('#login-role').val();
-     const useName=$('#login-name').val();
+     const name=$('#login-name').val();
      const usePassword=$('#login-password').val();
     $.ajax({
         type: 'POST', // You may use GET or other methods depending on your backend
         url: '/login', // Replace with the actual URL of your backend endpoint
-        data: JSON.stringify({ userRole, useName, usePassword }),
+        data: JSON.stringify({ userRole, name, usePassword }),
         contentType: 'application/json',
         success: function (response) {
             if (response === 'success') {
@@ -55,8 +117,45 @@ document.getElementById('btn-admin-login').addEventListener('click', function ()
     });
 
 
-});
+});*/
+/*OTHER ADMINS*/
+/*document.getElementById('btn-add-admin').addEventListener('click', function () {
+    console.log("Log");
+    /!*event.preventDefault();
+    const name = $('#txt-admin-name').val();
+    const password = $('#txt-admin-password').val();
+    const role = $('#admin-role').val();
 
+    const adminModel=new AdminModel(name,password,role)
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:9095/User/api/v1/admin",
+        data: JSON.stringify(adminModel),
+        contentType: 'application/json',
+        success: (response) => {
+            console.log("Saved " + response.data);
+            // Display a success message to the user
+            alert("Account created!");
+        },
+        error: (error) => {
+            console.log("Not Saved" + error.responseText);
+            // Display an error message to the user
+            alert("Account creation failed: " + error.responseText);
+        }
+    });*!/
+
+
+    /!*if (admin_name && password && role) {
+        const admin = new AdminModel(admin_name, password, role);
+
+    } else {
+        // Display an error message to the user for missing input
+        alert("Please fill in all fields before creating an account.");
+    }*!/
+});*/
+/*document.getElementById('btn-delete-admin').addEventListener('click',function (){
+    console.log("DELETE")
+})*/
 
 
 

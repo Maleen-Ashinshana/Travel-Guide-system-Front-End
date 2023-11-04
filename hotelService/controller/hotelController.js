@@ -14,10 +14,12 @@ $('#hotelCardConteiner').on("click", ".btn-delete-hotel", function (e) {
             /*this.getAllVehicles()
             this.loadData()*/
             console.log("DELETED")
+            /*alert("Deleted")*/
         },
 
         error: function (error) {
             console.log("Failed to Delete: " + error);
+            alert("Are You Sure")
         }
     });
 
@@ -71,12 +73,13 @@ document.getElementById('btn-hotel-save').addEventListener('click',function (){
                     console.log("Not Saved Image"+error);
                 })
             })
-
+               alert("Hotel Saved")
         },
         error: function(error) {
             // Handle any errors
             console.error('Error:', error);
-            console.error("No");
+            console.error("No");1
+            alert("No")
         }
 
     })

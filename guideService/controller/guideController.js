@@ -22,35 +22,38 @@ $('#cardContainer').on("click",".btn-delete-guide",function (e){
             /*this.getAllVehicles()
             this.loadData()*/
             console.log("DELETED")
+            alert("Guide Deleted!")
         },
         error: function (error) {
             console.log("Failed to Delete: " + error);
+            alert("Are you sure you want to delete this guide?")
         }
     });
 })
-$('#cardContainer').on("click",".btn-update-guide",function (e){
-    console.log(e.target.id + "Update")
-    overlay.style.display = "block";
-    newPage.style.display = "block";
+/*$('#cardContainer').on("click", ".btn-update-guide", function (e) {
+    if (confirm("Are you sure you want to delete this guide?")) {
+        const guideId = e.target.id;
+        $.ajax({
+            type: "DELETE",
+            url: `http://localhost:9092/Guide/api/v1/guide/${guideId}`,
+            dataType: 'json',
+            success: () => {
+                console.log("DELETED");
 
-    const id=e.target.id
-    console.log(id)
-    $.ajax({
-        type: "GET",
-        url: `http://localhost:9092/Guide/api/v1/guide/${id}`,
-        dataType: 'json',
-        success: ()=> {
-            /*this.getAllVehicles()
-            this.loadData()*/
-            console.log(id.guide_name)
-        },
-        error: function (error) {
-            console.log("No " + error);
-        }
-    });
+                alert("Guide Is Not Deleted");
+            },
+            error: function (error) {
+                console.log("Failed to Delete: " + error);
+                alert("Are You Sure!");
+            }
+        });
+    }
+});*/
+/*$('#cardContainer').on("click", ".btn-delete-guide", function (e) {
 
 
-})
+})*/
+
 document.getElementById('btn-save-guide').addEventListener('click',function (){
     const guide_name=$('#txt-guide-name').val()
     const guide_address=$('#txt-guide-address').val()
@@ -95,9 +98,11 @@ document.getElementById('btn-save-guide').addEventListener('click',function (){
 
         success:(response=>{
             console.log("Saved"   +response.data);
+            alert("Guide Created!")
         }),
         error:(error=>{
             console.log("Not Saved"+error.responseText);
+            alert("Guide Is Not Create"+error.responseText)
         })
     })
 });

@@ -1,9 +1,10 @@
 export class AdminModel{
 
-    constructor(admin_name,password,role) {
+    constructor(name,password,roleType) {
         this.admin_id=null;
-        this.admin_name=admin_name;
+        this.name=name;
         this.password=password;
-        this.role=role;
+        this.roleType=roleType;
+        this.roleId=null;
     }
 }

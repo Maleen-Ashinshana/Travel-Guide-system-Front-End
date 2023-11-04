@@ -173,10 +173,13 @@ $('#vehicleCardContainer').on("click", ".btn-delete", function (e) {
             /*this.getAllVehicles()
             this.loadData()*/
             console.log("DELETED")
+            alert("Vehicle Are Not Deleted ")
         },
 
         error: function (error) {
             console.log("Failed to Delete: " + error);
+
+            alert("Are You Sure")
         }
     });
     /*console.log(this.vehicle.vehicle_id)*/
@@ -195,6 +198,8 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
     const driver_name = $('#txt-vehicle-driver').val();
     const driver_contact_number = $('#txt-vehicle-driverContact').val();
     const vehicle_image = $('#fileInput')[0].files[0];
+
+  /*  const agePattern = /^(0?[1-9]|[1-9][0-9])$/;*/
 
 
     const model = new VehicleModel(driver_name, driver_contact_number, vehicle_brand, vehicle_category, vehicle_type, fuel_type, fuel_usage, hybrid_or_no, seat_capacity, transmission, remark);
@@ -218,16 +223,20 @@ document.getElementById('btn-vehicle-save').addEventListener('click',function ()
                 contentType: false,
                 success:(responses=>{
                     console.log("SavedImage"   +responses.data);
+                   /* alert("Vehicle Saved Success Full")*/
                 }),
                 error:(error=>{
                     console.log("Not Saved Image"+error);
+
                 })
             })
+            alert("Vehicle Saved Success Full")
         },
         error: function(error) {
             // Handle any errors
             console.error('Error:', error);
             console.error("No");
+            alert("Vehicle Are Not Saved")
         }
 
     })

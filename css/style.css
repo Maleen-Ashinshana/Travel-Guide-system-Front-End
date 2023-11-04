@@ -222,22 +222,26 @@ input{
     background: #0000A3;
     font-size: 1em;
     font-weight: bold;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     outline: none;
     border: none;
     border-radius: 5px;
     transition: .2s ease-in;
     cursor: pointer;
 }
-button:hover{
+/*button:hover{
     background: #0000A3;
-}
-.login{
+}*/
+
+.login {
     height: 460px;
     background: #eee;
     border-radius: 60% / 10%;
     transform: translateY(-180px);
     transition: .8s ease-in-out;
+    position: relative;
+    left: 0%;
+    top: 33%;
 }
 .login label{
     color: #0000A3;

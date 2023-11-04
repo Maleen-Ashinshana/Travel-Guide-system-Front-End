@@ -16,8 +16,8 @@
     </nav>
     <div class="customer-filed" id="customer-filed">
         <!-- <p class="date" id="date">Date :</p>-->
-        <p class="customer" id="customer-id">Customer Id :</p>
-        <p class="customer" id="Customer-Name">Customer Name :</p>
+      <!--  <p class="customer" id="customer-id">Customer Id :</p>-->
+        <p class="customer" id="Customer-Name" style="position: absolute;font-weight: bold;font-size: 1.2em;left: 10%">Customer :</p>
     </div>
     <div class="package-conteiner" id="package-conteiner">
 
@@ -35,12 +35,12 @@
         <input type="date" id="calendar-end">
 
         <div class="form-group" id="from-child-group">
-            <label for="txt-child" id="child-label" class="child-label">No Of Child :</label>
-            <input type="text" id="txt-child" name="seat" required>
+            <label for="txt-child" id="child-label" class="child-label" >No Of Child :</label>
+            <input type="text" id="txt-child" name="seat" required oninput="calculateHeadCount()">
         </div >
         <div class="form-group" id="from-adult-group">
             <label for="txt-adult" id="adult-label" class="child-label">No Of Adult :</label>
-            <input type="text" id="txt-adult" name="seat" required>
+            <input type="text" id="txt-adult" name="seat" required oninput="calculateHeadCount()">
         </div >
 
       <!--  <div class="guide">-->
@@ -109,9 +109,9 @@
         <label for="package-type" class="package-label">Package Type:</label>
         <select id="package-type" name="package-type" required >
             <option value="regular">Regular</option>
-            <option value="mid"> Mid-level</option>
+            <option value="mid-level"> Mid-level</option>
             <option value="luxury">Luxury</option>
-            <option value="Super">Super Luxury</option>
+            <option value="Super-Luxury">Super Luxury</option>
         </select>
     </div>
     <div class="hotels" id="hotels">
@@ -189,10 +189,22 @@ function initMap() {
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDczKkBNZu7gXEYkwm16LGsDIEJPHdbqlM&callback=initMap">
 </script>
 <script>
+    const  customer=$
+    console.log()
     const urlParam=new URLSearchParams(window.location.search);
     const name=urlParam.get('name');
     if (name){
         document.getElementById('Customer-Name').textContent=name;
+    }
+</script>
+<script>
+    function calculateHeadCount(){
+        var no_of_child=parseFloat(document.getElementById('txt-child').value)||0;
+        var no_of_adult=parseFloat(document.getElementById('txt-adult').value)||0;
+
+        var sum=no_of_child+ no_of_adult
+        console.log(sum)
+        document.getElementById('txt-head-count').value=sum
     }
 </script>
 </body>
