@@ -118,7 +118,30 @@
 <script src="controller/hotelController.js" type="module"></script>
 <!--<script src="../Js/addBluerrPage.js" type="module"></script>-->
 <script>
-    const VehicleOpenButton=document.getElementById("btn-add-hotel-page")
+    /*function open(){
+        const VehicleOpenButton=document.getElementById("btn-add-hotel-page")
+        const VehicleCloseButton = document.getElementById("hotelNewPageCloseButton");
+        const VehicleOverlay = document.getElementById("hotelOverLay");
+        const VehicleNewPage = document.getElementById("newHotelPage");
+
+        const card=document.getElementById("hotelCardConteiner");
+
+
+        VehicleOpenButton.addEventListener("click", () => {
+            VehicleOverlay.style.display = "block";
+            VehicleNewPage.style.display = "block";
+            card.style.display="none";
+
+        });
+
+        VehicleCloseButton.addEventListener("click", () => {
+            VehicleOverlay.style.display = "none";
+            VehicleNewPage.style.display = "none";
+            card.style.display="block";
+        });
+    }
+    open();*/
+    /*const VehicleOpenButton=document.getElementById("btn-add-hotel-page")
     const VehicleCloseButton = document.getElementById("hotelNewPageCloseButton");
     const VehicleOverlay = document.getElementById("hotelOverLay");
     const VehicleNewPage = document.getElementById("newHotelPage");
@@ -137,7 +160,44 @@
         VehicleOverlay.style.display = "none";
         VehicleNewPage.style.display = "none";
         card.style.display="block";
-    });
+    });*/
+
+    /*$('#hotelCardConteiner').on("click", ".btn-update-hotel", function (e) {
+        const  hotelId=e.target.id;
+        console.log(hotelId);
+        open();
+        /!*window.location.href = "separate_page.html?hotelId=" + hotelId;*!/
+        /!*window.location.href=openPage()+hotelId;*!/
+    })*/
+    /*function openPage(){
+        const VehicleOpenButton=document.getElementById("btn-add-hotel-page")
+        const VehicleCloseButton = document.getElementById("hotelNewPageCloseButton");
+        const VehicleOverlay = document.getElementById("hotelOverLay");
+        const VehicleNewPage = document.getElementById("newHotelPage");
+
+        const card=document.getElementById("hotelCardConteiner");
+
+
+        VehicleOpenButton.addEventListener("click", () => {
+            VehicleOverlay.style.display = "block";
+            VehicleNewPage.style.display = "block";
+            card.style.display="none";
+
+        });
+
+        VehicleCloseButton.addEventListener("click", () => {
+            VehicleOverlay.style.display = "none";
+            VehicleNewPage.style.display = "none";
+            card.style.display="block";
+        });
+    }
+    openPage();
+    $('#hotelCardConteiner').on("click", ".btn-update-hotel", function (e) {
+        const  hotelId=e.target.id;
+        console.log(hotelId);
+        openPage();
+
+    })*/
 </script>
 </body>
 </html>

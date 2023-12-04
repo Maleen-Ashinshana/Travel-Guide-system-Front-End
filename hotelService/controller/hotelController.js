@@ -2,6 +2,7 @@ import {HotelImageModel} from "../model/hotelImageModel.js";
 import {HotelModel} from "../model/hotelModel.js";
 export class HotelController{
 
+
 }
 $('#hotelCardConteiner').on("click", ".btn-delete-hotel", function (e) {
     const hotelId=e.target.id;
@@ -25,6 +26,37 @@ $('#hotelCardConteiner').on("click", ".btn-delete-hotel", function (e) {
 
 
 })
+$('#hotelCardConteiner').on("click", ".btn-update-hotel", function (e) {
+    const  hotelId=e.target.id;
+    console.log(hotelId);
+
+
+})
+function openPage(){
+    const VehicleOpenButton=document.getElementById("btn-add-hotel-page")
+    const VehicleCloseButton = document.getElementById("hotelNewPageCloseButton");
+    const VehicleOverlay = document.getElementById("hotelOverLay");
+    const VehicleNewPage = document.getElementById("newHotelPage");
+
+    const card=document.getElementById("hotelCardConteiner");
+
+
+    VehicleOpenButton.addEventListener("click", () => {
+        VehicleOverlay.style.display = "block";
+        VehicleNewPage.style.display = "block";
+        card.style.display="none";
+
+    });
+
+    VehicleCloseButton.addEventListener("click", () => {
+        VehicleOverlay.style.display = "none";
+        VehicleNewPage.style.display = "none";
+        card.style.display="block";
+    });
+    console.log("******")
+}
+openPage();
+
 document.getElementById('btn-hotel-save').addEventListener('click',function (){
 
     const hotelName = $('#txt-hotel-name').val();
@@ -346,7 +378,7 @@ $(document).ready(function () {
                         <p id="hotelRemark">Remark: ${hotel.remark}</p>
                         
                         <button type="button" class="btn-delete-hotel" id="${hotel.hotel_id}">Delete</button>
-                        <button type="button" class="btn-update-hotel">Update</button>
+                        <button type="button" class="btn-update-hotel" id="${hotel.hotel_id}">Update</button>
                     </div>
                 `;
                 console.log(hotel.hotel_id+"kakakaakakak")

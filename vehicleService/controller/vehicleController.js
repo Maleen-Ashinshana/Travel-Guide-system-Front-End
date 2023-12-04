@@ -179,7 +179,7 @@ $('#vehicleCardContainer').on("click", ".btn-delete", function (e) {
         error: function (error) {
             console.log("Failed to Delete: " + error);
 
-            alert("Are You Sure")
+            alert("Are You Surebtn-add")
         }
     });
     /*console.log(this.vehicle.vehicle_id)*/
